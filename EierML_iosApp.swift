@@ -11,7 +11,7 @@ import SwiftUI
 struct EierML_iosApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            MainView()
         }
     }
 }
