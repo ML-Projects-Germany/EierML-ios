@@ -19,13 +19,12 @@ struct PrimaryButtonStyle: ButtonStyle {
             .frame(minHeight: 60)
             .background(
                 !isEnabled ? color.opacity(0.5) :
-//                configuration.isPressed ? color.opacity(0.8) :
-                    color
+                    configuration.isPressed ? color.adjust(by: -5) : color
             )
             .cornerRadius(11)
             .foregroundColor(.white)
             .shadow(
-                color: configuration.isPressed ? .clear : .black.opacity(0.15),
+                color: configuration.isPressed ? .black.opacity(0.05) : .black.opacity(0.15),
                 radius: 10
             )
     }

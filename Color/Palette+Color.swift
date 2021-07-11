@@ -11,8 +11,8 @@ extension Color {
 
     struct Palette {
         /// systemRed
-        static let red = Color("systemRed")
+        static let red = Color(hex: "F05E64")
         /// systemBlue
-        static let blue = Color("systemBlue")
+        static let blue = Color(hex: "6298DF")
     }
 }
