@@ -8,54 +8,80 @@
 import SwiftUI
 
 struct GearView: View {
-    @State var percentage: Float = 0
-
+    @State var temperatureValue: CGFloat = 0.0
+    @State var angleValue: CGFloat = 0.0
+    var config: Config
     var body: some View {
-        VStack {
-            
-            GeometryReader { geometry in
-                ZStack {
-                    RoundedRectangle(cornerRadius: 15)
-                        .foregroundColor(Color.Palette.red)
-                        .shadow(color: .black.opacity(0.1), radius: 10)
-                        .overlay(
-                            RoundedRectangle(cornerRadius: 15)
-                                .stroke(Color.gray.opacity(0.6), lineWidth: 2)
-                                .blur(radius: 4)
-                                .mask(RoundedRectangle(cornerRadius: 15).fill(LinearGradient(Color.black, Color.clear)))
-                        )
-                        .overlay(
-                            RoundedRectangle(cornerRadius: 15)
-                                .stroke(Color.white.opacity(0.3), lineWidth: 8)
-                                .blur(radius: 4)
-                                .mask(RoundedRectangle(cornerRadius: 15).fill(LinearGradient(Color.clear, Color.black)))
-                        )
-                    VStack() {
-                        RoundedRectangle(cornerRadius: 15)
-                            .foregroundColor(.white)
-                            .shadow(color: .black.opacity(0.15), radius: 10)
-                            .frame(width: 60)
-                            .offset(x: (geometry.size.width-40) * CGFloat(self.percentage / 100), y: 0)
-                            .animation(.easeIn)
-                            .padding(6)
-                    }
-                    .frame(maxWidth: .infinity ,alignment: .leading)
-                }
-                .gesture(DragGesture(minimumDistance: 0)
+        ZStack {
+            Circle()
+                .frame(width: config.radius * 2, height: config.radius * 2)
+                .scaleEffect(1.2)
+                .foregroundColor(Color.Palette.red)
+
+            Circle()
+                .trim(from: 0.0, to: temperatureValue/config.totalValue)
+                .stroke(Color.white, style: StrokeStyle(lineWidth: 30, lineCap: .round))
+                .frame(width: config.radius * 1.9, height: config.radius * 2)
+                .rotationEffect(.degrees(-90))
+
+//            Circle()
+//                .trim(from: 0.0, to: temperatureValue/config.totalValue)
+//                .stroke(temperatureValue < config.maximumValue/2 ? Color.blue : Color.red, lineWidth: 4)
+//                .frame(width: config.radius * 2, height: config.radius * 2)
+//                .rotationEffect(.degrees(-90))
+
+            Circle()
+                .fill(Color.white)
+                .shadow(radius: 10)
+                .frame(width: config.knobRadius * 2, height: config.knobRadius * 2)
+                .offset(y: -config.radius+7)
+                .rotationEffect(Angle.degrees(Double(angleValue)))
+                .gesture(DragGesture(minimumDistance: 0.0)
                             .onChanged({ value in
-                                // TODO: - maybe use other logic here
-                                self.percentage = min(max(0, Float(value.location.x-35 / geometry.size.width * 100)), 100)
+                                change(location: value.location)
                             }))
-                .frame(maxWidth: .infinity)
-                .frame(height: 60)
-            }
+
+            Text("\(String.init(format: "%.0f", temperatureValue)) º")
+                .font(.system(size: 60))
+                .foregroundColor(.white)
+        }
+    }
+
+    private func change(location: CGPoint) {
+        // creating vector from location point
+        let vector = CGVector(dx: location.x, dy: location.y)
+
+        // geting angle in radian need to subtract the knob radius and padding from the dy and dx
+        let angle = atan2(vector.dy - (config.knobRadius + 10), vector.dx - (config.knobRadius + 10)) + .pi/2.0
+
+        // convert angle range from (-pi to pi) to (0 to 2pi)
+        let fixedAngle = angle < 0.0 ? angle + 2.0 * .pi : angle
+        // convert angle value to temperature value
+        let value = fixedAngle / (2.0 * .pi) * config.totalValue
+
+        if value >= config.minimumValue && value <= config.maximumValue {
+            temperatureValue = value
+            angleValue = fixedAngle * 180 / .pi // converting to degree
         }
     }
 }
 
+struct Config {
+    let minimumValue: CGFloat
+    let maximumValue: CGFloat
+    let totalValue: CGFloat
+    let knobRadius: CGFloat
+    let radius: CGFloat
+}
+
 struct GearView_Preview: PreviewProvider {
     static var previews: some View {
-        GearView()
+        GearView(config: Config(minimumValue: -30.0,
+                                maximumValue: 30.0,
+                                totalValue: 100.0,
+                                knobRadius: 15.0,
+                                radius: 125.0)
+        )
             .padding()
     }
 }
