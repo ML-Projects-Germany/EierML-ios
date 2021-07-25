@@ -10,14 +10,7 @@ import SwiftUI
 struct WelcomePageView: View {
     var body: some View {
         ZStack {
-            LinearGradient(gradient:
-                            Gradient(colors:
-                                        [
-                                            Color.Palette.red.opacity(0.8),
-                                            Color.Palette.blue.opacity(0.8)
-                                        ]),
-                           startPoint: .top,
-                           endPoint: .bottom)
+            ClassicBackground()
                 .ignoresSafeArea()
             VStack(alignment: .leading) {
                 Text("Wilkommen")

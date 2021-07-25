@@ -24,8 +24,8 @@ struct PrimaryButtonStyle: ButtonStyle {
             .cornerRadius(11)
             .foregroundColor(.white)
             .shadow(
-                color: configuration.isPressed ? .black.opacity(0.05) : .black.opacity(0.15),
-                radius: 10
+                color: configuration.isPressed ? .black.opacity(0.02) : .black.opacity(0.15),
+                radius: 5
             )
     }
 }
