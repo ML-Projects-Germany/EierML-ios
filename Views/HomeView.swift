@@ -8,6 +8,11 @@
 import SwiftUI
 
 struct HomeView: View {
+    @StateObject var model: HomeViewModel
+
+    init() {
+        self._model = StateObject(wrappedValue: HomeViewModel())
+    }
 
     var body: some View {
         NavigationView {
