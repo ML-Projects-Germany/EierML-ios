@@ -1,24 +1,25 @@
 //
-//  HomeViewModel.swift
+//  NewsListModel.swift
 //  EierML-ios
 //
-//  Created by Torben Köhler on 01.08.21.
+//  Created by Torben Köhler on 08.08.21.
 //
 
 import Foundation
 import SwiftUIWPArticleLoader
 import Combine
 
-class HomeViewModel: ObservableObject {
-    @Published var articles: [Article] = []
+class NewsListViewModel: ObservableObject {
     private var cancellables: Set<AnyCancellable> = []
 
-    init() {
-        let handler = WPArticleLoader(websiteAdress: URL(staticString: "https://eierml.ml-projects.de/"))
+    @Published var articles: [Article] = []
+
+    func reloadArticles() {
+        let handler = WPArticleLoader(websiteAdress: URL(staticString: "https://ml-projects.de"))
         handler.fetchArticles()
             .receive(on: DispatchQueue.main)
             .sink { response in
-                switch response { 
+                switch response {
                 case let .failure(error):
                     print(error)
                 case .finished:

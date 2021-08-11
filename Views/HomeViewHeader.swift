@@ -42,7 +42,7 @@ struct HomeViewHeader: View {
 struct HomeViewHeader_Previews: PreviewProvider {
     static var previews: some View {
         ZStack {
-            ClassicBackground()
+            ClassicBackgroundView()
                 .ignoresSafeArea()
             ScrollView {
                 HomeViewHeader()

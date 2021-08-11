@@ -1,5 +1,5 @@
 //
-//  ClasicBackground.swift
+//  ClasicBackgroundView.swift
 //  EierML-ios
 //
 //  Created by Torben Köhler on 18.07.21.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ClassicBackground: View {
+struct ClassicBackgroundView: View {
     var body: some View {
         LinearGradient(gradient:
                         Gradient(colors:
@@ -22,7 +22,7 @@ struct ClassicBackground: View {
 
 struct ClassicBackground_Previews: PreviewProvider {
     static var previews: some View {
-        ClassicBackground()
+        ClassicBackgroundView()
             .ignoresSafeArea()
     }
 }

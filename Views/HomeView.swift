@@ -8,27 +8,48 @@
 import SwiftUI
 
 struct HomeView: View {
-    @StateObject var model: HomeViewModel
-
-    init() {
-        self._model = StateObject(wrappedValue: HomeViewModel())
-    }
+    @Environment(\.colorScheme) var colorScheme
 
     var body: some View {
         NavigationView {
             ZStack {
-                ClassicBackground()
+                ClassicBackgroundView()
                     .ignoresSafeArea()
                 ScrollView {
                     VStack(spacing: 0) {
                         HomeViewHeader()
                             .frame(height: 80)
-                        HomeViewContentView()
+                            .padding(.bottom, 20)
+                        VStack(spacing: 0) {
+                            ZStack {
+                                VStack {
+                                    WelcomeMessageView()
+                                        .padding(.bottom, 15)
+                                        .padding(.horizontal, 20)
+                                    Label(
+                                        title: { Text("EierML-Blog") },
+                                        icon: { Image(systemName: "filemenu.and.cursorarrow") }
+                                    )
+                                    .font(.headline)
+                                    .frame(maxWidth: .infinity, alignment: .leading)
+                                    .padding(.leading, 20)
+                                    .padding(.bottom, -15)
+                                    NewsListView()
+                                        .frame(maxWidth: .infinity, maxHeight: 400)
+                                    Spacer()
+                                }
+                                .frame(maxWidth: .infinity, alignment: .leading)
+                            }
+                        }
                     }
                 }
             }
             .navigationBarHidden(true)
         }
+    }
+
+    var contentBackgroundColor: Color {
+        colorScheme == .dark ? .black : .white
     }
 }
 
@@ -37,9 +58,6 @@ struct HomeView_Previews: PreviewProvider {
         Group {
             HomeView()
               .preferredColorScheme(.dark)
-//            HomeView()
-//                .previewDevice("iPod touch (7th generation)")
-//              .preferredColorScheme(.dark)
         }
     }
 }
@@ -52,42 +70,3 @@ extension View {
             .mask(self)
     }
 }
-
-//#if canImport(UIKit)
-//extension View {
-//    fileprivate func hideKeyboard() {
-//        UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
-//    }
-//}
-//#endif
-
-//@State private var widthText: String = ""
-//@State private var heightText: String = ""
-//@State private var wightText: String = ""
-
-//VStack(spacing: 0) {
-//    VStack(spacing: 25) {
-//        PrimaryTextField(
-//            "Weite",
-//            text: $widthText,
-//            mainColor: Color.Palette.blue,
-//            borderColor: Color.Palette.blue,
-//            imageName: "arrow.left.and.right"
-//        )
-//        PrimaryTextField(
-//            "Höhe",
-//            text: $heightText,
-//            mainColor: Color.Palette.blue,
-//            borderColor: Color.Palette.blue,
-//            imageName: "arrow.up.and.down"
-//        )
-//        PrimaryTextField(
-//            "Gewicht",
-//            text: $wightText,
-//            mainColor: Color.Palette.blue,
-//            borderColor: Color.Palette.blue,
-//            imageName: "egg",
-//            systemImage: false
-//        )
-//    }
-//    .padding()

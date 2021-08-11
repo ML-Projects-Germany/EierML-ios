@@ -43,7 +43,7 @@ struct WelcomeMessageView: View {
 struct WelcomeMessageView_Previews: PreviewProvider {
     static var previews: some View {
         ZStack {
-            ClassicBackground()
+            ClassicBackgroundView()
                 .ignoresSafeArea()
             WelcomeMessageView()
         }
