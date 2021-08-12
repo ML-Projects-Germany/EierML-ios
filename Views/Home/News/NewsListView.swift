@@ -23,10 +23,10 @@ struct NewsListView: View {
                             .frame(width: 5)
                         ForEach(model.articles) { article in
                             NavigationLink(
-                                destination: HTMLView(htmlString: article.content, baseURL: article.link),
+                                destination: ArticleView(article: article),
                                 label: {
                                     NewsRowView(article: article)
-                                        .frame(width: rowWidth(reader: reader), height: 200)
+                                        .frame(width: rowWidth(reader: reader), height: rowWidth(reader: reader)/1.6)
                                         .padding(.vertical, 20)
                                 })
                                 .buttonStyle(NewsRowButtonStyle())
@@ -36,13 +36,13 @@ struct NewsListView: View {
                     }
                 }
             } else {
-                LottieView(name: "loading-animation")
+//                LottieView(name: "loading-animation")
 //                NewsImageLoadingView()
+                ProgressView("Lade Artikel")
                     .frame(width: reader.size.width, height: 200)
                     .onAppear(perform: model.reloadArticles )
             }
         }
-        .frame(height: 200)
     }
 
     func rowWidth(reader: GeometryProxy) -> CGFloat {

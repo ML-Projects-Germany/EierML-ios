@@ -1,5 +1,5 @@
 //
-//  WelcomeMessageView.swift
+//  WellcomeMessageView.swift
 //  EierML-ios
 //
 //  Created by Torben Köhler on 19.07.21.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct WelcomeMessageView: View {
+struct WellcomeMessageView: View {
     @Environment(\.colorScheme) var colorScheme
     
     var body: some View {
@@ -40,12 +40,12 @@ struct WelcomeMessageView: View {
     }
 }
 
-struct WelcomeMessageView_Previews: PreviewProvider {
+struct WellcomeMessageView_Previews: PreviewProvider {
     static var previews: some View {
         ZStack {
             ClassicBackgroundView()
                 .ignoresSafeArea()
-            WelcomeMessageView()
+            WellcomeMessageView()
         }
         .previewDevice("iPod touch (7th generation)")
     }

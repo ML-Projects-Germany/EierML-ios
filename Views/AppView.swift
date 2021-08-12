@@ -13,7 +13,7 @@ struct AppView: View {
     var body: some View {
         ZStack {
             if firstAppStart ?? true {
-                WelcomeView()
+                WellcomeView()
             } else {
                 HomeView()
             }

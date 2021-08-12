@@ -1,5 +1,5 @@
 //
-//  WelcomeView.swift
+//  WellcomeView.swift
 //  EierML-ios
 //
 //  Created by Torben Köhler on 05.07.21.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct WelcomeView: View {
+struct WellcomeView: View {
     @AppStorage("firstAppStart") var firstAppStart: Bool?
 
     var body: some View {
@@ -40,8 +40,8 @@ struct WelcomeView: View {
     }
 }
 
-struct WelcomePageView_Previews: PreviewProvider {
+struct WellcomePageView_Previews: PreviewProvider {
     static var previews: some View {
-        WelcomeView()
+        WellcomeView()
     }
 }

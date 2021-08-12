@@ -18,22 +18,28 @@ struct NewsRowView: View {
             VStack {
                 Spacer()
                 ZStack {
-                    Color.secondary.colorInvert().opacity(0.9)
+                    VisualEffectView(effect: UIBlurEffect(style: .systemUltraThinMaterial))
                     HStack {
                         VStack(alignment: .leading, spacing: 2) {
                             Text(article.title)
                                 .lineLimit(1)
                             HStack {
                                 Text(article.date?.toString("E d. MMM yyyy", showToday: true) ?? "Kein Datum")
+                                    .lineLimit(1)
                                     .font(.footnote)
-                                ForEach(article.categories) { category in
-                                    Text(category.name)
-                                        .font(.footnote)
-                                        .foregroundColor(.white)
-                                        .padding(.vertical, 1.5)
-                                        .padding(.horizontal, 3)
-                                        .background(Color.accentColor)
-                                        .cornerRadius(5)
+                                ScrollView(.horizontal, showsIndicators: false) {
+                                    HStack {
+                                        ForEach(article.categories) { category in
+                                            Text(category.name)
+                                                .lineLimit(1)
+                                                .font(.footnote)
+                                                .foregroundColor(.white)
+                                                .padding(.vertical, 1.5)
+                                                .padding(.horizontal, 3)
+                                                .background(Color.accentColor)
+                                                .cornerRadius(5)
+                                        }
+                                    }
                                 }
                             }
                         }
@@ -95,6 +101,12 @@ struct NewsRowView: View {
 struct NewsRowView_Previews: PreviewProvider {
     static var previews: some View {
         NewsRowView(article: .mock)
-            .frame(width: 200, height: 100, alignment: .center)
+            .frame(width: 300, height: 170, alignment: .center)
     }
+}
+
+struct VisualEffectView: UIViewRepresentable {
+    var effect: UIVisualEffect?
+    func makeUIView(context: UIViewRepresentableContext<Self>) -> UIVisualEffectView { UIVisualEffectView() }
+    func updateUIView(_ uiView: UIVisualEffectView, context: UIViewRepresentableContext<Self>) { uiView.effect = effect }
 }

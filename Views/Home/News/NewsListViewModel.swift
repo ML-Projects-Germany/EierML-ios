@@ -15,7 +15,7 @@ class NewsListViewModel: ObservableObject {
     @Published var articles: [Article] = []
 
     func reloadArticles() {
-        let handler = WPArticleLoader(websiteAdress: URL(staticString: "https://ml-projects.de"))
+        let handler = WPArticleLoader(websiteAdress: URL(staticString: "https://eierml.ml-projects.de"))
         handler.fetchArticles()
             .receive(on: DispatchQueue.main)
             .sink { response in
