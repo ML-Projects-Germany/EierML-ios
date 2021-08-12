@@ -23,14 +23,13 @@ struct WellcomeView: View {
                 .font(.largeTitle)
                 VStack(alignment: .leading) {
                     Spacer()
-                    NavigationButton {
-                        firstAppStart = false
-                    } destination: {
-                        HomeView()
-                            .navigationBarHidden(true)
-                    } label: {
+                    Button(action: {
+                        withAnimation {
+                            firstAppStart = false
+                        }
+                    }, label: {
                         Text("Weiter")
-                    }
+                    })
                     .buttonStyle(PrimaryButtonStyle(color: Color.Palette.red))
                     .padding()
                 }

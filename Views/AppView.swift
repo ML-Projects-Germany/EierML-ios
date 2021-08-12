@@ -9,21 +9,24 @@ import SwiftUI
 
 struct AppView: View {
     @AppStorage("firstAppStart") var firstAppStart: Bool?
-    
+
     var body: some View {
         ZStack {
+            TabView {
+                HomeView()
+                    .tabItem {
+                        Label("Startseite", systemImage: "rectangle.stack")
+                    }
+                    .tag(0)
+                EierMLView()
+                    .tabItem {
+                        Label("EierML", systemImage: "magnifyingglass.circle")
+                    }
+            }
             if firstAppStart ?? true {
                 WellcomeView()
-            } else {
-                HomeView()
+                    .transition(.opacity)
             }
-//            VStack {
-//                Color.primary.colorInvert()
-//                    .opacity(0.6)
-//                    .frame(maxWidth: .infinity, maxHeight: 40)
-//                Spacer()
-//            }
-//            .ignoresSafeArea()
         }
     }
 }

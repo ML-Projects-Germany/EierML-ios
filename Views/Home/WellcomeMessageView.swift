@@ -9,7 +9,7 @@ import SwiftUI
 
 struct WellcomeMessageView: View {
     @Environment(\.colorScheme) var colorScheme
-    
+
     var body: some View {
         ZStack {
             Text("Wilkommen zur EierML-App, wir freuen uns sehr das du unsere App nutzt und wünschen dir viel Spaß beim Entdecken!")
