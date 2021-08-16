@@ -1,0 +1,15 @@
+# By default, SwiftLint uses a set of sensible default rules you can adjust:
+disabled_rules: # rule identifiers turned on by default to exclude from running
+    - file_length
+    - identifier_name
+    - vertical_whitespace
+    - type_body_length
+    - nesting
+    - type_name
+    - multiple_closures_with_trailing_closure
+
+identifier_name:
+  excluded: # excluded via string array
+    - id
+
+reporter: "xcode"

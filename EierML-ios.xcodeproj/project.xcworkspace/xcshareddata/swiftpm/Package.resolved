@@ -1,0 +1,34 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "Lottie",
+        "repositoryURL": "https://github.com/airbnb/lottie-ios",
+        "state": {
+          "branch": null,
+          "revision": "79a0b70547f7c40ea54c67487f935fa2f2eaaadc",
+          "version": "3.2.3"
+        }
+      },
+      {
+        "package": "SwiftUIPager",
+        "repositoryURL": "https://github.com/fermoya/SwiftUIPager.git",
+        "state": {
+          "branch": null,
+          "revision": "d6745593cfa38ffa1fca75244a01e422d220d407",
+          "version": "2.3.1"
+        }
+      },
+      {
+        "package": "SwiftUIWPArticleLoader",
+        "repositoryURL": "https://github.com/tkoehlerlg/SwiftUIWPArticleLoader.git",
+        "state": {
+          "branch": null,
+          "revision": "85ec6b5bbd9790cd21249c4a525376158ad7c881",
+          "version": "1.3.3"
+        }
+      }
+    ]
+  },
+  "version": 1
+}
