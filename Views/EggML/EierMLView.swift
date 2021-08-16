@@ -8,52 +8,31 @@
 import SwiftUI
 
 struct EierMLView: View {
-    @StateObject var model: EierMLViewModel
-
-    @State var showAddEggView: Bool = true
-
-    init() {
-        self._model = StateObject(wrappedValue: EierMLViewModel())
-    }
+    @State var tap: Bool = true
 
     var body: some View {
-        GeometryReader { reader in
+        ZStack {
+            ClassicBackgroundView()
+                .ignoresSafeArea()
             ZStack {
-                VStack {
-                    ForEach(model.eggs) { egg in
-                        Text("Hello")
-                    }
-                    Button(action: {
-                        showAddEggView = true
-                    }, label: {
-                        HStack {
-                            Image(systemName: "plus.circle")
-                                .resizable()
-                                .scaledToFit()
-                                .frame(width: 30, height: 30)
-                                .padding(10)
-                            Text("Ei hinzufügen")
-
-                        }
-                        .font(.headline)
-                        .foregroundColor(.accentColor)
-                    })
-                }
-                .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
-                .padding()
-                if showAddEggView {
-                    ZStack {
-                        Color.primary.colorInvert()
-                        Text("Hello")
-                    }
-                    .frame(
-                        width: reader.size.width/3*2,
-                        height: reader.size.width/3*2.1, alignment: .center
-                    )
-                    .cornerRadius(20)
-                    .shadow(color: .black.opacity(0.1), radius: 10)
+                if tap {
+                    EierMLTutorialView()
+                        .transition(.move(edge: .leading))
+                        .zIndex(1.0)
+                } else {
+                    EggListView()
+                        .transition(.move(edge: .leading))
+                        .blur(radius: tap ? 3 : 0)
                 }
             }
+            .animation(.easeInOut)
+//            Button(action: { tap.toggle() }, label: {
+//                Text("Button")
+//                    .foregroundColor(.white)
+//                    .padding()
+//                    .background(Color.blue.opacity(0.8))
+//                    .cornerRadius(20)
+//            })
         }
     }
 }
