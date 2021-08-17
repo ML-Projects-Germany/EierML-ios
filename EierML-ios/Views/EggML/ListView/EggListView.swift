@@ -10,56 +10,84 @@ import SwiftUI
 struct EggListView: View {
     @StateObject var model: EggListViewModel
 
-    @State var showAddEggView: Bool = false
+    @State var showAddEggView: Bool = true
 
     init() {
         self._model = StateObject(wrappedValue: EggListViewModel())
     }
 
     var body: some View {
-        GeometryReader { reader in
-            ZStack {
-                VStack {
+        ZStack {
+            VStack(alignment: .leading, spacing: 8) {
+                Text("Deine Eier")
+                    .font(.title.bold())
+                    .foregroundColor(.white)
+                    .frame(maxWidth: .infinity)
+                    .padding(.bottom, 10)
+                Section {
                     ForEach(model.eggs) { egg in
-                        Text("Hello")
-                    }
-                    Button(action: {
-                        showAddEggView = true
-                    }, label: {
                         HStack {
-                            Image(systemName: "plus.circle")
-                                .resizable()
-                                .scaledToFit()
-                                .frame(width: 30, height: 30)
-                                .padding(10)
-                            Text("Ei hinzufügen")
-
+                            ZStack {
+                                Image("egg bordered")
+                                    .renderingMode(.template)
+                                    .resizable()
+                                    .scaledToFit()
+                                    .frame(width: 40)
+                                Text("\(egg.number)")
+                                    .font(.body.bold())
+                                    .lineLimit(1)
+                                    .minimumScaleFactor(0.01)
+                                    .frame(width: 20)
+                            }
+                            Text("\(egg.size)mm x \(egg.size)mm")
+                                .frame(maxWidth: .infinity, alignment: .leading)
+                            Label("\(egg.timeInMinutes) min", systemImage: "clock")
+                                .font(.body.bold())
                         }
-                        .font(.headline)
                         .foregroundColor(.white)
+                        seperator
+                    }
+                    .onDelete(perform: { indexSet in
+                        print("Hello")
                     })
                 }
-                .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
-                .padding()
-                if showAddEggView {
-                    ZStack {
-                        Color.primary.colorInvert()
-                        Text("Hello")
+                Button(action: {
+                    showAddEggView = true
+                }, label: {
+                    HStack {
+                        Image(systemName: "plus.circle")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 40, height: 30)
+                            .padding([.vertical], 10)
+                        Text("Ei hinzufügen")
                     }
-                    .frame(
-                        width: reader.size.width/3*2,
-                        height: reader.size.width/3*2.1, alignment: .center
-                    )
-                    .cornerRadius(20)
-                    .shadow(color: .black.opacity(0.1), radius: 10)
-                }
+                    .font(.headline)
+                    .foregroundColor(.white)
+                })
+            }
+            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
+            .padding()
+            if showAddEggView {
+
             }
         }
+    }
+
+    var seperator: some View {
+        Rectangle()
+            .frame(maxWidth: .infinity, maxHeight: 2)
+            .cornerRadius(10)
+            .foregroundColor(.white)
     }
 }
 
 struct EggListView_Previews: PreviewProvider {
     static var previews: some View {
-        EggListView()
+        ZStack {
+            ClassicBackgroundView()
+                .ignoresSafeArea()
+            EggListView()
+        }
     }
 }

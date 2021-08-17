@@ -16,7 +16,6 @@ struct EierMLTutorialView: View {
     var body: some View {
         GeometryReader { reader in
             ZStack {
-
                 Pager(page: page, data: tutorialSheets, id: \.id) { item in
                     pageView(item)
                 }

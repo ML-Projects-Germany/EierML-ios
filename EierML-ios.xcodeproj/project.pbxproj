@@ -46,6 +46,11 @@
 		D9BFA14426CAE216008BE365 /* TutorialSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9BFA14326CAE216008BE365 /* TutorialSheet.swift */; };
 		D9BFA14726CAFDC0008BE365 /* EggListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9BFA14626CAFDC0008BE365 /* EggListView.swift */; };
 		D9C35519269B164C005C0081 /* Color+Adjust.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C35518269B164C005C0081 /* Color+Adjust.swift */; };
+		D9E1051426CC3F27002CB828 /* AddEggView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9E1051326CC3F27002CB828 /* AddEggView.swift */; };
+		D9E1051626CC40BD002CB828 /* VisualEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9E1051526CC40BD002CB828 /* VisualEffect.swift */; };
+		D9E1051826CC4E6B002CB828 /* UIScreenExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9E1051726CC4E6B002CB828 /* UIScreenExtension.swift */; };
+		D9E1051D26CC5C9A002CB828 /* PixelScreenManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9E1051C26CC5C9A002CB828 /* PixelScreenManager.swift */; };
+		D9E1051F26CC5D9C002CB828 /* SliderTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9E1051E26CC5D9C002CB828 /* SliderTextFieldView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -108,6 +113,11 @@
 		D9BFA14326CAE216008BE365 /* TutorialSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialSheet.swift; sourceTree = "<group>"; };
 		D9BFA14626CAFDC0008BE365 /* EggListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EggListView.swift; sourceTree = "<group>"; };
 		D9C35518269B164C005C0081 /* Color+Adjust.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Adjust.swift"; sourceTree = "<group>"; };
+		D9E1051326CC3F27002CB828 /* AddEggView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEggView.swift; sourceTree = "<group>"; };
+		D9E1051526CC40BD002CB828 /* VisualEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisualEffect.swift; sourceTree = "<group>"; };
+		D9E1051726CC4E6B002CB828 /* UIScreenExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIScreenExtension.swift; sourceTree = "<group>"; };
+		D9E1051C26CC5C9A002CB828 /* PixelScreenManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PixelScreenManager.swift; sourceTree = "<group>"; };
+		D9E1051E26CC5D9C002CB828 /* SliderTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderTextFieldView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -304,6 +314,8 @@
 			isa = PBXGroup;
 			children = (
 				D9BFA14626CAFDC0008BE365 /* EggListView.swift */,
+				D9E1051326CC3F27002CB828 /* AddEggView.swift */,
+				D9E1051E26CC5D9C002CB828 /* SliderTextFieldView.swift */,
 				D90AC30826C5C50700B6B7D0 /* EggListViewModel.swift */,
 			);
 			path = ListView;
@@ -312,12 +324,15 @@
 		D9D37426269B0B810075DE4E /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				D9E1051726CC4E6B002CB828 /* UIScreenExtension.swift */,
+				D9E1051C26CC5C9A002CB828 /* PixelScreenManager.swift */,
 				D90D5E7526C015B20023D2C7 /* LottieView.swift */,
 				D90AC30126C5748900B6B7D0 /* WebLoadingView.swift */,
 				D90AC30226C5748900B6B7D0 /* WebView.swift */,
 				D994220426BB2AFD00DB2BCF /* Date+String.swift */,
 				D994220226BB2AD200DB2BCF /* AsyncImage.swift */,
 				D99421E826BB0FCB00DB2BCF /* NavigationButton.swift */,
+				D9E1051526CC40BD002CB828 /* VisualEffect.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -413,6 +428,7 @@
 			knownRegions = (
 				en,
 				Base,
+				de,
 			);
 			mainGroup = D94521342693512500305EF8;
 			packageReferences = (
@@ -496,11 +512,15 @@
 				D99421E926BB0FCB00DB2BCF /* NavigationButton.swift in Sources */,
 				D9BB94CE26A4CC2B007086D0 /* HomeViewHeader.swift in Sources */,
 				D994220526BB2AFD00DB2BCF /* Date+String.swift in Sources */,
+				D9E1051F26CC5D9C002CB828 /* SliderTextFieldView.swift in Sources */,
 				D945217326935C1E00305EF8 /* PrimaryButtonStyle.swift in Sources */,
 				D9BFA14726CAFDC0008BE365 /* EggListView.swift in Sources */,
+				D9E1051826CC4E6B002CB828 /* UIScreenExtension.swift in Sources */,
 				D945216E2693556900305EF8 /* Color+Hex.swift in Sources */,
+				D9E1051626CC40BD002CB828 /* VisualEffect.swift in Sources */,
 				D90AC30426C5748900B6B7D0 /* WebView.swift in Sources */,
 				D9BB94D026A4CCF6007086D0 /* ClassicBackgroundView.swift in Sources */,
+				D9E1051D26CC5C9A002CB828 /* PixelScreenManager.swift in Sources */,
 				D90AC30B26C5C5E600B6B7D0 /* Egg.swift in Sources */,
 				D94521412693512600305EF8 /* EierML_iosApp.swift in Sources */,
 				D90AC30626C5822F00B6B7D0 /* EierMLView.swift in Sources */,
@@ -508,6 +528,7 @@
 				D9BFA14426CAE216008BE365 /* TutorialSheet.swift in Sources */,
 				D9795FF6269A2D2800C6CF98 /* PrimaryTextField.swift in Sources */,
 				D945216C2693544D00305EF8 /* WellcomeView.swift in Sources */,
+				D9E1051426CC3F27002CB828 /* AddEggView.swift in Sources */,
 				D90D5E6726C00AF90023D2C7 /* NewsRowView.swift in Sources */,
 				D994220326BB2AD200DB2BCF /* AsyncImage.swift in Sources */,
 				D90AC30026C5745300B6B7D0 /* ArticleView.swift in Sources */,

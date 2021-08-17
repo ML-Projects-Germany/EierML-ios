@@ -12,6 +12,7 @@ struct WellcomeMessageView: View {
 
     var body: some View {
         ZStack {
+            // swiftlint:disable:next line_length
             Text("Wilkommen zur EierML-App, wir freuen uns sehr das du unsere App nutzt und wünschen dir viel Spaß beim Entdecken!")
                 .multilineTextAlignment(.leading)
                 .padding(15)

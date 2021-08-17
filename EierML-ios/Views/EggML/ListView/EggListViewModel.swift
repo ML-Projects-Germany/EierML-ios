@@ -8,7 +8,7 @@
 import Foundation
 
 class EggListViewModel: ObservableObject {
-    @Published var eggs: [Egg] = []
+    @Published var eggs: [Egg] = [.mock, .mock]
 
     init() {
 
