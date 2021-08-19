@@ -6,11 +6,14 @@
 //
 
 import SwiftUI
+import Combine
 
 struct SliderTextFieldView: View {
 
     @State var sliderValue: Double
     @State var textValue: String = ""
+
+    @State var update: Bool = false
 
     init(sliderValue: State<Double>) {
         self._sliderValue = sliderValue
@@ -18,16 +21,21 @@ struct SliderTextFieldView: View {
 
     var body: some View {
         HStack {
-            TextField("Breite", text: $textValue)
-                .onChange(of: textValue, perform: { value in
-                    if let doubleValue = value.doubleValue {
-                        sliderValue = doubleValue
-                    }
-                })
-                .textFieldStyle(RoundedBorderTextFieldStyle())
+            Picker(
+                selection: .constant(1),
+                label: Text("Picker")) {
+                /*@START_MENU_TOKEN@*/Text("1").tag(1)/*@END_MENU_TOKEN@*/
+                /*@START_MENU_TOKEN@*/Text("2").tag(2)/*@END_MENU_TOKEN@*/
+            }
+            .frame(maxWidth: 50)
+            .pickerStyle(InlinePickerStyle())
             Slider(value: $sliderValue, in: 0...20)
                 .onChange(of: sliderValue, perform: { value in
-                    textValue = String(format: "%.1f", value)
+                    if !update {
+                        update = true
+                        textValue = String(format: "%.1f", value)
+                        update = false
+                    }
                 })
                 .padding()
         }
