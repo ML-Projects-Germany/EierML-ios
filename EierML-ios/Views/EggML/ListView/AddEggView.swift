@@ -25,7 +25,7 @@ struct AddEggView: View {
                     Text("\(getNormalPixelsForCentimeter(getCentimeterForNormalPixels(300)))")
                 }
             }
-            SliderTextFieldView(sliderValue: _sliderValue)
+            SliderTextFieldView()
         }
     }
 

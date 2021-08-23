@@ -10,10 +10,11 @@ import SwiftUI
 struct EggListView: View {
     @StateObject var model: EggListViewModel
 
-    @State var showAddEggView: Bool = true
+    @State var showAddEggView: Bool
 
-    init() {
+    init(showAddEggView: State<Bool>) {
         self._model = StateObject(wrappedValue: EggListViewModel())
+        self._showAddEggView = showAddEggView
     }
 
     var body: some View {
@@ -48,7 +49,7 @@ struct EggListView: View {
                         seperator
                     }
                     .onDelete(perform: { indexSet in
-                        print("Hello")
+                        print("Hello \(indexSet)")
                     })
                 }
                 Button(action: {
@@ -87,7 +88,7 @@ struct EggListView_Previews: PreviewProvider {
         ZStack {
             ClassicBackgroundView()
                 .ignoresSafeArea()
-            EggListView()
+            EggListView(showAddEggView: State(wrappedValue: true))
         }
     }
 }
