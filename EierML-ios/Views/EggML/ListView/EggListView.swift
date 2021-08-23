@@ -25,32 +25,8 @@ struct EggListView: View {
                     .foregroundColor(.white)
                     .frame(maxWidth: .infinity)
                     .padding(.bottom, 10)
-                Section {
-                    ForEach(model.eggs) { egg in
-                        HStack {
-                            ZStack {
-                                Image("egg bordered")
-                                    .renderingMode(.template)
-                                    .resizable()
-                                    .scaledToFit()
-                                    .frame(width: 40)
-                                Text("\(egg.number)")
-                                    .font(.body.bold())
-                                    .lineLimit(1)
-                                    .minimumScaleFactor(0.01)
-                                    .frame(width: 20)
-                            }
-                            Text("\(egg.size)mm x \(egg.size)mm")
-                                .frame(maxWidth: .infinity, alignment: .leading)
-                            Label("\(egg.timeInMinutes) min", systemImage: "clock")
-                                .font(.body.bold())
-                        }
-                        .foregroundColor(.white)
-                        seperator
-                    }
-                    .onDelete(perform: { indexSet in
-                        print("Hello \(indexSet)")
-                    })
+                ForEach(model.eggs) { egg in
+                    EggListRowView(egg: egg)
                 }
                 Button(action: {
                     showAddEggView = true
@@ -68,7 +44,7 @@ struct EggListView: View {
                 })
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
-            .padding()
+            .padding(5)
         }
     }
 

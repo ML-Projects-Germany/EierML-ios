@@ -15,8 +15,6 @@ struct AddEggView: View {
     var body: some View {
         NavigationView {
             GeometryReader { reader in
-                ClassicBackgroundView()
-                    .ignoresSafeArea()
                 VStack {
                     Spacer()
                     ZStack {
@@ -28,7 +26,10 @@ struct AddEggView: View {
                                 height: CGFloat(heightValue)*reader.size.height/1.4
                             )
                             .foregroundColor(.white)
-                            .opacity(0.6)
+                            .gradientForeground(colors: [
+                                Color.Palette.blue,
+                                Color.Palette.red
+                            ])
                         VStack(alignment: .leading) {
                             Text("Breite: \(getCentimeterForNormalPixels(CGFloat(widthValue)*reader.size.width))")
                             Text("Höhe: \(getCentimeterForNormalPixels(CGFloat(heightValue)*reader.size.height/1.4))")
@@ -76,7 +77,6 @@ struct AddEggView: View {
         }, label: {
             Text("Abbrechen")
                 .fontWeight(.medium)
-                .foregroundColor(.white)
         })
     }
 
@@ -86,7 +86,6 @@ struct AddEggView: View {
         }, label: {
             Text("Hinzufügen")
                 .fontWeight(.bold)
-                .foregroundColor(.white)
         })
     }
 

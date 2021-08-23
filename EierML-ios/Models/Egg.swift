@@ -21,5 +21,7 @@ struct Egg: Identifiable {
         }
     }
 
-    static var mock: Self = .init(number: 1, size: 43, time: 180)
+    static var mock: Self {
+        .init(number: 1, size: 43, time: 180)
+    }
 }

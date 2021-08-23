@@ -12,8 +12,8 @@ struct ClassicBackgroundView: View {
         LinearGradient(gradient:
                         Gradient(colors:
                                     [
-                                        Color.Palette.blue.opacity(0.7),
-                                        Color.Palette.red.opacity(0.7)
+                                        Color.Palette.blue.opacity(0.8),
+                                        Color.Palette.red.opacity(0.8)
                                     ]),
                        startPoint: .top,
                        endPoint: .bottom)

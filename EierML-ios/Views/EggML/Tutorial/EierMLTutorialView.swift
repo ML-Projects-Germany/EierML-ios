@@ -16,8 +16,8 @@ struct EierMLTutorialView: View {
     var body: some View {
         GeometryReader { reader in
             ZStack {
-                Pager(page: page, data: tutorialSheets, id: \.id) { item in
-                    pageView(item)
+                Pager(page: page, data: tutorialSheets, id: \.id) { tutorialSheet in
+                    TutorialSheetView(tutorialSheet)
                 }
                 .preferredItemSize(CGSize(width: .greatestFiniteMagnitude, height: reader.size.height/2))
                 .itemSpacing(20)
@@ -37,29 +37,20 @@ struct EierMLTutorialView: View {
             }
         }
     }
-
-    func pageView(_ tutorialSheet: TutorialSheet) -> some View {
-        ZStack {
-            Color.white
-                .opacity(0.3)
-            VStack {
-                Text(tutorialSheet.title)
-                    .font(.title2)
-                    .fontWeight(.medium)
-                    .padding()
-                Text(tutorialSheet.text)
-                    .padding([.horizontal, .bottom])
-                    .frame(maxWidth: .infinity, maxHeight: .infinity)
-            }
-        }
-        .cornerRadius(20)
-    }
 }
 
 struct EierMLTutorialView_Previews: PreviewProvider {
     static var previews: some View {
-        EierMLTutorialView()
-        EierMLTutorialView()
+        ZStack {
+            ClassicBackgroundView()
+                .ignoresSafeArea()
+            EierMLTutorialView()
+        }
+        ZStack {
+            ClassicBackgroundView()
+                .ignoresSafeArea()
+            EierMLTutorialView()
+        }
             .previewDevice("iPod touch (7th generation)")
     }
 }
