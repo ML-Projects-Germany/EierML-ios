@@ -9,24 +9,85 @@ import SwiftUI
 
 struct AddEggView: View {
 
-    @State var sliderValue: Double = 0
+    @State var widthValue: Double = 0.6
+    @State var heightValue: Double = 0.7
 
     var body: some View {
-        VStack {
-            ZStack {
-                Image("egg")
-                    .renderingMode(.template)
-                    .resizable()
-                    .frame(width: 300, height: 450)
-                    .foregroundColor(.white)
-                    .opacity(0.6)
+        NavigationView {
+            GeometryReader { reader in
+                ClassicBackgroundView()
+                    .ignoresSafeArea()
                 VStack {
-                    Text("\(getCentimeterForNormalPixels(300))")
-                    Text("\(getNormalPixelsForCentimeter(getCentimeterForNormalPixels(300)))")
+                    Spacer()
+                    ZStack {
+                        Image("egg")
+                            .renderingMode(.template)
+                            .resizable()
+                            .frame(
+                                width: CGFloat(widthValue)*reader.size.width,
+                                height: CGFloat(heightValue)*reader.size.height/1.4
+                            )
+                            .foregroundColor(.white)
+                            .opacity(0.6)
+                        VStack(alignment: .leading) {
+                            Text("Breite: \(getCentimeterForNormalPixels(CGFloat(widthValue)*reader.size.width))")
+                            Text("Höhe: \(getCentimeterForNormalPixels(CGFloat(heightValue)*reader.size.height/1.4))")
+                        }
+                        .frame(maxWidth: .infinity)
+                        .padding()
+                    }
+                    .frame(width: reader.size.width, height: reader.size.height/2)
+                    Spacer()
+                    VStack(alignment: .leading, spacing: 0) {
+                        Text("Höhe")
+                            .font(.body)
+                        Slider(
+                            value: $heightValue,
+                            in: 0.2...1,
+                            minimumValueLabel: Image(systemName: "minus"),
+                            maximumValueLabel: Image(systemName: "plus")
+                        ) {
+                            EmptyView()
+                        }
+                        Spacer().frame(height: 15)
+                        Text("Breite")
+                            .font(.body)
+                        Slider(
+                            value: $widthValue,
+                            in: 0.2...1,
+                            minimumValueLabel: Image(systemName: "minus"),
+                            maximumValueLabel: Image(systemName: "plus")
+                        ) {
+                            EmptyView()
+                        }
+                    }
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .padding()
+                    Spacer().frame(height: 30)
                 }
             }
-            SliderTextFieldView()
+            .navigationBarItems(leading: quitButton, trailing: addButton)
         }
+    }
+
+    var quitButton: some View {
+        Button(action: {
+
+        }, label: {
+            Text("Abbrechen")
+                .fontWeight(.medium)
+                .foregroundColor(.white)
+        })
+    }
+
+    var addButton: some View {
+        Button(action: {
+
+        }, label: {
+            Text("Hinzufügen")
+                .fontWeight(.bold)
+                .foregroundColor(.white)
+        })
     }
 
     func getCentimeterForNormalPixels(_ pixels: CGFloat) -> CGFloat {
@@ -46,16 +107,8 @@ struct AddEggView: View {
 
 struct AddEggView_Previews: PreviewProvider {
     static var previews: some View {
-        ZStack {
-            ClassicBackgroundView()
-                .ignoresSafeArea()
-            AddEggView()
-        }
-        ZStack {
-            ClassicBackgroundView()
-                .ignoresSafeArea()
-            AddEggView()
-        }
+        AddEggView()
+        AddEggView()
         .previewDevice("iPod touch (7th generation)")
     }
 }

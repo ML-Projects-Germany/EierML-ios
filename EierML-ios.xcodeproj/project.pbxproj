@@ -50,7 +50,6 @@
 		D9E1051626CC40BD002CB828 /* VisualEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9E1051526CC40BD002CB828 /* VisualEffect.swift */; };
 		D9E1051826CC4E6B002CB828 /* UIScreenExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9E1051726CC4E6B002CB828 /* UIScreenExtension.swift */; };
 		D9E1051D26CC5C9A002CB828 /* PixelScreenManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9E1051C26CC5C9A002CB828 /* PixelScreenManager.swift */; };
-		D9E1051F26CC5D9C002CB828 /* SliderTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9E1051E26CC5D9C002CB828 /* SliderTextFieldView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -117,7 +116,6 @@
 		D9E1051526CC40BD002CB828 /* VisualEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisualEffect.swift; sourceTree = "<group>"; };
 		D9E1051726CC4E6B002CB828 /* UIScreenExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIScreenExtension.swift; sourceTree = "<group>"; };
 		D9E1051C26CC5C9A002CB828 /* PixelScreenManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PixelScreenManager.swift; sourceTree = "<group>"; };
-		D9E1051E26CC5D9C002CB828 /* SliderTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderTextFieldView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -315,7 +313,6 @@
 			children = (
 				D9BFA14626CAFDC0008BE365 /* EggListView.swift */,
 				D9E1051326CC3F27002CB828 /* AddEggView.swift */,
-				D9E1051E26CC5D9C002CB828 /* SliderTextFieldView.swift */,
 				D90AC30826C5C50700B6B7D0 /* EggListViewModel.swift */,
 			);
 			path = ListView;
@@ -512,7 +509,6 @@
 				D99421E926BB0FCB00DB2BCF /* NavigationButton.swift in Sources */,
 				D9BB94CE26A4CC2B007086D0 /* HomeViewHeader.swift in Sources */,
 				D994220526BB2AFD00DB2BCF /* Date+String.swift in Sources */,
-				D9E1051F26CC5D9C002CB828 /* SliderTextFieldView.swift in Sources */,
 				D945217326935C1E00305EF8 /* PrimaryButtonStyle.swift in Sources */,
 				D9BFA14726CAFDC0008BE365 /* EggListView.swift in Sources */,
 				D9E1051826CC4E6B002CB828 /* UIScreenExtension.swift in Sources */,

@@ -69,9 +69,6 @@ struct EggListView: View {
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
             .padding()
-            if showAddEggView {
-
-            }
         }
     }
 
