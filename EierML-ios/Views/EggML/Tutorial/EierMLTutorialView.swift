@@ -12,7 +12,6 @@ struct EierMLTutorialView: View {
     @StateObject private var model: EierMLTutorialViewModel
 
     @StateObject private var page: Page = .first()
-    @State private var pageValue = 1
 
     @Binding var dismissTutorial: Bool
 
@@ -24,6 +23,11 @@ struct EierMLTutorialView: View {
     var body: some View {
         GeometryReader { reader in
             ZStack {
+                Color.primary.colorInvert()
+                    .ignoresSafeArea()
+                    .shadow(color: .black.opacity(0.1), radius: 8)
+                ClassicBackgroundView()
+                    .ignoresSafeArea()
                 Pager(page: page, data: model.tutorialSheets, id: \.id) { tutorialSheet in
                     TutorialSheetView(tutorialSheet, dismissTutorial: $dismissTutorial)
                 }
@@ -32,7 +36,6 @@ struct EierMLTutorialView: View {
                 .interactive(opacity: 0.5)
                 .vertical()
                 .sensitivity(.high)
-//                .shadow(radius: 10)
                 .shadow(color: .black.opacity(0.15), radius: 10)
                 .padding(.horizontal, 20)
                 .ignoresSafeArea()
@@ -43,10 +46,23 @@ struct EierMLTutorialView: View {
                     Spacer()
                 }
                 VStack {
-                    Text("Tutorial")
-                        .font(.title.bold())
-                        .padding(.top)
-                        .frame(height: 50)
+                    ZStack {
+                        HStack {
+                            Spacer()
+                            Button(action: {
+                                withAnimation(.easeInOut) {
+                                    dismissTutorial = true
+                                }
+                            }, label: {
+                                Text("Überspringen")
+                            })
+                            .padding([.top, .trailing])
+                        }
+                        Text("Tutorial")
+                            .font(.title.bold())
+                            .padding(.top)
+                            .frame(height: 50)
+                    }
                     Spacer()
                 }
             }

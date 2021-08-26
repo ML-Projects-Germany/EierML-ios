@@ -11,13 +11,16 @@ struct EggListView: View {
     @ObservedObject private var model: EggsViewModel
 
     @Binding private var showAddEggView: Bool
+    @Binding private var dismissTutorial: Bool
 
     init(
         model: EggsViewModel,
-        showAddEggView: Binding<Bool>
+        showAddEggView: Binding<Bool>,
+        dismissTutorial: Binding<Bool>
     ) {
         self._model = ObservedObject(wrappedValue: model)
         self._showAddEggView = showAddEggView
+        self._dismissTutorial = dismissTutorial
     }
 
     var body: some View {
@@ -25,11 +28,27 @@ struct EggListView: View {
             ZStack {
                 ScrollView {
                     VStack(alignment: .leading, spacing: 8) {
-                        Text("Deine Eier")
-                            .font(.title.bold())
-                            .foregroundColor(.white)
-                            .frame(maxWidth: .infinity)
-                            .padding(10)
+                        ZStack {
+                            HStack {
+                                Spacer()
+                                Button(action: {
+                                    withAnimation(.easeInOut) {
+                                        dismissTutorial = false
+                                    }
+                                }, label: {
+                                    Image(systemName: "info.circle")
+                                        .font(.title3.bold())
+                                        .foregroundColor(.white)
+                                        .padding(.trailing, 10)
+                                })
+                                .frame(maxHeight: .infinity)
+                            }
+                            Text("Deine Eier")
+                                .font(.title.bold())
+                                .foregroundColor(.white)
+                                .frame(maxWidth: .infinity)
+                                .padding(10)
+                        }
                         ForEach(model.eggs) { egg in
                             EggListRowView(egg: egg)
                         }
@@ -77,6 +96,7 @@ struct EggListView_Previews: PreviewProvider {
             EggListView(
                 model: EggsViewModel(),
                 showAddEggView: .constant(true)
+                , dismissTutorial: .constant(true)
             )
         }
     }

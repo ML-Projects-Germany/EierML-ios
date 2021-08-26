@@ -11,22 +11,22 @@ struct TutorialSheet: Identifiable, Equatable {
     let id: UUID = UUID()
     var title: String
     var text: String
-    var imageName: String
-    var fertigButton: Bool
+    var imageName: String?
+    var doneButton: Bool
 
     init(
         title: String,
         text: String,
-        imageName: String,
-        fertigButton: Bool = false
+        imageName: String?,
+        doneButton: Bool = false
     ) {
         self.title = title
         self.text = text
         self.imageName = imageName
-        self.fertigButton = fertigButton
+        self.doneButton = doneButton
     }
 
     static var mock: Self {
-        .init(title: "Hello", text: "Some Text", imageName: "", fertigButton: false)
+        .init(title: "Hello", text: "Some Text", imageName: nil)
     }
 }

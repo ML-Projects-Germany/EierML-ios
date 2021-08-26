@@ -41,7 +41,6 @@ struct WebView: UIViewRepresentable {
         })
 
         webView.load(URLRequest(url: url))
-        isLoading = true
 
         return webView
     }

@@ -10,7 +10,7 @@ import SwiftUIWPArticleLoader
 
 struct ArticleView: View {
     var article: Article
-    @State private var isLoading: Bool = false
+    @State private var isLoading: Bool = true
 
     var body: some View {
         WebLoadingView(isShown: $isLoading, content: {

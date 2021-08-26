@@ -9,6 +9,20 @@ import SwiftUI
 
 class EggsViewModel: ObservableObject {
     @AppStorage("eggs") var eggs: [Egg] = []
+
+    @Published var eggTutorialIsShown: Bool {
+        didSet {
+            if eggTutorialIsShown {
+                UserDefaults.standard.setValue(true, forKey: "eggTutorialIsShown")
+                print("Set")
+            }
+        }
+    }
+
+    init() {
+        eggTutorialIsShown = UserDefaults.standard.bool(forKey: "eggTutorialIsShown")
+        print(eggTutorialIsShown)
+    }
 }
 
 extension Array: RawRepresentable where Element: Codable {

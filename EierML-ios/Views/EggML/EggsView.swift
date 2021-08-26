@@ -9,7 +9,6 @@ import SwiftUI
 
 struct EggsView: View {
     @StateObject private var model: EggsViewModel
-    @State private var dismissTutorial: Bool = false
     @State private var showAddEggView: Bool = false
 
     init() {
@@ -21,17 +20,18 @@ struct EggsView: View {
             ClassicBackgroundView()
                 .ignoresSafeArea()
             ZStack {
-                if dismissTutorial {
+                if model.eggTutorialIsShown {
                     EggListView(
                         model: model,
-                        showAddEggView: $showAddEggView
+                        showAddEggView: $showAddEggView,
+                        dismissTutorial: $model.eggTutorialIsShown
                     )
-                    .opacity(dismissTutorial ? 1 : 0)
                 } else {
                     EierMLTutorialView(
-                        dismissTutorial: $dismissTutorial
+                        dismissTutorial: $model.eggTutorialIsShown
                     )
                     .zIndex(1.0)
+                    .transition(.move(edge: .leading))
                 }
             }
             .sheet(isPresented: $showAddEggView, content: {
