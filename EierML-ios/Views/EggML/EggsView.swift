@@ -11,6 +11,8 @@ struct EggsView: View {
     @StateObject private var model: EggsViewModel
     @State private var showAddEggView: Bool = false
 
+    @State private var editableEgg: Egg?
+
     init() {
         self._model = StateObject(wrappedValue: EggsViewModel())
     }
@@ -35,7 +37,19 @@ struct EggsView: View {
                 }
             }
             .sheet(isPresented: $showAddEggView, content: {
-                AddEggView(model: model)
+                if let editableEgg = editableEgg {
+                    AddEggView(
+                        model: model,
+                        egg: editableEgg
+                    )
+                } else {
+                    AddEggView(model: model)
+                }
+            })
+            .onReceive(model.showEditEggView, perform: { egg in
+                editableEgg = egg
+                showAddEggView = true
+                editableEgg = nil
             })
         }
     }

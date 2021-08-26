@@ -14,9 +14,23 @@ struct AddEggView: View {
 
     @State private var widthValue: Double = 0.55
     @State private var heightValue: Double = 0.6
+    @State private var viscosityPickerValue: Int = 4
+    private var viscosity: Int {
+        // swiftlint:disable:next computed_accessors_order
+        set { viscosityPickerValue = newValue - 1 }
+        get { viscosityPickerValue+1 }
+    }
 
     init(model: EggsViewModel) {
         self._model = ObservedObject(wrappedValue: model)
+    }
+
+    init(
+        model: EggsViewModel,
+        egg: Egg
+    ) {
+        self._model = ObservedObject(wrappedValue: model)
+        self.viscosity = egg.viscosity
     }
 
     var body: some View {
@@ -37,6 +51,19 @@ struct AddEggView: View {
                                 Color.Palette.blue,
                                 Color.Palette.red
                             ])
+                        Picker(
+                            selection: $viscosityPickerValue,
+                            label: Text("Härte: \(viscosity)").fontWeight(.medium)
+                        ) {
+                            ForEach(1..<11) { i in
+                                Text("\(i)").tag(i)
+                            }
+                        }
+                        .frame(width: 100)
+                        .pickerStyle(MenuPickerStyle())
+                        .animation(nil)
+                        .foregroundColor(.white)
+                        .padding()
                     }
                     .frame(width: reader.size.width, height: reader.size.height/2)
                     Spacer()
@@ -88,7 +115,7 @@ struct AddEggView: View {
                     number: model.eggs.count+1,
                     height: eggWidthInMilimeter(screenSize: screenSize),
                     width: eggHeightInMilimeter(screenSize: screenSize),
-                    time: 120
+                    viscosity: viscosity
                 )
             )
             presentationMode.wrappedValue.dismiss()
@@ -129,6 +156,6 @@ struct AddEggView_Previews: PreviewProvider {
     static var previews: some View {
         AddEggView(model: EggsViewModel())
         AddEggView(model: EggsViewModel())
-        .previewDevice("iPod touch (7th generation)")
+            .previewDevice("iPod touch (7th generation)")
     }
 }

@@ -10,6 +10,12 @@ import SwiftUI
 struct WellcomeMessageView: View {
     @Environment(\.colorScheme) var colorScheme
 
+    @Binding private var isShown: Bool
+
+    init(isShown: Binding<Bool>) {
+        self._isShown = isShown
+    }
+
     var body: some View {
         ZStack {
             // swiftlint:disable:next line_length
@@ -18,7 +24,9 @@ struct WellcomeMessageView: View {
                 .padding(15)
                 .padding(.trailing, 25)
             Button(action: {
-
+                withAnimation {
+                    isShown = false
+                }
             }, label: {
                 Image(systemName: "xmark.circle.fill")
                     .imageScale(.large)
@@ -46,7 +54,7 @@ struct WellcomeMessageView_Previews: PreviewProvider {
         ZStack {
             ClassicBackgroundView()
                 .ignoresSafeArea()
-            WellcomeMessageView()
+            WellcomeMessageView(isShown: .constant(true))
         }
         .previewDevice("iPod touch (7th generation)")
     }

@@ -50,7 +50,7 @@ struct EggListView: View {
                                 .padding(10)
                         }
                         ForEach(model.eggs) { egg in
-                            EggListRowView(egg: egg)
+                            EggListRowView(egg: egg, model: model)
                         }
                         Button(action: {
                             showAddEggView = true
@@ -95,8 +95,8 @@ struct EggListView_Previews: PreviewProvider {
                 .ignoresSafeArea()
             EggListView(
                 model: EggsViewModel(),
-                showAddEggView: .constant(true)
-                , dismissTutorial: .constant(true)
+                showAddEggView: .constant(true),
+                dismissTutorial: .constant(true)
             )
         }
     }

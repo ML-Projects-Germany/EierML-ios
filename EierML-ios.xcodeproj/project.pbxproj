@@ -45,6 +45,7 @@
 		D9BFA14426CAE216008BE365 /* TutorialSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9BFA14326CAE216008BE365 /* TutorialSheet.swift */; };
 		D9BFA14726CAFDC0008BE365 /* EggListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9BFA14626CAFDC0008BE365 /* EggListView.swift */; };
 		D9C35519269B164C005C0081 /* Color+Adjust.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C35518269B164C005C0081 /* Color+Adjust.swift */; };
+		D9CD7D3526D8368A00C36DA2 /* EierML.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9CD7D3426D8368A00C36DA2 /* EierML.swift */; };
 		D9E1051426CC3F27002CB828 /* AddEggView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9E1051326CC3F27002CB828 /* AddEggView.swift */; };
 		D9E1051626CC40BD002CB828 /* VisualEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9E1051526CC40BD002CB828 /* VisualEffect.swift */; };
 		D9E1051826CC4E6B002CB828 /* UIScreenExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9E1051726CC4E6B002CB828 /* UIScreenExtension.swift */; };
@@ -113,6 +114,7 @@
 		D9BFA14326CAE216008BE365 /* TutorialSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialSheet.swift; sourceTree = "<group>"; };
 		D9BFA14626CAFDC0008BE365 /* EggListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EggListView.swift; sourceTree = "<group>"; };
 		D9C35518269B164C005C0081 /* Color+Adjust.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Adjust.swift"; sourceTree = "<group>"; };
+		D9CD7D3426D8368A00C36DA2 /* EierML.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EierML.swift; sourceTree = "<group>"; };
 		D9E1051326CC3F27002CB828 /* AddEggView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEggView.swift; sourceTree = "<group>"; };
 		D9E1051526CC40BD002CB828 /* VisualEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisualEffect.swift; sourceTree = "<group>"; };
 		D9E1051726CC4E6B002CB828 /* UIScreenExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIScreenExtension.swift; sourceTree = "<group>"; };
@@ -249,8 +251,10 @@
 		D99421E626BB0F3600DB2BCF /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				D9BB94CD26A4CC2B007086D0 /* HomeViewHeader.swift */,
 				D9BB94D326A4DF98007086D0 /* WellcomeMessageView.swift */,
 				D90D5E5F26C009660023D2C7 /* News */,
+				D9CD7D3326D82FA700C36DA2 /* BandageView */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -269,6 +273,7 @@
 			isa = PBXGroup;
 			children = (
 				D90AC30A26C5C5E600B6B7D0 /* Egg.swift */,
+				D9CD7D3426D8368A00C36DA2 /* EierML.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -278,7 +283,6 @@
 			children = (
 				D94521422693512600305EF8 /* AppView.swift */,
 				D93FD7F22696486A002DD264 /* HomeView.swift */,
-				D9BB94CD26A4CC2B007086D0 /* HomeViewHeader.swift */,
 				D99421E626BB0F3600DB2BCF /* Home */,
 				D90AC30726C5823300B6B7D0 /* EggML */,
 				D9BB94CB26A467FA007086D0 /* Wellcome */,
@@ -313,6 +317,13 @@
 				D97361FF26D4276B0012AFE7 /* EggListRowView.swift */,
 			);
 			path = ListView;
+			sourceTree = "<group>";
+		};
+		D9CD7D3326D82FA700C36DA2 /* BandageView */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = BandageView;
 			sourceTree = "<group>";
 		};
 		D9D37426269B0B810075DE4E /* Helper */ = {
@@ -518,6 +529,7 @@
 				D973620226D433F50012AFE7 /* TutorialSheetView.swift in Sources */,
 				D90AC30326C5748900B6B7D0 /* WebLoadingView.swift in Sources */,
 				D9BFA14426CAE216008BE365 /* TutorialSheet.swift in Sources */,
+				D9CD7D3526D8368A00C36DA2 /* EierML.swift in Sources */,
 				D9795FF6269A2D2800C6CF98 /* PrimaryTextField.swift in Sources */,
 				D945216C2693544D00305EF8 /* WellcomeView.swift in Sources */,
 				D9E1051426CC3F27002CB828 /* AddEggView.swift in Sources */,

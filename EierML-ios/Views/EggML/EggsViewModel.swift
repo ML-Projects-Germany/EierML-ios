@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Combine
 
 class EggsViewModel: ObservableObject {
     @AppStorage("eggs") var eggs: [Egg] = []
@@ -19,9 +20,23 @@ class EggsViewModel: ObservableObject {
         }
     }
 
+    var showEditEggView: PassthroughSubject<Egg, Never> = .init()
+
     init() {
         eggTutorialIsShown = UserDefaults.standard.bool(forKey: "eggTutorialIsShown")
         print(eggTutorialIsShown)
+    }
+
+    func refreshEggs() {
+        var eggsWithNewNumbers: [Egg] = []
+        var number = 1
+        for egg in eggs {
+            var newEgg = egg
+            newEgg.number = number
+            number += 1
+            eggsWithNewNumbers.append(newEgg)
+        }
+        eggs = eggsWithNewNumbers
     }
 }
 
