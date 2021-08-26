@@ -22,6 +22,7 @@ struct NewsRowView: View {
                     HStack {
                         VStack(alignment: .leading, spacing: 2) {
                             Text(article.title)
+                                .fontWeight(.medium)
                                 .lineLimit(1)
                             HStack {
                                 Text(article.date?.toString("E d. MMM yyyy", showToday: true) ?? "Kein Datum")

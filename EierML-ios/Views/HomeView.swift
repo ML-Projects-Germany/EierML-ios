@@ -59,6 +59,12 @@ struct HomeView: View {
                     }
                 }
                 .navigationBarHidden(true)
+                VStack {
+                    VisualEffectView(effect: UIBlurEffect(style: .systemUltraThinMaterial))
+                        .frame(maxWidth: .infinity, maxHeight: reader.safeAreaInsets.top)
+                        .offset(x: 0, y: -reader.safeAreaInsets.top)
+                    Spacer()
+                }
             }
         }
     }

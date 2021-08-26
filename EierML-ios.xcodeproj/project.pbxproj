@@ -10,8 +10,8 @@
 		D90AC30026C5745300B6B7D0 /* ArticleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90AC2FF26C5745300B6B7D0 /* ArticleView.swift */; };
 		D90AC30326C5748900B6B7D0 /* WebLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90AC30126C5748900B6B7D0 /* WebLoadingView.swift */; };
 		D90AC30426C5748900B6B7D0 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90AC30226C5748900B6B7D0 /* WebView.swift */; };
-		D90AC30626C5822F00B6B7D0 /* EierMLView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90AC30526C5822F00B6B7D0 /* EierMLView.swift */; };
-		D90AC30926C5C50700B6B7D0 /* EggListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90AC30826C5C50700B6B7D0 /* EggListViewModel.swift */; };
+		D90AC30626C5822F00B6B7D0 /* EggsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90AC30526C5822F00B6B7D0 /* EggsView.swift */; };
+		D90AC30926C5C50700B6B7D0 /* EggsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90AC30826C5C50700B6B7D0 /* EggsViewModel.swift */; };
 		D90AC30B26C5C5E600B6B7D0 /* Egg.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90AC30A26C5C5E600B6B7D0 /* Egg.swift */; };
 		D90D5E6126C009810023D2C7 /* NewsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90D5E6026C009810023D2C7 /* NewsListView.swift */; };
 		D90D5E6326C009950023D2C7 /* NewsListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90D5E6226C009950023D2C7 /* NewsListViewModel.swift */; };
@@ -75,8 +75,8 @@
 		D90AC2FF26C5745300B6B7D0 /* ArticleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleView.swift; sourceTree = "<group>"; };
 		D90AC30126C5748900B6B7D0 /* WebLoadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebLoadingView.swift; sourceTree = "<group>"; };
 		D90AC30226C5748900B6B7D0 /* WebView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
-		D90AC30526C5822F00B6B7D0 /* EierMLView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EierMLView.swift; sourceTree = "<group>"; };
-		D90AC30826C5C50700B6B7D0 /* EggListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EggListViewModel.swift; sourceTree = "<group>"; };
+		D90AC30526C5822F00B6B7D0 /* EggsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EggsView.swift; sourceTree = "<group>"; };
+		D90AC30826C5C50700B6B7D0 /* EggsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EggsViewModel.swift; sourceTree = "<group>"; };
 		D90AC30A26C5C5E600B6B7D0 /* Egg.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Egg.swift; sourceTree = "<group>"; };
 		D90D5E6026C009810023D2C7 /* NewsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsListView.swift; sourceTree = "<group>"; };
 		D90D5E6226C009950023D2C7 /* NewsListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsListViewModel.swift; sourceTree = "<group>"; };
@@ -153,7 +153,9 @@
 		D90AC30726C5823300B6B7D0 /* EggML */ = {
 			isa = PBXGroup;
 			children = (
-				D90AC30526C5822F00B6B7D0 /* EierMLView.swift */,
+				D90AC30526C5822F00B6B7D0 /* EggsView.swift */,
+				D90AC30826C5C50700B6B7D0 /* EggsViewModel.swift */,
+				D9E1051326CC3F27002CB828 /* AddEggView.swift */,
 				D9BFA14526CAFDA9008BE365 /* ListView */,
 				D9BFA13F26CAE14F008BE365 /* Tutorial */,
 			);
@@ -285,8 +287,8 @@
 			isa = PBXGroup;
 			children = (
 				D94521422693512600305EF8 /* AppView.swift */,
-				D9BB94CD26A4CC2B007086D0 /* HomeViewHeader.swift */,
 				D93FD7F22696486A002DD264 /* HomeView.swift */,
+				D9BB94CD26A4CC2B007086D0 /* HomeViewHeader.swift */,
 				D99421E626BB0F3600DB2BCF /* Home */,
 				D90AC30726C5823300B6B7D0 /* EggML */,
 				D9BB94CB26A467FA007086D0 /* Wellcome */,
@@ -318,8 +320,6 @@
 			children = (
 				D9BFA14626CAFDC0008BE365 /* EggListView.swift */,
 				D97361FF26D4276B0012AFE7 /* EggListRowView.swift */,
-				D9E1051326CC3F27002CB828 /* AddEggView.swift */,
-				D90AC30826C5C50700B6B7D0 /* EggListViewModel.swift */,
 			);
 			path = ListView;
 			sourceTree = "<group>";
@@ -509,7 +509,7 @@
 				D93FD7F32696486A002DD264 /* HomeView.swift in Sources */,
 				D94521432693512600305EF8 /* AppView.swift in Sources */,
 				D90D5E6D26C012CD0023D2C7 /* NewsImageLoadingView copy.swift in Sources */,
-				D90AC30926C5C50700B6B7D0 /* EggListViewModel.swift in Sources */,
+				D90AC30926C5C50700B6B7D0 /* EggsViewModel.swift in Sources */,
 				D90D5E6326C009950023D2C7 /* NewsListViewModel.swift in Sources */,
 				D9C35519269B164C005C0081 /* Color+Adjust.swift in Sources */,
 				D99421E926BB0FCB00DB2BCF /* NavigationButton.swift in Sources */,
@@ -525,7 +525,7 @@
 				D9E1051D26CC5C9A002CB828 /* PixelScreenManager.swift in Sources */,
 				D90AC30B26C5C5E600B6B7D0 /* Egg.swift in Sources */,
 				D94521412693512600305EF8 /* EierML_iosApp.swift in Sources */,
-				D90AC30626C5822F00B6B7D0 /* EierMLView.swift in Sources */,
+				D90AC30626C5822F00B6B7D0 /* EggsView.swift in Sources */,
 				D973620226D433F50012AFE7 /* TutorialSheetView.swift in Sources */,
 				D90AC30326C5748900B6B7D0 /* WebLoadingView.swift in Sources */,
 				D9BFA14426CAE216008BE365 /* TutorialSheet.swift in Sources */,

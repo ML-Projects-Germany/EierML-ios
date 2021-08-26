@@ -18,7 +18,7 @@ struct AppView: View {
                         Label("Startseite", systemImage: "rectangle.stack")
                     }
                     .tag(0)
-                EierMLView()
+                EggsView()
                     .tabItem {
                         Label("EierML", systemImage: "magnifyingglass.circle")
                     }

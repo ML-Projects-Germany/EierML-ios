@@ -9,8 +9,9 @@ import Foundation
 
 struct Egg: Identifiable {
     let id: UUID = UUID()
-    var number: Int
-    var size: Int
+    let number: Int
+    var height: Int
+    var width: Int
     var time: Int
 
     var timeInMinutes: String {
@@ -22,6 +23,11 @@ struct Egg: Identifiable {
     }
 
     static var mock: Self {
-        .init(number: 1, size: 43, time: 180)
+        .init(
+            number: 1,
+            height: Int.random(in: 44...65),
+            width: Int.random(in: 40...45),
+            time: 180
+        )
     }
 }

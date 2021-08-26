@@ -16,7 +16,7 @@ struct ArticleView: View {
         WebLoadingView(isShown: $isLoading, content: {
             WebView(url: article.link, cookies: nil, isLoading: $isLoading)
         })
-        .ignoresSafeArea(.container, edges: .bottom)
+//        .ignoresSafeArea(.container, edges: .bottom)
         .navigationBarTitleDisplayMode(.inline)
         .navigationTitle(article.title)
     }

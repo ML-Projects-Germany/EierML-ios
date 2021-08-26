@@ -8,12 +8,15 @@
 import SwiftUI
 
 struct EggListRowView: View {
-    let egg: Egg
+    private let egg: Egg
 
-    let width: CGFloat = 70
+    private let width: CGFloat = 70
+    @State private var offset = CGSize.zero
+    @State private var scale: CGFloat = 0.5
 
-    @State var offset = CGSize.zero
-    @State var scale: CGFloat = 0.5
+    init(egg: Egg) {
+        self.egg = egg
+    }
 
     var body: some View {
         GeometryReader { geo in
@@ -35,7 +38,7 @@ struct EggListRowView: View {
                             .frame(width: 20)
                     }
                     .padding(5)
-                    Text("\(egg.size)mm x \(egg.size)mm")
+                    Text("\(egg.height)mm x \(egg.width)mm")
                         .frame(maxWidth: .infinity, alignment: .leading)
                     Label("\(egg.timeInMinutes) min", systemImage: "clock")
                         .font(.body.bold())

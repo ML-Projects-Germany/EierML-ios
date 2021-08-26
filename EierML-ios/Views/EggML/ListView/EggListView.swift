@@ -8,43 +8,48 @@
 import SwiftUI
 
 struct EggListView: View {
-    @StateObject var model: EggListViewModel
+    @ObservedObject private var model: EggsViewModel
 
-    @State var showAddEggView: Bool
+    @Binding private var showAddEggView: Bool
 
-    init(showAddEggView: State<Bool>) {
-        self._model = StateObject(wrappedValue: EggListViewModel())
+    init(
+        model: EggsViewModel,
+        showAddEggView: Binding<Bool>
+    ) {
+        self._model = ObservedObject(wrappedValue: model)
         self._showAddEggView = showAddEggView
     }
 
     var body: some View {
         ZStack {
-            VStack(alignment: .leading, spacing: 8) {
-                Text("Deine Eier")
-                    .font(.title.bold())
-                    .foregroundColor(.white)
-                    .frame(maxWidth: .infinity)
-                    .padding(.bottom, 10)
-                ForEach(model.eggs) { egg in
-                    EggListRowView(egg: egg)
-                }
-                Button(action: {
-                    showAddEggView = true
-                }, label: {
-                    HStack {
-                        Image(systemName: "plus.circle")
-                            .resizable()
-                            .scaledToFit()
-                            .frame(width: 40, height: 30)
-                            .padding([.vertical], 10)
-                        Text("Ei hinzufügen")
+            ScrollView {
+                VStack(alignment: .leading, spacing: 8) {
+                    Text("Deine Eier")
+                        .font(.title.bold())
+                        .foregroundColor(.white)
+                        .frame(maxWidth: .infinity)
+                        .padding(10)
+                    ForEach(model.eggs) { egg in
+                        EggListRowView(egg: egg)
                     }
-                    .font(.headline)
-                    .foregroundColor(.white)
-                })
+                    Button(action: {
+                        showAddEggView = true
+                    }, label: {
+                        HStack {
+                            Image(systemName: "plus.circle")
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: 40, height: 30)
+                                .padding([.vertical], 10)
+                            Text("Ei hinzufügen")
+                        }
+                        .font(.headline)
+                        .foregroundColor(.white)
+                    })
+                }
+                .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
+                .padding(5)
             }
-            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
-            .padding(5)
         }
     }
 
@@ -61,7 +66,10 @@ struct EggListView_Previews: PreviewProvider {
         ZStack {
             ClassicBackgroundView()
                 .ignoresSafeArea()
-            EggListView(showAddEggView: State(wrappedValue: true))
+            EggListView(
+                model: EggsViewModel(),
+                showAddEggView: .constant(true)
+            )
         }
     }
 }
