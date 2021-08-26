@@ -1,10 +1,3 @@
-//
-//  WebView.swift
-//  SamedayHealth-ios
-//
-//  Created by Marius Seufzer on 28.04.21.
-//
-
 import WebKit
 import SwiftUI
 

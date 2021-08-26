@@ -18,9 +18,6 @@
 		D90D5E6726C00AF90023D2C7 /* NewsRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90D5E6626C00AF90023D2C7 /* NewsRowView.swift */; };
 		D90D5E6D26C012CD0023D2C7 /* NewsImageLoadingView copy.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90D5E6C26C012CD0023D2C7 /* NewsImageLoadingView copy.swift */; };
 		D90D5E7126C013560023D2C7 /* NewsRowButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90D5E7026C013560023D2C7 /* NewsRowButtonStyle.swift */; };
-		D90D5E7426C015380023D2C7 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = D90D5E7326C015380023D2C7 /* Lottie */; };
-		D90D5E7626C015B20023D2C7 /* LottieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90D5E7526C015B20023D2C7 /* LottieView.swift */; };
-		D90D5E7926C09C970023D2C7 /* loading-animation.json in Resources */ = {isa = PBXBuildFile; fileRef = D90D5E7826C09C970023D2C7 /* loading-animation.json */; };
 		D93FD7F32696486A002DD264 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D93FD7F22696486A002DD264 /* HomeView.swift */; };
 		D94521412693512600305EF8 /* EierML_iosApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D94521402693512600305EF8 /* EierML_iosApp.swift */; };
 		D94521432693512600305EF8 /* AppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D94521422693512600305EF8 /* AppView.swift */; };
@@ -85,8 +82,6 @@
 		D90D5E6626C00AF90023D2C7 /* NewsRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsRowView.swift; sourceTree = "<group>"; };
 		D90D5E6C26C012CD0023D2C7 /* NewsImageLoadingView copy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NewsImageLoadingView copy.swift"; sourceTree = "<group>"; };
 		D90D5E7026C013560023D2C7 /* NewsRowButtonStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsRowButtonStyle.swift; sourceTree = "<group>"; };
-		D90D5E7526C015B20023D2C7 /* LottieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieView.swift; sourceTree = "<group>"; };
-		D90D5E7826C09C970023D2C7 /* loading-animation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "loading-animation.json"; sourceTree = "<group>"; };
 		D93FD7F22696486A002DD264 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		D945213D2693512500305EF8 /* EierML-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "EierML-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D94521402693512600305EF8 /* EierML_iosApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EierML_iosApp.swift; sourceTree = "<group>"; };
@@ -132,7 +127,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				D9A15A7826B62380000B56F8 /* SwiftUIWPArticleLoader in Frameworks */,
-				D90D5E7426C015380023D2C7 /* Lottie in Frameworks */,
 				D9BFA14226CAE1D3008BE365 /* SwiftUIPager in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -179,14 +173,6 @@
 			path = News;
 			sourceTree = "<group>";
 		};
-		D90D5E7726C018FD0023D2C7 /* Lottie */ = {
-			isa = PBXGroup;
-			children = (
-				D90D5E7826C09C970023D2C7 /* loading-animation.json */,
-			);
-			path = Lottie;
-			sourceTree = "<group>";
-		};
 		D94521342693512500305EF8 = {
 			isa = PBXGroup;
 			children = (
@@ -216,7 +202,6 @@
 				D99421E726BB0FBC00DB2BCF /* Extensions */,
 				D9D37426269B0B810075DE4E /* Helper */,
 				D945217126935C0E00305EF8 /* Color */,
-				D90D5E7726C018FD0023D2C7 /* Lottie */,
 				D94521442693512600305EF8 /* Assets.xcassets */,
 				D94521492693512600305EF8 /* Info.plist */,
 				D99421EA26BB124100DB2BCF /* Launch Screen.storyboard */,
@@ -335,7 +320,6 @@
 			children = (
 				D9E1051726CC4E6B002CB828 /* UIScreenExtension.swift */,
 				D9E1051C26CC5C9A002CB828 /* PixelScreenManager.swift */,
-				D90D5E7526C015B20023D2C7 /* LottieView.swift */,
 				D90AC30126C5748900B6B7D0 /* WebLoadingView.swift */,
 				D90AC30226C5748900B6B7D0 /* WebView.swift */,
 				D994220426BB2AFD00DB2BCF /* Date+String.swift */,
@@ -365,7 +349,6 @@
 			name = "EierML-ios";
 			packageProductDependencies = (
 				D9A15A7726B62380000B56F8 /* SwiftUIWPArticleLoader */,
-				D90D5E7326C015380023D2C7 /* Lottie */,
 				D9BFA14126CAE1D3008BE365 /* SwiftUIPager */,
 			);
 			productName = "EierML-ios";
@@ -442,7 +425,6 @@
 			mainGroup = D94521342693512500305EF8;
 			packageReferences = (
 				D9A15A7626B62380000B56F8 /* XCRemoteSwiftPackageReference "SwiftUIWPArticleLoader" */,
-				D90D5E7226C015380023D2C7 /* XCRemoteSwiftPackageReference "lottie-ios" */,
 				D9BFA14026CAE1D3008BE365 /* XCRemoteSwiftPackageReference "SwiftUIPager" */,
 			);
 			productRefGroup = D945213E2693512500305EF8 /* Products */;
@@ -461,7 +443,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D90D5E7926C09C970023D2C7 /* loading-animation.json in Resources */,
 				D99421EB26BB124100DB2BCF /* Launch Screen.storyboard in Resources */,
 				D94521482693512600305EF8 /* Preview Assets.xcassets in Resources */,
 				D94521452693512600305EF8 /* Assets.xcassets in Resources */,
@@ -545,7 +526,6 @@
 				D994220326BB2AD200DB2BCF /* AsyncImage.swift in Sources */,
 				D90AC30026C5745300B6B7D0 /* ArticleView.swift in Sources */,
 				D90D5E7126C013560023D2C7 /* NewsRowButtonStyle.swift in Sources */,
-				D90D5E7626C015B20023D2C7 /* LottieView.swift in Sources */,
 				D90D5E6126C009810023D2C7 /* NewsListView.swift in Sources */,
 				D9BB94D426A4DF98007086D0 /* WellcomeMessageView.swift in Sources */,
 			);
@@ -587,6 +567,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -648,6 +629,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -869,14 +851,6 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		D90D5E7226C015380023D2C7 /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/airbnb/lottie-ios";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 3.2.3;
-			};
-		};
 		D9A15A7626B62380000B56F8 /* XCRemoteSwiftPackageReference "SwiftUIWPArticleLoader" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/tkoehlerlg/SwiftUIWPArticleLoader.git";
@@ -896,11 +870,6 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		D90D5E7326C015380023D2C7 /* Lottie */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = D90D5E7226C015380023D2C7 /* XCRemoteSwiftPackageReference "lottie-ios" */;
-			productName = Lottie;
-		};
 		D9A15A7726B62380000B56F8 /* SwiftUIWPArticleLoader */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = D9A15A7626B62380000B56F8 /* XCRemoteSwiftPackageReference "SwiftUIWPArticleLoader" */;

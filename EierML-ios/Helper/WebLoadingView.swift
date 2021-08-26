@@ -1,10 +1,3 @@
-//
-//  WebForm.swift
-//  SamedayHealth-ios
-//
-//  Created by Torben Köhler on 04.06.21.
-//
-
 import Foundation
 import UIKit
 import SwiftUI

@@ -1,11 +1,3 @@
-//
-//  UIScreenExtension.swift
-//  UIScreenExtension
-//
-//  Created by Jens Schwarzer on 02/10/2017.
-//  Copyright © 2017 marchv. All rights reserved.
-//
-
 import UIKit
 
 internal extension UIDevice {

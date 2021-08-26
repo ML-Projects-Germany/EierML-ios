@@ -54,7 +54,9 @@ struct NewsListView: View {
 
 struct NewsListView_Previews: PreviewProvider {
     static var previews: some View {
-        NewsListView()
-            .frame(maxWidth: .infinity, maxHeight: 300)
+        NavigationView {
+            NewsListView()
+                .frame(maxWidth: .infinity, maxHeight: 300)
+        }
     }
 }

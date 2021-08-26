@@ -23,10 +23,10 @@ struct AppView: View {
                         Label("EierML", systemImage: "magnifyingglass.circle")
                     }
             }
-            if firstAppStart ?? true {
-                WellcomeView()
-                    .transition(.opacity)
-            }
+//            if firstAppStart ?? true {
+//                WellcomeView()
+//                    .transition(.opacity)
+//            }
         }
     }
 }

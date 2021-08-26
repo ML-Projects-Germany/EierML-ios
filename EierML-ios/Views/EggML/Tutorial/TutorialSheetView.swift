@@ -11,7 +11,6 @@ struct TutorialSheetView: View {
     private var tutorialSheet: TutorialSheet
     @Binding private var dismissTutorial: Bool
 
-    @State private var isAnimated = false
     @State private var arrowIsOnTop: Bool = true
 
     init(_ tutorialSheet: TutorialSheet, dismissTutorial: Binding<Bool>) {
@@ -28,7 +27,9 @@ struct TutorialSheetView: View {
                     Text(tutorialSheet.title)
                         .font(.title2)
                         .fontWeight(.medium)
-                        .padding()
+                        .multilineTextAlignment(.center)
+                        .padding(.top)
+                        .padding(.horizontal, 5)
                     Text(tutorialSheet.text)
                         .padding([.horizontal, .bottom])
                         .frame(maxWidth: .infinity, maxHeight: .infinity)
@@ -57,7 +58,11 @@ struct TutorialSheetView: View {
                                 .padding(.bottom, 10)
                                 .offset(x: 0, y: arrowIsOnTop ? -4 : 7)
                                 .animation(.easeInOut(duration: 2).repeatForever())
-                                .onAppear { arrowIsOnTop = false }
+                                .onAppear {
+                                    Timer.scheduledTimer(withTimeInterval: 1, repeats: false) { _ in
+                                        arrowIsOnTop = false
+                                    }
+                                }
                         }
                     }
                 }
