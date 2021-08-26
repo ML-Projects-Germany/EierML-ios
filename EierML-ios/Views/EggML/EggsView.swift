@@ -11,10 +11,12 @@ struct EggsView: View {
     @StateObject private var model: EggsViewModel
     @State private var showTutorial: Bool = false
     @State private var showAddEggView: Bool = false
+
+    @State var animationsActivated: Bool = false
+
     init() {
         self._model = StateObject(wrappedValue: EggsViewModel())
     }
-
     var body: some View {
         GeometryReader { reader in
             ZStack {
@@ -23,18 +25,21 @@ struct EggsView: View {
                 ZStack {
                     if showTutorial {
                         EierMLTutorialView()
-                            .transition(.move(edge: .leading))
+                            .transition(animationsActivated ? .move(edge: .leading) : .opacity)
                             .zIndex(1.0)
                     } else {
                         EggListView(
                             model: model,
                             showAddEggView: $showAddEggView
                         )
-                        .transition(.move(edge: .leading))
+                        .transition(animationsActivated ? .move(edge: .leading) : .opacity)
                         .blur(radius: showTutorial ? 3 : 0)
                     }
                 }
                 .animation(.easeInOut)
+                .onAppear {
+                    animationsActivated = true
+                }
                 .sheet(isPresented: $showAddEggView, content: {
                     AddEggView(model: model)
                 })
@@ -52,5 +57,7 @@ struct EggsView: View {
 struct EggsView_Previews: PreviewProvider {
     static var previews: some View {
         EggsView()
+        EggsView()
+            .previewDevice("iPod touch (7th generation)")
     }
 }

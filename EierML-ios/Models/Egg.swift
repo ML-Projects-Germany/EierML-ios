@@ -7,13 +7,24 @@
 
 import Foundation
 
-struct Egg: Identifiable {
-    let id: UUID = UUID()
+struct Egg: Identifiable, Codable {
+    let id: UUID
     let number: Int
     var height: Int
     var width: Int
     var time: Int
-
+    init(
+        number: Int,
+        height: Int,
+        width: Int,
+        time: Int
+    ) {
+        self.id = UUID()
+        self.number = number
+        self.height = height
+        self.width = width
+        self.time = time
+    }
     var timeInMinutes: String {
         if time.isMultiple(of: 60) {
             return "\(time/60)"
@@ -21,7 +32,6 @@ struct Egg: Identifiable {
             return String(format: "%.1f", Double(time)/60)
         }
     }
-
     static var mock: Self {
         .init(
             number: 1,
