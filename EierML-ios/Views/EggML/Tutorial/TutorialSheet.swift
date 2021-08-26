@@ -12,24 +12,21 @@ struct TutorialSheet: Identifiable, Equatable {
     var title: String
     var text: String
     var imageName: String
-    var weiterAnimation: Bool
-    var skipButton: Bool
+    var fertigButton: Bool
 
     init(
         title: String,
         text: String,
         imageName: String,
-        weiterAnimation: Bool = false,
-        skipButton: Bool = false
+        fertigButton: Bool = false
     ) {
         self.title = title
         self.text = text
         self.imageName = imageName
-        self.weiterAnimation = weiterAnimation
-        self.skipButton = skipButton
+        self.fertigButton = fertigButton
     }
 
     static var mock: Self {
-        .init(title: "Hello", text: "Some Text", imageName: "", weiterAnimation: true)
+        .init(title: "Hello", text: "Some Text", imageName: "", fertigButton: false)
     }
 }

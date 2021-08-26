@@ -31,7 +31,7 @@
 		D945216C2693544D00305EF8 /* WellcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D945216B2693544D00305EF8 /* WellcomeView.swift */; };
 		D945216E2693556900305EF8 /* Color+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = D945216D2693556900305EF8 /* Color+Hex.swift */; };
 		D94521702693562D00305EF8 /* Palette+Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = D945216F2693562D00305EF8 /* Palette+Color.swift */; };
-		D945217326935C1E00305EF8 /* PrimaryButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = D945217226935C1E00305EF8 /* PrimaryButtonStyle.swift */; };
+		D945217326935C1E00305EF8 /* SecondaryButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = D945217226935C1E00305EF8 /* SecondaryButtonStyle.swift */; };
 		D973620026D4276B0012AFE7 /* EggListRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D97361FF26D4276B0012AFE7 /* EggListRowView.swift */; };
 		D973620226D433F50012AFE7 /* TutorialSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D973620126D433F50012AFE7 /* TutorialSheetView.swift */; };
 		D9795FF6269A2D2800C6CF98 /* PrimaryTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9795FF5269A2D2800C6CF98 /* PrimaryTextField.swift */; };
@@ -52,6 +52,8 @@
 		D9E1051626CC40BD002CB828 /* VisualEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9E1051526CC40BD002CB828 /* VisualEffect.swift */; };
 		D9E1051826CC4E6B002CB828 /* UIScreenExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9E1051726CC4E6B002CB828 /* UIScreenExtension.swift */; };
 		D9E1051D26CC5C9A002CB828 /* PixelScreenManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9E1051C26CC5C9A002CB828 /* PixelScreenManager.swift */; };
+		D9EADB9326D7EA5B0042CAF2 /* PrimaryButtonStyle copy.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9EADB9226D7EA5B0042CAF2 /* PrimaryButtonStyle copy.swift */; };
+		D9EADB9526D7FB050042CAF2 /* EierMLTutorialViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9EADB9426D7FB050042CAF2 /* EierMLTutorialViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -101,7 +103,7 @@
 		D945216B2693544D00305EF8 /* WellcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WellcomeView.swift; sourceTree = "<group>"; };
 		D945216D2693556900305EF8 /* Color+Hex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Color+Hex.swift"; sourceTree = "<group>"; };
 		D945216F2693562D00305EF8 /* Palette+Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Palette+Color.swift"; sourceTree = "<group>"; };
-		D945217226935C1E00305EF8 /* PrimaryButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButtonStyle.swift; sourceTree = "<group>"; };
+		D945217226935C1E00305EF8 /* SecondaryButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondaryButtonStyle.swift; sourceTree = "<group>"; };
 		D97361FF26D4276B0012AFE7 /* EggListRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EggListRowView.swift; sourceTree = "<group>"; };
 		D973620126D433F50012AFE7 /* TutorialSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialSheetView.swift; sourceTree = "<group>"; };
 		D9795FF5269A2D2800C6CF98 /* PrimaryTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryTextField.swift; sourceTree = "<group>"; };
@@ -120,6 +122,8 @@
 		D9E1051526CC40BD002CB828 /* VisualEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisualEffect.swift; sourceTree = "<group>"; };
 		D9E1051726CC4E6B002CB828 /* UIScreenExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIScreenExtension.swift; sourceTree = "<group>"; };
 		D9E1051C26CC5C9A002CB828 /* PixelScreenManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PixelScreenManager.swift; sourceTree = "<group>"; };
+		D9EADB9226D7EA5B0042CAF2 /* PrimaryButtonStyle copy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PrimaryButtonStyle copy.swift"; sourceTree = "<group>"; };
+		D9EADB9426D7FB050042CAF2 /* EierMLTutorialViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EierMLTutorialViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -270,7 +274,8 @@
 			isa = PBXGroup;
 			children = (
 				D9795FF5269A2D2800C6CF98 /* PrimaryTextField.swift */,
-				D945217226935C1E00305EF8 /* PrimaryButtonStyle.swift */,
+				D9EADB9226D7EA5B0042CAF2 /* PrimaryButtonStyle copy.swift */,
+				D945217226935C1E00305EF8 /* SecondaryButtonStyle.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -309,6 +314,7 @@
 			isa = PBXGroup;
 			children = (
 				D9BFA13D26CAE14A008BE365 /* EierMLTutorialView.swift */,
+				D9EADB9426D7FB050042CAF2 /* EierMLTutorialViewModel.swift */,
 				D973620126D433F50012AFE7 /* TutorialSheetView.swift */,
 				D9BFA14326CAE216008BE365 /* TutorialSheet.swift */,
 			);
@@ -512,10 +518,11 @@
 				D90AC30926C5C50700B6B7D0 /* EggsViewModel.swift in Sources */,
 				D90D5E6326C009950023D2C7 /* NewsListViewModel.swift in Sources */,
 				D9C35519269B164C005C0081 /* Color+Adjust.swift in Sources */,
+				D9EADB9526D7FB050042CAF2 /* EierMLTutorialViewModel.swift in Sources */,
 				D99421E926BB0FCB00DB2BCF /* NavigationButton.swift in Sources */,
 				D9BB94CE26A4CC2B007086D0 /* HomeViewHeader.swift in Sources */,
 				D994220526BB2AFD00DB2BCF /* Date+String.swift in Sources */,
-				D945217326935C1E00305EF8 /* PrimaryButtonStyle.swift in Sources */,
+				D945217326935C1E00305EF8 /* SecondaryButtonStyle.swift in Sources */,
 				D9BFA14726CAFDC0008BE365 /* EggListView.swift in Sources */,
 				D9E1051826CC4E6B002CB828 /* UIScreenExtension.swift in Sources */,
 				D945216E2693556900305EF8 /* Color+Hex.swift in Sources */,
@@ -523,6 +530,7 @@
 				D90AC30426C5748900B6B7D0 /* WebView.swift in Sources */,
 				D9BB94D026A4CCF6007086D0 /* ClassicBackgroundView.swift in Sources */,
 				D9E1051D26CC5C9A002CB828 /* PixelScreenManager.swift in Sources */,
+				D9EADB9326D7EA5B0042CAF2 /* PrimaryButtonStyle copy.swift in Sources */,
 				D90AC30B26C5C5E600B6B7D0 /* Egg.swift in Sources */,
 				D94521412693512600305EF8 /* EierML_iosApp.swift in Sources */,
 				D90AC30626C5822F00B6B7D0 /* EggsView.swift in Sources */,

@@ -30,7 +30,7 @@ struct WellcomeView: View {
                     }, label: {
                         Text("Weiter")
                     })
-                    .buttonStyle(PrimaryButtonStyle(color: Color.Palette.red))
+                    .buttonStyle(SecondaryButtonStyle(color: Color.Palette.red))
                     .padding()
                 }
             }

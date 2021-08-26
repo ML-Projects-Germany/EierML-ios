@@ -9,10 +9,8 @@ import SwiftUI
 
 struct EggsView: View {
     @StateObject private var model: EggsViewModel
-    @State private var showTutorial: Bool = false
+    @State private var dismissTutorial: Bool = false
     @State private var showAddEggView: Bool = false
-
-    @State var animationsActivated: Bool = false
 
     init() {
         self._model = StateObject(wrappedValue: EggsViewModel())
@@ -23,22 +21,18 @@ struct EggsView: View {
                 ClassicBackgroundView()
                     .ignoresSafeArea()
                 ZStack {
-                    if showTutorial {
-                        EierMLTutorialView()
-                            .transition(animationsActivated ? .move(edge: .leading) : .opacity)
-                            .zIndex(1.0)
-                    } else {
+                    if dismissTutorial {
                         EggListView(
                             model: model,
                             showAddEggView: $showAddEggView
                         )
-                        .transition(animationsActivated ? .move(edge: .leading) : .opacity)
-                        .blur(radius: showTutorial ? 3 : 0)
+                        .blur(radius: dismissTutorial ? 3 : 0)
+                    } else {
+                        EierMLTutorialView(
+                            dismissTutorial: $dismissTutorial
+                        )
+                        .zIndex(1.0)
                     }
-                }
-                .animation(.easeInOut)
-                .onAppear {
-                    animationsActivated = true
                 }
                 .sheet(isPresented: $showAddEggView, content: {
                     AddEggView(model: model)

@@ -9,15 +9,23 @@ import SwiftUI
 import SwiftUIPager
 
 struct EierMLTutorialView: View {
-    @StateObject var page: Page = .first()
-    private var tutorialSheets: [TutorialSheet] = [.mock, .mock]
-    @State var pageValue = 1
+    @StateObject private var model: EierMLTutorialViewModel
+
+    @StateObject private var page: Page = .first()
+    @State private var pageValue = 1
+
+    @Binding var dismissTutorial: Bool
+
+    init(dismissTutorial: Binding<Bool>) {
+        self._dismissTutorial = dismissTutorial
+        self._model = StateObject(wrappedValue: EierMLTutorialViewModel())
+    }
 
     var body: some View {
         GeometryReader { reader in
             ZStack {
-                Pager(page: page, data: tutorialSheets, id: \.id) { tutorialSheet in
-                    TutorialSheetView(tutorialSheet)
+                Pager(page: page, data: model.tutorialSheets, id: \.id) { tutorialSheet in
+                    TutorialSheetView(tutorialSheet, dismissTutorial: $dismissTutorial)
                 }
                 .preferredItemSize(CGSize(width: .greatestFiniteMagnitude, height: reader.size.height/2))
                 .itemSpacing(20)
@@ -29,9 +37,16 @@ struct EierMLTutorialView: View {
                 .padding(.horizontal, 20)
                 .ignoresSafeArea()
                 VStack {
+                    VisualEffectView(effect: UIBlurEffect(style: .systemUltraThinMaterial))
+                        .frame(maxWidth: .infinity, maxHeight: reader.safeAreaInsets.top+55)
+                        .offset(x: 0, y: -reader.safeAreaInsets.top)
+                    Spacer()
+                }
+                VStack {
                     Text("Tutorial")
                         .font(.title.bold())
                         .padding(.top)
+                        .frame(height: 50)
                     Spacer()
                 }
             }
@@ -44,12 +59,12 @@ struct EierMLTutorialView_Previews: PreviewProvider {
         ZStack {
             ClassicBackgroundView()
                 .ignoresSafeArea()
-            EierMLTutorialView()
+            EierMLTutorialView(dismissTutorial: .constant(true))
         }
         ZStack {
             ClassicBackgroundView()
                 .ignoresSafeArea()
-            EierMLTutorialView()
+            EierMLTutorialView(dismissTutorial: .constant(true))
         }
             .previewDevice("iPod touch (7th generation)")
     }

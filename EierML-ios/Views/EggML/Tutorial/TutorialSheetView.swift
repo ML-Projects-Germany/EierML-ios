@@ -8,12 +8,15 @@
 import SwiftUI
 
 struct TutorialSheetView: View {
-    var tutorialSheet: TutorialSheet
+    private var tutorialSheet: TutorialSheet
+    @Binding private var dismissTutorial: Bool
 
     @State private var isAnimated = false
+    @State private var arrowIsOnTop: Bool = true
 
-    init(_ tutorialSheet: TutorialSheet) {
+    init(_ tutorialSheet: TutorialSheet, dismissTutorial: Binding<Bool>) {
         self.tutorialSheet = tutorialSheet
+        self._dismissTutorial = dismissTutorial
     }
 
     var body: some View {
@@ -21,21 +24,43 @@ struct TutorialSheetView: View {
             Color.white
                 .opacity(0.3)
             VStack(spacing: 0) {
-                Text(tutorialSheet.title)
-                    .font(.title2)
-                    .fontWeight(.medium)
-                    .padding()
-                Text(tutorialSheet.text)
-                    .padding([.horizontal, .bottom])
-                    .frame(maxWidth: .infinity, maxHeight: .infinity)
-                Text("Wische nach oben um zum nächsten Schritt zu kommen.")
-                    .font(.system(size: 10))
-                    .multilineTextAlignment(.center)
-                Image(systemName: "arrow.down")
-                    .imageScale(.small)
-                    .padding(.top, 5)
-                    .padding(.bottom, 10)
-                    .offset(x: 0, y: /*@START_MENU_TOKEN@*/10.0/*@END_MENU_TOKEN@*/)
+                Group {
+                    Text(tutorialSheet.title)
+                        .font(.title2)
+                        .fontWeight(.medium)
+                        .padding()
+                    Text(tutorialSheet.text)
+                        .padding([.horizontal, .bottom])
+                        .frame(maxWidth: .infinity, maxHeight: .infinity)
+                }
+                .padding(.horizontal)
+                .padding(.bottom, 5)
+                ZStack {
+                    if tutorialSheet.fertigButton {
+                        Button(action: {
+
+                        }, label: {
+                            Text("Fertig")
+                                .frame(maxHeight: 13)
+                        })
+                        .buttonStyle(SecondaryButtonStyle(color: Color.Palette.red))
+                        .padding()
+                    } else {
+                        VStack(spacing: 0) {
+                            Text("Wische nach oben um zum nächsten Schritt zu kommen.")
+                                .font(.system(size: 10))
+                                .multilineTextAlignment(.center)
+                                .padding(.horizontal)
+                            Image(systemName: "arrow.down")
+                                .imageScale(.small)
+                                .padding(.top, 5)
+                                .padding(.bottom, 10)
+                                .offset(x: 0, y: arrowIsOnTop ? -4 : 7)
+                                .animation(.easeInOut(duration: 2).repeatForever())
+                                .onAppear { arrowIsOnTop = false }
+                        }
+                    }
+                }
             }
         }
         .cornerRadius(20)
@@ -44,38 +69,16 @@ struct TutorialSheetView: View {
 
 struct TutorialSheetView_Previews: PreviewProvider {
     static var previews: some View {
-//        ContentView()
         ZStack {
             ClassicBackgroundView()
                 .ignoresSafeArea()
-            EierMLTutorialView()
+            EierMLTutorialView(dismissTutorial: .constant(true))
         }
         ZStack {
             ClassicBackgroundView()
                 .ignoresSafeArea()
-            EierMLTutorialView()
+            EierMLTutorialView(dismissTutorial: .constant(true))
         }
         .previewDevice("iPod touch (7th generation)")
-    }
-}
-
-struct ContentView: View {
-    @State private var isLoading = false
-    var body: some View {
-        ZStack {
-            Circle()
-                .stroke(Color(.systemGray5), lineWidth: 14)
-                .frame(width: 100, height: 100)
-
-            Circle()
-                .trim(from: 0, to: 0.2)
-                .stroke(Color.green, style: .init(lineWidth: 7, lineCap: .round, lineJoin: .miter, miterLimit: 0, dash: [1, 0], dashPhase: 0))
-                .frame(width: 100, height: 100)
-                .rotationEffect(Angle(degrees: isLoading ? 360 : .zero))
-                .animation(Animation.linear(duration: 1).repeatForever(autoreverses: false))
-                .onAppear {
-                    self.isLoading = true
-                }
-        }
     }
 }

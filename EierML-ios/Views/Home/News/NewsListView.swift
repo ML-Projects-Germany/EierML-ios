@@ -36,8 +36,6 @@ struct NewsListView: View {
                     }
                 }
             } else {
-//                LottieView(name: "loading-animation")
-//                NewsImageLoadingView()
                 ProgressView("Lade Artikel")
                     .frame(width: reader.size.width, height: 200)
                     .onAppear(perform: model.reloadArticles )
