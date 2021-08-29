@@ -46,6 +46,7 @@
 		D9BFA14726CAFDC0008BE365 /* EggListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9BFA14626CAFDC0008BE365 /* EggListView.swift */; };
 		D9C35519269B164C005C0081 /* Color+Adjust.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C35518269B164C005C0081 /* Color+Adjust.swift */; };
 		D9CD7D3526D8368A00C36DA2 /* EierML.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9CD7D3426D8368A00C36DA2 /* EierML.swift */; };
+		D9D3353426DA4B0B004E7ECD /* ViscosityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9D3353326DA4B0B004E7ECD /* ViscosityView.swift */; };
 		D9E1051426CC3F27002CB828 /* AddEggView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9E1051326CC3F27002CB828 /* AddEggView.swift */; };
 		D9E1051626CC40BD002CB828 /* VisualEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9E1051526CC40BD002CB828 /* VisualEffect.swift */; };
 		D9E1051826CC4E6B002CB828 /* UIScreenExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9E1051726CC4E6B002CB828 /* UIScreenExtension.swift */; };
@@ -115,6 +116,7 @@
 		D9BFA14626CAFDC0008BE365 /* EggListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EggListView.swift; sourceTree = "<group>"; };
 		D9C35518269B164C005C0081 /* Color+Adjust.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Adjust.swift"; sourceTree = "<group>"; };
 		D9CD7D3426D8368A00C36DA2 /* EierML.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EierML.swift; sourceTree = "<group>"; };
+		D9D3353326DA4B0B004E7ECD /* ViscosityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViscosityView.swift; sourceTree = "<group>"; };
 		D9E1051326CC3F27002CB828 /* AddEggView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEggView.swift; sourceTree = "<group>"; };
 		D9E1051526CC40BD002CB828 /* VisualEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisualEffect.swift; sourceTree = "<group>"; };
 		D9E1051726CC4E6B002CB828 /* UIScreenExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIScreenExtension.swift; sourceTree = "<group>"; };
@@ -156,6 +158,7 @@
 				D90AC30526C5822F00B6B7D0 /* EggsView.swift */,
 				D90AC30826C5C50700B6B7D0 /* EggsViewModel.swift */,
 				D9E1051326CC3F27002CB828 /* AddEggView.swift */,
+				D9D3353326DA4B0B004E7ECD /* ViscosityView.swift */,
 				D9BFA14526CAFDA9008BE365 /* ListView */,
 				D9BFA13F26CAE14F008BE365 /* Tutorial */,
 			);
@@ -519,6 +522,7 @@
 				D9E1051826CC4E6B002CB828 /* UIScreenExtension.swift in Sources */,
 				D945216E2693556900305EF8 /* Color+Hex.swift in Sources */,
 				D9E1051626CC40BD002CB828 /* VisualEffect.swift in Sources */,
+				D9D3353426DA4B0B004E7ECD /* ViscosityView.swift in Sources */,
 				D90AC30426C5748900B6B7D0 /* WebView.swift in Sources */,
 				D9BB94D026A4CCF6007086D0 /* ClassicBackgroundView.swift in Sources */,
 				D9E1051D26CC5C9A002CB828 /* PixelScreenManager.swift in Sources */,
@@ -711,7 +715,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "de.TorbenKoehler.EierML-ios";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -733,7 +737,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "de.TorbenKoehler.EierML-ios";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

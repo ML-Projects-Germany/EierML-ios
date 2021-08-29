@@ -50,7 +50,7 @@ struct EggListRowView: View {
                             .fontWeight(.medium)
                     }
                     .frame(maxWidth: .infinity, alignment: .leading)
-                    Label("\(egg.timeInMinutes) min", systemImage: "clock")
+                    Label(egg.timeString, systemImage: "clock")
                         .font(.body.bold())
                         .padding(.trailing)
                 }
@@ -94,8 +94,10 @@ struct EggListRowView: View {
     }
 
     func trashTapped() {
-        model.eggs.removeAll { $0.number == egg.number }
-        model.refreshEggs()
+        withAnimation {
+            model.eggs.removeAll { $0.number == egg.number }
+            model.refreshEggs()
+        }
     }
 }
 

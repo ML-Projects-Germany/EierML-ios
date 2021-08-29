@@ -47,12 +47,11 @@ struct Egg: Identifiable, Codable {
             viscosity: viscosity
         )
     }
-    var timeInMinutes: String {
-        if time.isMultiple(of: 60) {
-            return "\(time/60)"
-        } else {
-            return String(format: "%.1f", Double(time)/60)
-        }
+    var timeString: String {
+        let minutes = Int(time/60)
+        let seconds = Int(time%60)
+
+        return "\(minutes)min \(seconds)s"
     }
     static var mock: Self {
         .init(

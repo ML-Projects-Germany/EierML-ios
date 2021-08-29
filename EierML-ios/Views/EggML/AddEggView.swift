@@ -25,6 +25,9 @@ struct AddEggView: View {
         self._model = ObservedObject(wrappedValue: model)
     }
 
+    // ViscosityView
+    @State var showViscosityView: Bool = true
+
     init(
         model: EggsViewModel,
         egg: Egg
@@ -34,67 +37,81 @@ struct AddEggView: View {
     }
 
     var body: some View {
-        NavigationView {
-            GeometryReader { reader in
-                VStack {
-                    Spacer()
-                    ZStack {
-                        Image("egg")
-                            .renderingMode(.template)
-                            .resizable()
-                            .frame(
-                                width: CGFloat(widthValue)*reader.size.width,
-                                height: CGFloat(heightValue)*reader.size.height/1.4
-                            )
+        GeometryReader { reader in
+            ZStack {
+                NavigationView {
+                    VStack {
+                        Spacer()
+                        ZStack {
+                            Image("egg")
+                                .renderingMode(.template)
+                                .resizable()
+                                .frame(
+                                    width: CGFloat(widthValue)*reader.size.width,
+                                    height: CGFloat(heightValue)*reader.size.height/1.4
+                                )
+                                .foregroundColor(.white)
+                                .gradientForeground(colors: [
+                                    Color.Palette.blue,
+                                    Color.Palette.red
+                                ])
+                            Picker(
+                                selection: $viscosityPickerValue,
+                                label: Text("Härte: \(viscosity)").fontWeight(.medium)
+                            ) {
+                                ForEach(1..<11) { i in
+                                    Text("\(i)").tag(i)
+                                }
+                            }
+                            .frame(width: 100)
+                            .pickerStyle(MenuPickerStyle())
+                            .animation(nil)
                             .foregroundColor(.white)
-                            .gradientForeground(colors: [
-                                Color.Palette.blue,
-                                Color.Palette.red
-                            ])
-                        Picker(
-                            selection: $viscosityPickerValue,
-                            label: Text("Härte: \(viscosity)").fontWeight(.medium)
-                        ) {
-                            ForEach(1..<11) { i in
-                                Text("\(i)").tag(i)
+                            .padding()
+                        }
+                        .frame(width: reader.size.width, height: reader.size.height/2)
+                        Spacer()
+                        VStack(alignment: .leading, spacing: 0) {
+                            Text("Höhe: \(eggHeightInMilimeter(screenSize: reader.size))mm")
+                                .font(.body)
+                            Slider(
+                                value: $heightValue,
+                                in: 0.2...1,
+                                minimumValueLabel: Image(systemName: "minus"),
+                                maximumValueLabel: Image(systemName: "plus")
+                            ) {
+                                EmptyView()
+                            }
+                            .padding(.bottom, 15)
+                            Text("Breite: \(eggWidthInMilimeter(screenSize: reader.size))mm")
+                                .font(.body)
+                            Slider(
+                                value: $widthValue,
+                                in: 0.2...1,
+                                minimumValueLabel: Image(systemName: "minus"),
+                                maximumValueLabel: Image(systemName: "plus")
+                            ) {
+                                EmptyView()
                             }
                         }
-                        .frame(width: 100)
-                        .pickerStyle(MenuPickerStyle())
-                        .animation(nil)
-                        .foregroundColor(.white)
+                        .frame(maxWidth: .infinity, alignment: .leading)
                         .padding()
+                        Spacer().frame(height: 30)
                     }
-                    .frame(width: reader.size.width, height: reader.size.height/2)
-                    Spacer()
-                    VStack(alignment: .leading, spacing: 0) {
-                        Text("Höhe: \(eggHeightInMilimeter(screenSize: reader.size))mm")
-                            .font(.body)
-                        Slider(
-                            value: $heightValue,
-                            in: 0.2...1,
-                            minimumValueLabel: Image(systemName: "minus"),
-                            maximumValueLabel: Image(systemName: "plus")
-                        ) {
-                            EmptyView()
-                        }
-                        .padding(.bottom, 15)
-                        Text("Breite: \(eggWidthInMilimeter(screenSize: reader.size))mm")
-                            .font(.body)
-                        Slider(
-                            value: $widthValue,
-                            in: 0.2...1,
-                            minimumValueLabel: Image(systemName: "minus"),
-                            maximumValueLabel: Image(systemName: "plus")
-                        ) {
-                            EmptyView()
-                        }
-                    }
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                    .padding()
-                    Spacer().frame(height: 30)
+                    .navigationBarItems(leading: quitButton, trailing: addButton(screenSize: reader.size))
                 }
-                .navigationBarItems(leading: quitButton, trailing: addButton(screenSize: reader.size))
+//                .blur(radius: showViscosityView ? 3 : 0)
+//                if showViscosityView {
+//                    ZStack {
+//                        ZStack {
+//                            Color(UIColor.systemBackground)
+//                            ViscosityView()
+//                        }
+//                        .frame(width: reader.size.width/1.2, height: reader.size.width/1.1)
+//                        .cornerRadius(20)
+//                        .shadow(color: .gray.opacity(0.2), radius: 10)
+//                    }
+//                }
             }
         }
     }
