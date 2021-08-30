@@ -100,18 +100,6 @@ struct AddEggView: View {
                     }
                     .navigationBarItems(leading: quitButton, trailing: addButton(screenSize: reader.size))
                 }
-//                .blur(radius: showViscosityView ? 3 : 0)
-//                if showViscosityView {
-//                    ZStack {
-//                        ZStack {
-//                            Color(UIColor.systemBackground)
-//                            ViscosityView()
-//                        }
-//                        .frame(width: reader.size.width/1.2, height: reader.size.width/1.1)
-//                        .cornerRadius(20)
-//                        .shadow(color: .gray.opacity(0.2), radius: 10)
-//                    }
-//                }
             }
         }
     }
@@ -126,20 +114,12 @@ struct AddEggView: View {
     }
 
     private func addButton(screenSize: CGSize) -> some View {
-        Button(action: {
-            model.eggs.append(
-                Egg(
-                    number: model.eggs.count+1,
-                    height: eggWidthInMilimeter(screenSize: screenSize),
-                    width: eggHeightInMilimeter(screenSize: screenSize),
-                    viscosity: viscosity
-                )
-            )
-            presentationMode.wrappedValue.dismiss()
-        }, label: {
-            Text("Hinzufügen")
+        NavigationButton {
+            ViscosityView()
+        } label: {
+            Text("Weiter")
                 .fontWeight(.bold)
-        })
+        }
     }
 
     private func eggWidthInMilimeter(screenSize: CGSize) -> Int {
@@ -176,3 +156,10 @@ struct AddEggView_Previews: PreviewProvider {
             .previewDevice("iPod touch (7th generation)")
     }
 }
+
+//Egg(
+//    number: model.eggs.count+1,
+//    height: eggWidthInMilimeter(screenSize: screenSize),
+//    width: eggHeightInMilimeter(screenSize: screenSize),
+//    viscosity: viscosity
+//)

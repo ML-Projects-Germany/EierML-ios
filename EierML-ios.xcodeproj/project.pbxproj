@@ -32,6 +32,7 @@
 		D973620026D4276B0012AFE7 /* EggListRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D97361FF26D4276B0012AFE7 /* EggListRowView.swift */; };
 		D973620226D433F50012AFE7 /* TutorialSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D973620126D433F50012AFE7 /* TutorialSheetView.swift */; };
 		D9795FF6269A2D2800C6CF98 /* PrimaryTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9795FF5269A2D2800C6CF98 /* PrimaryTextField.swift */; };
+		D97F19D926DD5ED100374033 /* NumberRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = D97F19D826DD5ED100374033 /* NumberRow.swift */; };
 		D99421E926BB0FCB00DB2BCF /* NavigationButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99421E826BB0FCB00DB2BCF /* NavigationButton.swift */; };
 		D99421EB26BB124100DB2BCF /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D99421EA26BB124100DB2BCF /* Launch Screen.storyboard */; };
 		D994220326BB2AD200DB2BCF /* AsyncImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D994220226BB2AD200DB2BCF /* AsyncImage.swift */; };
@@ -104,6 +105,7 @@
 		D97361FF26D4276B0012AFE7 /* EggListRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EggListRowView.swift; sourceTree = "<group>"; };
 		D973620126D433F50012AFE7 /* TutorialSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialSheetView.swift; sourceTree = "<group>"; };
 		D9795FF5269A2D2800C6CF98 /* PrimaryTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryTextField.swift; sourceTree = "<group>"; };
+		D97F19D826DD5ED100374033 /* NumberRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberRow.swift; sourceTree = "<group>"; };
 		D99421E826BB0FCB00DB2BCF /* NavigationButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationButton.swift; sourceTree = "<group>"; };
 		D99421EA26BB124100DB2BCF /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		D994220226BB2AD200DB2BCF /* AsyncImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsyncImage.swift; sourceTree = "<group>"; };
@@ -157,8 +159,7 @@
 			children = (
 				D90AC30526C5822F00B6B7D0 /* EggsView.swift */,
 				D90AC30826C5C50700B6B7D0 /* EggsViewModel.swift */,
-				D9E1051326CC3F27002CB828 /* AddEggView.swift */,
-				D9D3353326DA4B0B004E7ECD /* ViscosityView.swift */,
+				D97F19DA26DD5EF900374033 /* Add Egg */,
 				D9BFA14526CAFDA9008BE365 /* ListView */,
 				D9BFA13F26CAE14F008BE365 /* Tutorial */,
 			);
@@ -249,6 +250,16 @@
 				D9C35518269B164C005C0081 /* Color+Adjust.swift */,
 			);
 			path = Color;
+			sourceTree = "<group>";
+		};
+		D97F19DA26DD5EF900374033 /* Add Egg */ = {
+			isa = PBXGroup;
+			children = (
+				D9E1051326CC3F27002CB828 /* AddEggView.swift */,
+				D9D3353326DA4B0B004E7ECD /* ViscosityView.swift */,
+				D97F19D826DD5ED100374033 /* NumberRow.swift */,
+			);
+			path = "Add Egg";
 			sourceTree = "<group>";
 		};
 		D99421E626BB0F3600DB2BCF /* Home */ = {
@@ -516,6 +527,7 @@
 				D9EADB9526D7FB050042CAF2 /* EierMLTutorialViewModel.swift in Sources */,
 				D99421E926BB0FCB00DB2BCF /* NavigationButton.swift in Sources */,
 				D9BB94CE26A4CC2B007086D0 /* HomeViewHeader.swift in Sources */,
+				D97F19D926DD5ED100374033 /* NumberRow.swift in Sources */,
 				D994220526BB2AFD00DB2BCF /* Date+String.swift in Sources */,
 				D945217326935C1E00305EF8 /* SecondaryButtonStyle.swift in Sources */,
 				D9BFA14726CAFDC0008BE365 /* EggListView.swift in Sources */,
