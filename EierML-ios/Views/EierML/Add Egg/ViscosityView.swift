@@ -9,8 +9,25 @@ import SwiftUI
 
 struct ViscosityView: View {
     @Environment(\.presentationMode) private var presentationMode
+    @ObservedObject private var model: EggsViewModel
 
     @State private var selectedCell: String = "5"
+
+    private let number: Int
+    private let height: Int
+    private let width: Int
+
+    init(
+        number: Int,
+        height: Int,
+        width: Int,
+        model: EggsViewModel
+    ) {
+        self.number = number
+        self.height = height
+        self.width = width
+        self._model = ObservedObject(wrappedValue: model)
+    }
 
     var body: some View {
         VStack(spacing: 0) {
@@ -43,12 +60,19 @@ struct ViscosityView: View {
     }
 
     private var addButton: some View {
-        NavigationButton {
-            ViscosityView()
-        } label: {
+        Button(action: {
+            model.eggs.append(
+                            Egg(
+                                number: number,
+                                height: height,
+                                width: width,
+                                viscosity: Int(selectedCell)!
+                            )
+                        )
+            presentationMode.wrappedValue.dismiss()
+        }, label: {
             Text("Hinzufügen")
-                .fontWeight(.bold)
-        }
+        })
     }
 
     var maskView: some View {
@@ -71,7 +95,12 @@ struct ViscosityView: View {
 struct ViscosityView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
-            ViscosityView()
+            ViscosityView(
+                number: 1,
+                height: 45,
+                width: 30,
+                model: EggsViewModel()
+            )
         }
     }
 }

@@ -42,33 +42,18 @@ struct AddEggView: View {
                 NavigationView {
                     VStack {
                         Spacer()
-                        ZStack {
-                            Image("egg")
-                                .renderingMode(.template)
-                                .resizable()
-                                .frame(
-                                    width: CGFloat(widthValue)*reader.size.width,
-                                    height: CGFloat(heightValue)*reader.size.height/1.4
-                                )
-                                .foregroundColor(.white)
-                                .gradientForeground(colors: [
-                                    Color.Palette.blue,
-                                    Color.Palette.red
-                                ])
-                            Picker(
-                                selection: $viscosityPickerValue,
-                                label: Text("Härte: \(viscosity)").fontWeight(.medium)
-                            ) {
-                                ForEach(1..<11) { i in
-                                    Text("\(i)").tag(i)
-                                }
-                            }
-                            .frame(width: 100)
-                            .pickerStyle(MenuPickerStyle())
-                            .animation(nil)
+                        Image("egg")
+                            .renderingMode(.template)
+                            .resizable()
+                            .frame(
+                                width: CGFloat(widthValue)*reader.size.width,
+                                height: CGFloat(heightValue)*reader.size.height/1.4
+                            )
                             .foregroundColor(.white)
-                            .padding()
-                        }
+                            .gradientForeground(colors: [
+                                Color.Palette.blue,
+                                Color.Palette.red
+                            ])
                         .frame(width: reader.size.width, height: reader.size.height/2)
                         Spacer()
                         VStack(alignment: .leading, spacing: 0) {
@@ -98,7 +83,7 @@ struct AddEggView: View {
                         .padding()
                         Spacer().frame(height: 30)
                     }
-                    .navigationBarItems(leading: quitButton, trailing: continueButton)
+                    .navigationBarItems(leading: quitButton, trailing: continueButton(screenSize: reader.size))
                 }
             }
         }
@@ -113,9 +98,14 @@ struct AddEggView: View {
         })
     }
 
-    private var continueButton: some View {
+    private func continueButton(screenSize: CGSize) -> some View {
         NavigationButton {
-            ViscosityView()
+            ViscosityView(
+                number: model.eggs.count+1,
+                height: eggWidthInMilimeter(screenSize: screenSize),
+                width: eggHeightInMilimeter(screenSize: screenSize),
+                model: model
+            )
         } label: {
             Text("Weiter")
                 .fontWeight(.bold)

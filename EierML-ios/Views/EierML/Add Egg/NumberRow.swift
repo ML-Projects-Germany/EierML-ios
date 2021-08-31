@@ -17,7 +17,7 @@ struct NumberRow: View {
             Text(number)
                 .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
         }
-        .background(selectedCell == number ? Color.accentColor.opacity(0.6) : Color.white)
+        .background(selectedCell == number ? Color.accentColor.opacity(0.6) : Color(UIColor.systemBackground))
         .cornerRadius(18)
         .overlay(
             RoundedRectangle(cornerRadius: 15)
