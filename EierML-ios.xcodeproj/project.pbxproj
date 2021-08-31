@@ -154,7 +154,7 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		D90AC30726C5823300B6B7D0 /* EggML */ = {
+		D90AC30726C5823300B6B7D0 /* EierML */ = {
 			isa = PBXGroup;
 			children = (
 				D90AC30526C5822F00B6B7D0 /* EggsView.swift */,
@@ -163,7 +163,7 @@
 				D9BFA14526CAFDA9008BE365 /* ListView */,
 				D9BFA13F26CAE14F008BE365 /* Tutorial */,
 			);
-			path = EggML;
+			path = EierML;
 			sourceTree = "<group>";
 		};
 		D90D5E5F26C009660023D2C7 /* News */ = {
@@ -268,7 +268,6 @@
 				D9BB94CD26A4CC2B007086D0 /* HomeViewHeader.swift */,
 				D9BB94D326A4DF98007086D0 /* WellcomeMessageView.swift */,
 				D90D5E5F26C009660023D2C7 /* News */,
-				D9CD7D3326D82FA700C36DA2 /* BandageView */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -298,7 +297,7 @@
 				D94521422693512600305EF8 /* AppView.swift */,
 				D93FD7F22696486A002DD264 /* HomeView.swift */,
 				D99421E626BB0F3600DB2BCF /* Home */,
-				D90AC30726C5823300B6B7D0 /* EggML */,
+				D90AC30726C5823300B6B7D0 /* EierML */,
 				D9BB94CB26A467FA007086D0 /* Wellcome */,
 			);
 			path = Views;
@@ -331,13 +330,6 @@
 				D97361FF26D4276B0012AFE7 /* EggListRowView.swift */,
 			);
 			path = ListView;
-			sourceTree = "<group>";
-		};
-		D9CD7D3326D82FA700C36DA2 /* BandageView */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = BandageView;
 			sourceTree = "<group>";
 		};
 		D9D37426269B0B810075DE4E /* Helper */ = {
