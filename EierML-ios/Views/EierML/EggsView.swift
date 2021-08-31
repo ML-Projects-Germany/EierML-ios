@@ -36,7 +36,7 @@ struct EggsView: View {
                     .transition(.move(edge: .leading))
                 }
             }
-            .sheet(isPresented: $showAddEggView, content: {
+            .fullScreenCover(isPresented: $showAddEggView, content: {
                 if let editableEgg = editableEgg {
                     AddEggView(
                         model: model,

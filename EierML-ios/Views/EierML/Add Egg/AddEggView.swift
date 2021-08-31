@@ -98,7 +98,7 @@ struct AddEggView: View {
                         .padding()
                         Spacer().frame(height: 30)
                     }
-                    .navigationBarItems(leading: quitButton, trailing: addButton(screenSize: reader.size))
+                    .navigationBarItems(leading: quitButton, trailing: continueButton)
                 }
             }
         }
@@ -113,7 +113,7 @@ struct AddEggView: View {
         })
     }
 
-    private func addButton(screenSize: CGSize) -> some View {
+    private var continueButton: some View {
         NavigationButton {
             ViscosityView()
         } label: {

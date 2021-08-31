@@ -39,16 +39,7 @@ struct ViscosityView: View {
             Spacer()
         }
         .navigationTitle("Wie hart soll es sein?")
-        .navigationBarItems(leading: quitButton, trailing: addButton)
-    }
-
-    private var quitButton: some View {
-        Button(action: {
-            presentationMode.wrappedValue.dismiss()
-        }, label: {
-            Text("Abbrechen")
-                .fontWeight(.medium)
-        })
+        .navigationBarItems(trailing: addButton)
     }
 
     private var addButton: some View {
