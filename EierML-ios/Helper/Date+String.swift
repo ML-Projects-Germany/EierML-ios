@@ -1,10 +1,3 @@
-//
-//  File.swift
-//  clickbaitml-ios (iOS)
-//
-//  Created by Torben Köhler on 01.08.21.
-//
-
 import Foundation
 
 extension Date {

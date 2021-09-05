@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct WellcomeView: View {
-    @AppStorage("firstAppStart") var firstAppStart: Bool?
+    @Binding var firstAppStart: Bool
 
     var body: some View {
         NavigationView {
@@ -24,13 +24,13 @@ struct WellcomeView: View {
                 VStack(alignment: .leading) {
                     Spacer()
                     Button(action: {
-                        withAnimation {
+                        withAnimation(.easeInOut) {
                             firstAppStart = false
                         }
                     }, label: {
                         Text("Weiter")
                     })
-                    .buttonStyle(PrimaryButtonStyle(color: Color.Palette.red))
+                    .buttonStyle(SecondaryButtonStyle(color: Color.Palette.red))
                     .padding()
                 }
             }
@@ -41,6 +41,6 @@ struct WellcomeView: View {
 
 struct WellcomePageView_Previews: PreviewProvider {
     static var previews: some View {
-        WellcomeView()
+        WellcomeView(firstAppStart: .constant(true))
     }
 }

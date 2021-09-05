@@ -9,6 +9,7 @@ import SwiftUI
 
 struct HomeView: View {
     @Environment(\.colorScheme) var colorScheme
+    @AppStorage("welcomeMessageIsShown") var welcomeMessageIsShown: Bool = true
 
     var body: some View {
         NavigationView {
@@ -25,10 +26,12 @@ struct HomeView: View {
                                 ZStack {
                                     VStack {
                                         // MARK: Wellcome
-                                        WellcomeMessageView()
-                                            .padding(.bottom, 15)
-                                            .padding(.horizontal, 20)
-
+                                        if welcomeMessageIsShown {
+                                            WellcomeMessageView(isShown: $welcomeMessageIsShown)
+                                                .frame(maxHeight: .infinity)
+                                                .padding(.bottom, 15)
+                                                .padding(.horizontal, 10)
+                                        }
                                         // MARK: EierML-Blog
                                         Label(
                                             title: { Text("EierML-Blog") },
@@ -41,7 +44,20 @@ struct HomeView: View {
                                         NewsListView()
                                             .frame(maxWidth: .infinity)
                                             .frame(height: rowWidth(reader: reader)/1.35)
-
+                                        // MARK: Mehr über EierML lernen
+                                        Label(
+                                            title: { Text("Mehr über EierML lernen") },
+                                            icon: {
+                                                Image("egg")
+                                                    .renderingMode(.template)
+                                                    .resizable()
+                                                    .scaledToFit()
+                                                    .frame(width: 20, height: 20)
+                                            }
+                                        )
+                                        .font(.headline)
+                                        .frame(maxWidth: .infinity, alignment: .leading)
+                                        .padding(.leading, 20)
                                         // MARK: Mehr über Machine learning lernen
                                         Label(
                                             title: { Text("Mehr über Machine learning lernen") },
@@ -59,6 +75,12 @@ struct HomeView: View {
                     }
                 }
                 .navigationBarHidden(true)
+                VStack {
+                    VisualEffectView(effect: UIBlurEffect(style: .systemUltraThinMaterial))
+                        .frame(maxWidth: .infinity, maxHeight: reader.safeAreaInsets.top)
+                        .offset(x: 0, y: -reader.safeAreaInsets.top)
+                    Spacer()
+                }
             }
         }
     }

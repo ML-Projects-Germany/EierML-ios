@@ -1,10 +1,3 @@
-//
-//  AsyncImage.swift
-//  Clickbait ML Multi
-//
-//  Created by Torben Köhler on 13.06.21.
-//
-
 import SwiftUI
 import Combine
 import Foundation

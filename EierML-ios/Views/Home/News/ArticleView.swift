@@ -10,13 +10,13 @@ import SwiftUIWPArticleLoader
 
 struct ArticleView: View {
     var article: Article
-    @State private var isLoading: Bool = false
+    @State private var isLoading: Bool = true
 
     var body: some View {
         WebLoadingView(isShown: $isLoading, content: {
             WebView(url: article.link, cookies: nil, isLoading: $isLoading)
         })
-        .ignoresSafeArea(.container, edges: .bottom)
+//        .ignoresSafeArea(.container, edges: .bottom)
         .navigationBarTitleDisplayMode(.inline)
         .navigationTitle(article.title)
     }

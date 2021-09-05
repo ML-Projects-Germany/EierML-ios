@@ -1,5 +1,5 @@
 //
-//  SwiftUIView.swift
+//  PrimaryButtonStyle.swift
 //  EierML-ios
 //
 //  Created by Torben Köhler on 05.07.21.

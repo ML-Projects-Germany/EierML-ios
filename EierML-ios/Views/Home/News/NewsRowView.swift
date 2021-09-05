@@ -22,6 +22,7 @@ struct NewsRowView: View {
                     HStack {
                         VStack(alignment: .leading, spacing: 2) {
                             Text(article.title)
+                                .fontWeight(.medium)
                                 .lineLimit(1)
                             HStack {
                                 Text(article.date?.toString("E d. MMM yyyy", showToday: true) ?? "Kein Datum")
@@ -102,16 +103,5 @@ struct NewsRowView_Previews: PreviewProvider {
     static var previews: some View {
         NewsRowView(article: .mock)
             .frame(width: 300, height: 170, alignment: .center)
-    }
-}
-
-struct VisualEffectView: UIViewRepresentable {
-    var effect: UIVisualEffect?
-    func makeUIView(context: UIViewRepresentableContext<Self>) -> UIVisualEffectView { UIVisualEffectView() }
-    func updateUIView(
-        _ uiView: UIVisualEffectView,
-        context: UIViewRepresentableContext<Self>
-    ) {
-        uiView.effect = effect
     }
 }

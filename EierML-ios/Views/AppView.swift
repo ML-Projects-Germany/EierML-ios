@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct AppView: View {
-    @AppStorage("firstAppStart") var firstAppStart: Bool?
+    @AppStorage("firstAppStart") var firstAppStart: Bool = true
 
     var body: some View {
         ZStack {
@@ -18,13 +18,13 @@ struct AppView: View {
                         Label("Startseite", systemImage: "rectangle.stack")
                     }
                     .tag(0)
-                EierMLView()
+                EggsView()
                     .tabItem {
                         Label("EierML", systemImage: "magnifyingglass.circle")
                     }
             }
-            if firstAppStart ?? true {
-                WellcomeView()
+            if firstAppStart {
+                WellcomeView(firstAppStart: $firstAppStart)
                     .transition(.opacity)
             }
         }

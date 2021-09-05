@@ -1,10 +1,3 @@
-//
-//  NavigationButton.swift
-//  SamedayNurse-ios
-//
-//  Created by Torben Köhler on 02.07.21.
-//
-
 import SwiftUI
 
 struct NavigationButton<Destination: View, Label: View>: View {
