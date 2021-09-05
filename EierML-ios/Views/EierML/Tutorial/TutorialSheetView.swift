@@ -50,7 +50,7 @@ struct TutorialSheetView: View {
                 .padding(.bottom, 5)
                 if tutorialSheet.doneButton {
                     Button(action: {
-                        withAnimation(.easeInOut) {
+                        withAnimation(.spring()) {
                             dismissTutorial = true
                         }
                     }, label: {
@@ -87,12 +87,12 @@ struct TutorialSheetView_Previews: PreviewProvider {
         ZStack {
             ClassicBackgroundView()
                 .ignoresSafeArea()
-            EierMLTutorialView(dismissTutorial: .constant(true))
+            EierMLTutorialView(model: EggsViewModel())
         }
         ZStack {
             ClassicBackgroundView()
                 .ignoresSafeArea()
-            EierMLTutorialView(dismissTutorial: .constant(true))
+            EierMLTutorialView(model: EggsViewModel())
         }
         .previewDevice("iPod touch (7th generation)")
     }

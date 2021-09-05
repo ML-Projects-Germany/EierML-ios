@@ -17,36 +17,36 @@ struct WellcomeMessageView: View {
     }
 
     var body: some View {
-        ZStack {
-            // swiftlint:disable:next line_length
-            Text("Wilkommen zur EierML-App, wir freuen uns sehr das du unsere App nutzt und wünschen dir viel Spaß beim Entdecken!")
-                .multilineTextAlignment(.leading)
-                .padding(15)
-                .padding(.trailing, 25)
-            Button(action: {
-                withAnimation {
-                    isShown = false
+        // swiftlint:disable:next line_length
+        Text("Wilkommen zur EierML-App!\nWir freuen uns sehr das du unsere App nutzt und wünschen dir viel Spaß beim Entdecken!")
+            .lineLimit(20)
+            .multilineTextAlignment(.leading)
+            .frame(maxWidth: .infinity, minHeight: 70, alignment: .leading)
+            .padding(15)
+            .padding(.trailing, 15)
+            .background(
+                Color.primary.colorInvert()
+                    .opacity(0.2)
+            )
+            .overlay(
+                ZStack {
+                    Button(action: {
+                        withAnimation {
+                            isShown = false
+                        }
+                    }, label: {
+                        Image(systemName: "xmark.circle.fill")
+                            .imageScale(.large)
+                            .font(.body.bold())
+                            .foregroundColor(.white)
+                    })
                 }
-            }, label: {
-                Image(systemName: "xmark.circle.fill")
-                    .imageScale(.large)
-                    .font(.body.bold())
-                    .foregroundColor(.white)
-            })
-            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topTrailing)
-            .padding(10)
-        }
-        .frame(maxWidth: .infinity, maxHeight: 120)
-        .background(
-            contentBackgroundColor
-                .opacity(0.2)
-        )
-        .cornerRadius(15)
+                .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topTrailing)
+                .padding(10)
+            )
+            .cornerRadius(15)
     }
 
-    var contentBackgroundColor: Color {
-        colorScheme == .dark ? .black : .white
-    }
 }
 
 struct WellcomeMessageView_Previews: PreviewProvider {

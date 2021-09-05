@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D902F7B426E3E22F009FB4E7 /* AddEggSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = D902F7B326E3E22F009FB4E7 /* AddEggSlider.swift */; };
 		D90AC30026C5745300B6B7D0 /* ArticleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90AC2FF26C5745300B6B7D0 /* ArticleView.swift */; };
 		D90AC30326C5748900B6B7D0 /* WebLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90AC30126C5748900B6B7D0 /* WebLoadingView.swift */; };
 		D90AC30426C5748900B6B7D0 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90AC30226C5748900B6B7D0 /* WebView.swift */; };
@@ -33,6 +34,7 @@
 		D973620226D433F50012AFE7 /* TutorialSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D973620126D433F50012AFE7 /* TutorialSheetView.swift */; };
 		D9795FF6269A2D2800C6CF98 /* PrimaryTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9795FF5269A2D2800C6CF98 /* PrimaryTextField.swift */; };
 		D97F19D926DD5ED100374033 /* NumberRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = D97F19D826DD5ED100374033 /* NumberRow.swift */; };
+		D98AAB7326E4CB250087FAF6 /* PixelConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98AAB7226E4CB250087FAF6 /* PixelConverter.swift */; };
 		D99421E926BB0FCB00DB2BCF /* NavigationButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99421E826BB0FCB00DB2BCF /* NavigationButton.swift */; };
 		D99421EB26BB124100DB2BCF /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D99421EA26BB124100DB2BCF /* Launch Screen.storyboard */; };
 		D994220326BB2AD200DB2BCF /* AsyncImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D994220226BB2AD200DB2BCF /* AsyncImage.swift */; };
@@ -74,6 +76,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D902F7B326E3E22F009FB4E7 /* AddEggSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEggSlider.swift; sourceTree = "<group>"; };
 		D90AC2FF26C5745300B6B7D0 /* ArticleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleView.swift; sourceTree = "<group>"; };
 		D90AC30126C5748900B6B7D0 /* WebLoadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebLoadingView.swift; sourceTree = "<group>"; };
 		D90AC30226C5748900B6B7D0 /* WebView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
@@ -106,6 +109,7 @@
 		D973620126D433F50012AFE7 /* TutorialSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialSheetView.swift; sourceTree = "<group>"; };
 		D9795FF5269A2D2800C6CF98 /* PrimaryTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryTextField.swift; sourceTree = "<group>"; };
 		D97F19D826DD5ED100374033 /* NumberRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberRow.swift; sourceTree = "<group>"; };
+		D98AAB7226E4CB250087FAF6 /* PixelConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PixelConverter.swift; sourceTree = "<group>"; };
 		D99421E826BB0FCB00DB2BCF /* NavigationButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationButton.swift; sourceTree = "<group>"; };
 		D99421EA26BB124100DB2BCF /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		D994220226BB2AD200DB2BCF /* AsyncImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsyncImage.swift; sourceTree = "<group>"; };
@@ -256,6 +260,7 @@
 			isa = PBXGroup;
 			children = (
 				D9E1051326CC3F27002CB828 /* AddEggView.swift */,
+				D902F7B326E3E22F009FB4E7 /* AddEggSlider.swift */,
 				D9D3353326DA4B0B004E7ECD /* ViscosityView.swift */,
 				D97F19D826DD5ED100374033 /* NumberRow.swift */,
 			);
@@ -343,6 +348,7 @@
 				D994220226BB2AD200DB2BCF /* AsyncImage.swift */,
 				D99421E826BB0FCB00DB2BCF /* NavigationButton.swift */,
 				D9E1051526CC40BD002CB828 /* VisualEffect.swift */,
+				D98AAB7226E4CB250087FAF6 /* PixelConverter.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -529,6 +535,7 @@
 				D9D3353426DA4B0B004E7ECD /* ViscosityView.swift in Sources */,
 				D90AC30426C5748900B6B7D0 /* WebView.swift in Sources */,
 				D9BB94D026A4CCF6007086D0 /* ClassicBackgroundView.swift in Sources */,
+				D98AAB7326E4CB250087FAF6 /* PixelConverter.swift in Sources */,
 				D9E1051D26CC5C9A002CB828 /* PixelScreenManager.swift in Sources */,
 				D9EADB9326D7EA5B0042CAF2 /* PrimaryButtonStyle copy.swift in Sources */,
 				D90AC30B26C5C5E600B6B7D0 /* Egg.swift in Sources */,
@@ -544,6 +551,7 @@
 				D973620026D4276B0012AFE7 /* EggListRowView.swift in Sources */,
 				D90D5E6726C00AF90023D2C7 /* NewsRowView.swift in Sources */,
 				D994220326BB2AD200DB2BCF /* AsyncImage.swift in Sources */,
+				D902F7B426E3E22F009FB4E7 /* AddEggSlider.swift in Sources */,
 				D90AC30026C5745300B6B7D0 /* ArticleView.swift in Sources */,
 				D90D5E7126C013560023D2C7 /* NewsRowButtonStyle.swift in Sources */,
 				D90D5E6126C009810023D2C7 /* NewsListView.swift in Sources */,

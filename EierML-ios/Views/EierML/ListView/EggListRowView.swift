@@ -65,38 +65,42 @@ struct EggListRowView: View {
                 .cornerRadius(20)
                 .padding(.leading, 10)
                 .onTapGesture {
-                    self.scale = 0.5
-                    self.offset = .zero
+                    withAnimation(.spring()) {
+                        self.scale = 0.5
+                        self.offset = .zero
+                    }
                     trashTapped()
                 }
             }
         }
         .frame(height: 70)
         .offset(self.offset)
-        .animation(.spring())
         .gesture(DragGesture()
-              .onChanged { gesture in
-                           self.offset.width = gesture.translation.width
-                          }
-              .onEnded { _ in
-                         if self.offset.width < -50 {
+                    .onChanged { gesture in
+                        withAnimation(.spring()) {
+                            self.offset.width = gesture.translation.width
+                        }
+                    }
+                    .onEnded { _ in
+                        withAnimation(.spring()) {
+                            if self.offset.width < -50 {
                                 self.scale = 1
                                 self.offset.width = -width-15
-                          } else {
+                            } else {
                                 self.scale = 0.5
                                 self.offset = .zero
-                         }
-                       }
-                )
+                            }
+                        }
+                    }
+        )
         .onTapGesture {
-            model.showEditEggView.send(egg)
+            model.showAddEggView(with: egg)
         }
     }
 
     func trashTapped() {
         withAnimation {
-            model.eggs.removeAll { $0.number == egg.number }
-            model.refreshEggs()
+            model.deleteEgg(number: egg.number)
         }
     }
 }

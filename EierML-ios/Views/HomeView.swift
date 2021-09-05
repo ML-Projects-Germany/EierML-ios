@@ -28,8 +28,9 @@ struct HomeView: View {
                                         // MARK: Wellcome
                                         if welcomeMessageIsShown {
                                             WellcomeMessageView(isShown: $welcomeMessageIsShown)
+                                                .frame(maxHeight: .infinity)
                                                 .padding(.bottom, 15)
-                                                .padding(.horizontal, 20)
+                                                .padding(.horizontal, 10)
                                         }
                                         // MARK: EierML-Blog
                                         Label(

@@ -10,17 +10,8 @@ import SwiftUI
 struct EggListView: View {
     @ObservedObject private var model: EggsViewModel
 
-    @Binding private var showAddEggView: Bool
-    @Binding private var dismissTutorial: Bool
-
-    init(
-        model: EggsViewModel,
-        showAddEggView: Binding<Bool>,
-        dismissTutorial: Binding<Bool>
-    ) {
+    init(model: EggsViewModel) {
         self._model = ObservedObject(wrappedValue: model)
-        self._showAddEggView = showAddEggView
-        self._dismissTutorial = dismissTutorial
     }
 
     var body: some View {
@@ -32,8 +23,8 @@ struct EggListView: View {
                             HStack {
                                 Spacer()
                                 Button(action: {
-                                    withAnimation(.easeInOut) {
-                                        dismissTutorial = false
+                                    withAnimation(.spring()) {
+                                        model.eggTutorialIsShown = true
                                     }
                                 }, label: {
                                     Image(systemName: "info.circle")
@@ -53,7 +44,7 @@ struct EggListView: View {
                             EggListRowView(egg: egg, model: model)
                         }
                         Button(action: {
-                            showAddEggView = true
+                            model.showAddEggView()
                         }, label: {
                             HStack {
                                 Image(systemName: "plus.circle")
@@ -93,11 +84,7 @@ struct EggListView_Previews: PreviewProvider {
         ZStack {
             ClassicBackgroundView()
                 .ignoresSafeArea()
-            EggListView(
-                model: EggsViewModel(),
-                showAddEggView: .constant(true),
-                dismissTutorial: .constant(true)
-            )
+            EggListView(model: EggsViewModel())
         }
     }
 }

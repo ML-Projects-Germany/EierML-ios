@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct ViscosityView: View {
-    @Environment(\.presentationMode) private var presentationMode
     @ObservedObject private var model: EggsViewModel
 
     @State private var selectedCell: String = "5"
@@ -61,15 +60,17 @@ struct ViscosityView: View {
 
     private var addButton: some View {
         Button(action: {
-            model.eggs.append(
-                            Egg(
-                                number: number,
-                                height: height,
-                                width: width,
-                                viscosity: Int(selectedCell)!
-                            )
-                        )
-            presentationMode.wrappedValue.dismiss()
+            model.addEgg(
+                Egg(
+                    number: number,
+                    height: height,
+                    width: width,
+                    viscosity: Int(selectedCell)!
+                )
+            )
+            withAnimation {
+                model.dismissAddEggView()
+            }
         }, label: {
             Text("Hinzufügen")
         })

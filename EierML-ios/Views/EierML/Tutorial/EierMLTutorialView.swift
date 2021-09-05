@@ -9,15 +9,14 @@ import SwiftUI
 import SwiftUIPager
 
 struct EierMLTutorialView: View {
-    @StateObject private var model: EierMLTutorialViewModel
+    @ObservedObject private var model: EggsViewModel
+    @StateObject private var viewModel: EierMLTutorialViewModel
 
     @StateObject private var page: Page = .first()
 
-    @Binding var dismissTutorial: Bool
-
-    init(dismissTutorial: Binding<Bool>) {
-        self._dismissTutorial = dismissTutorial
-        self._model = StateObject(wrappedValue: EierMLTutorialViewModel())
+    init(model: EggsViewModel) {
+        self._model = ObservedObject(wrappedValue: model)
+        self._viewModel = StateObject(wrappedValue: EierMLTutorialViewModel())
     }
 
     var body: some View {
@@ -28,8 +27,8 @@ struct EierMLTutorialView: View {
                     .shadow(color: .black.opacity(0.1), radius: 8)
                 ClassicBackgroundView()
                     .ignoresSafeArea()
-                Pager(page: page, data: model.tutorialSheets, id: \.id) { tutorialSheet in
-                    TutorialSheetView(tutorialSheet, dismissTutorial: $dismissTutorial)
+                Pager(page: page, data: viewModel.tutorialSheets, id: \.id) { tutorialSheet in
+                    TutorialSheetView(tutorialSheet, dismissTutorial: $model.eggTutorialIsShown)
                 }
                 .preferredItemSize(CGSize(width: .greatestFiniteMagnitude, height: reader.size.height/2))
                 .itemSpacing(20)
@@ -50,8 +49,8 @@ struct EierMLTutorialView: View {
                         HStack {
                             Spacer()
                             Button(action: {
-                                withAnimation(.easeInOut) {
-                                    dismissTutorial = true
+                                withAnimation(.spring()) {
+                                    model.eggTutorialIsShown = false
                                 }
                             }, label: {
                                 Text("Überspringen")
@@ -75,12 +74,12 @@ struct EierMLTutorialView_Previews: PreviewProvider {
         ZStack {
             ClassicBackgroundView()
                 .ignoresSafeArea()
-            EierMLTutorialView(dismissTutorial: .constant(true))
+            EierMLTutorialView(model: EggsViewModel())
         }
         ZStack {
             ClassicBackgroundView()
                 .ignoresSafeArea()
-            EierMLTutorialView(dismissTutorial: .constant(true))
+            EierMLTutorialView(model: EggsViewModel())
         }
             .previewDevice("iPod touch (7th generation)")
     }

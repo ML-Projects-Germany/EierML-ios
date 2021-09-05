@@ -9,48 +9,26 @@ import SwiftUI
 
 struct EggsView: View {
     @StateObject private var model: EggsViewModel
-    @State private var showAddEggView: Bool = false
-
-    @State private var editableEgg: Egg?
 
     init() {
         self._model = StateObject(wrappedValue: EggsViewModel())
     }
 
     var body: some View {
-        ZStack {
-            ClassicBackgroundView()
-                .ignoresSafeArea()
+        GeometryReader { reader in
             ZStack {
-                if model.eggTutorialIsShown {
-                    EggListView(
-                        model: model,
-                        showAddEggView: $showAddEggView,
-                        dismissTutorial: $model.eggTutorialIsShown
-                    )
-                } else {
-                    EierMLTutorialView(
-                        dismissTutorial: $model.eggTutorialIsShown
-                    )
+                ClassicBackgroundView()
+                    .ignoresSafeArea()
+                ZStack {
+                    EggListView(model: model)
+                    EierMLTutorialView(model: model)
+                    .offset(x: model.eggTutorialIsShown ? 0 : -reader.size.width, y: 0)
                     .zIndex(1.0)
-                    .transition(.move(edge: .leading))
                 }
-            }
-            .fullScreenCover(isPresented: $showAddEggView, content: {
-                if let editableEgg = editableEgg {
-                    AddEggView(
-                        model: model,
-                        egg: editableEgg
-                    )
-                } else {
+                .fullScreenCover(isPresented: $model.addEggViewIsPresented, content: {
                     AddEggView(model: model)
-                }
-            })
-            .onReceive(model.showEditEggView, perform: { egg in
-                editableEgg = egg
-                showAddEggView = true
-                editableEgg = nil
-            })
+                })
+            }
         }
     }
 }

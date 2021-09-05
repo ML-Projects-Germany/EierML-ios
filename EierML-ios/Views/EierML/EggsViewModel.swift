@@ -13,18 +13,34 @@ class EggsViewModel: ObservableObject {
 
     @Published var eggTutorialIsShown: Bool {
         didSet {
-            if eggTutorialIsShown {
-                UserDefaults.standard.setValue(true, forKey: "eggTutorialIsShown")
-                print("Set")
+            if !eggTutorialIsShown {
+                UserDefaults.standard.setValue(true, forKey: "eggTutorialWasShown")
             }
         }
     }
 
-    var showEditEggView: PassthroughSubject<Egg, Never> = .init()
+    @Published var addEggViewIsPresented: Bool = false
+    @Published var editableEgg: Egg?
+    private var cancellables: Set<AnyCancellable> = []
 
     init() {
-        eggTutorialIsShown = UserDefaults.standard.bool(forKey: "eggTutorialIsShown")
+        eggTutorialIsShown = !UserDefaults.standard.bool(forKey: "eggTutorialWasShown")
         print(eggTutorialIsShown)
+    }
+
+    func addEgg(_ egg: Egg) {
+        if eggs.contains(where: { $0.number == egg.number }) {
+            var editEggNumber: Int = 0
+            eggs.forEach({ if $0.number == egg.number { editEggNumber = egg.number }})
+            eggs[editEggNumber-1] = egg
+        } else {
+            eggs.append(egg)
+        }
+    }
+
+    func deleteEgg(number: Int) {
+        eggs.removeAll { $0.number == number }
+        refreshEggs()
     }
 
     func refreshEggs() {
@@ -37,6 +53,17 @@ class EggsViewModel: ObservableObject {
             eggsWithNewNumbers.append(newEgg)
         }
         eggs = eggsWithNewNumbers
+    }
+
+    func showAddEggView(with egg: Egg? = nil) {
+        editableEgg = egg
+        print(editableEgg?.number)
+        addEggViewIsPresented = true
+    }
+
+    func dismissAddEggView() {
+        addEggViewIsPresented = false
+        editableEgg = nil
     }
 }
 

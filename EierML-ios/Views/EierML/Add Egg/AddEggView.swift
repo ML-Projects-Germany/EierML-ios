@@ -8,33 +8,35 @@
 import SwiftUI
 
 struct AddEggView: View {
-    @Environment(\.presentationMode) private var presentationMode
-
     @ObservedObject private var model: EggsViewModel
 
-    @State private var widthValue: Double = 0.55
-    @State private var heightValue: Double = 0.6
-    @State private var viscosityPickerValue: Int = 4
-    private var viscosity: Int {
-        // swiftlint:disable:next computed_accessors_order
-        set { viscosityPickerValue = newValue - 1 }
-        get { viscosityPickerValue+1 }
-    }
+    /// 30-50
+    @State private var widthValue: CGFloat
+    /// 40-70
+    @State private var heightValue: CGFloat
+    /// 1-10
+    private var viscosity: Int
+    let eggNumber: Int
 
     init(model: EggsViewModel) {
         self._model = ObservedObject(wrappedValue: model)
+        if let egg = model.editableEgg {
+            self.viscosity = egg.viscosity
+            self.widthValue = CGFloat(egg.width)
+            self.heightValue = CGFloat(egg.height)
+            self.eggNumber = egg.number
+            print(egg.height)
+            print(heightValue)
+        } else {
+            self.eggNumber = model.eggs.count+1
+            self.widthValue = 40
+            self.heightValue = 55
+            self.viscosity = 5
+        }
     }
 
     // ViscosityView
     @State var showViscosityView: Bool = true
-
-    init(
-        model: EggsViewModel,
-        egg: Egg
-    ) {
-        self._model = ObservedObject(wrappedValue: model)
-        self.viscosity = egg.viscosity
-    }
 
     var body: some View {
         GeometryReader { reader in
@@ -46,42 +48,22 @@ struct AddEggView: View {
                             .renderingMode(.template)
                             .resizable()
                             .frame(
-                                width: CGFloat(widthValue)*reader.size.width,
-                                height: CGFloat(heightValue)*reader.size.height/1.4
+                                width: widthValue*pixelForMilimeter(),
+                                height: heightValue*pixelForMilimeter()
                             )
                             .foregroundColor(.white)
                             .gradientForeground(colors: [
                                 Color.Palette.blue,
                                 Color.Palette.red
                             ])
-                        .frame(width: reader.size.width, height: reader.size.height/2)
+                        .frame(width: reader.size.width, height: reader.size.height/3)
                         Spacer()
-                        VStack(alignment: .leading, spacing: 0) {
-                            Text("Höhe: \(eggHeightInMilimeter(screenSize: reader.size))mm")
-                                .font(.body)
-                            Slider(
-                                value: $heightValue,
-                                in: 0.2...1,
-                                minimumValueLabel: Image(systemName: "minus"),
-                                maximumValueLabel: Image(systemName: "plus")
-                            ) {
-                                EmptyView()
-                            }
-                            .padding(.bottom, 15)
-                            Text("Breite: \(eggWidthInMilimeter(screenSize: reader.size))mm")
-                                .font(.body)
-                            Slider(
-                                value: $widthValue,
-                                in: 0.2...1,
-                                minimumValueLabel: Image(systemName: "minus"),
-                                maximumValueLabel: Image(systemName: "plus")
-                            ) {
-                                EmptyView()
-                            }
+                        VStack {
+                            AddEggSlider(title: "Höhe", value: $heightValue, min: 40, max: 70, unit: "mm")
+                            AddEggSlider(title: "Breite", value: $widthValue, min: 30, max: 50, unit: "mm")
                         }
-                        .frame(maxWidth: .infinity, alignment: .leading)
                         .padding()
-                        Spacer().frame(height: 30)
+                        Spacer().frame(height: 10)
                     }
                     .navigationBarItems(leading: quitButton, trailing: continueButton(screenSize: reader.size))
                 }
@@ -91,7 +73,9 @@ struct AddEggView: View {
 
     private var quitButton: some View {
         Button(action: {
-            presentationMode.wrappedValue.dismiss()
+            withAnimation {
+                model.dismissAddEggView()
+            }
         }, label: {
             Text("Abbrechen")
                 .fontWeight(.medium)
@@ -101,9 +85,9 @@ struct AddEggView: View {
     private func continueButton(screenSize: CGSize) -> some View {
         NavigationButton {
             ViscosityView(
-                number: model.eggs.count+1,
-                height: eggWidthInMilimeter(screenSize: screenSize),
-                width: eggHeightInMilimeter(screenSize: screenSize),
+                number: eggNumber,
+                height: Int(heightValue.rounded()),
+                width: Int(widthValue.rounded()),
                 model: model
             )
         } label: {
@@ -112,30 +96,8 @@ struct AddEggView: View {
         }
     }
 
-    private func eggWidthInMilimeter(screenSize: CGSize) -> Int {
-        let pixel = CGFloat(widthValue)*screenSize.width
-        let centimeter = getCentimeterForNormalPixels(pixel)
-        return Int((centimeter*10).rounded())
-    }
-
-    private func eggHeightInMilimeter(screenSize: CGSize) -> Int {
-        let pixel = CGFloat(heightValue)*screenSize.height/1.4
-        let centimeter = getCentimeterForNormalPixels(pixel)
-        return Int((centimeter*10).rounded())
-    }
-
-    private func getCentimeterForNormalPixels(_ pixels: CGFloat) -> CGFloat {
-        let nativeBoundsComposer = UIScreen.main.nativeBounds.width/UIScreen.main.bounds.width
-        let nativeBounds = pixels*nativeBoundsComposer
-
-        return nativeBounds/(UIScreen.pixelsPerCentimeter ?? 1)
-    }
-
-    private func getNormalPixelsForCentimeter(_ centimeter: CGFloat) -> CGFloat {
-        let nativeBounds = centimeter*(UIScreen.pixelsPerCentimeter ?? 1)
-        let nativeBoundsComposer = UIScreen.main.nativeBounds.width/UIScreen.main.bounds.width
-
-        return nativeBounds/nativeBoundsComposer
+    private func pixelForMilimeter() -> CGFloat {
+        PixelConverter.getNormalPixelsForCentimeter(0.1)
     }
 }
 
@@ -147,9 +109,9 @@ struct AddEggView_Previews: PreviewProvider {
     }
 }
 
-//Egg(
+// Egg(
 //    number: model.eggs.count+1,
 //    height: eggWidthInMilimeter(screenSize: screenSize),
 //    width: eggHeightInMilimeter(screenSize: screenSize),
 //    viscosity: viscosity
-//)
+// )
