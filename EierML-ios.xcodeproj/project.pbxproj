@@ -54,6 +54,7 @@
 		D9E1051626CC40BD002CB828 /* VisualEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9E1051526CC40BD002CB828 /* VisualEffect.swift */; };
 		D9E1051826CC4E6B002CB828 /* UIScreenExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9E1051726CC4E6B002CB828 /* UIScreenExtension.swift */; };
 		D9E1051D26CC5C9A002CB828 /* PixelScreenManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9E1051C26CC5C9A002CB828 /* PixelScreenManager.swift */; };
+		D9E5897C26E7948400349794 /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9E5897B26E7948400349794 /* TimerView.swift */; };
 		D9EADB9326D7EA5B0042CAF2 /* PrimaryButtonStyle copy.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9EADB9226D7EA5B0042CAF2 /* PrimaryButtonStyle copy.swift */; };
 		D9EADB9526D7FB050042CAF2 /* EierMLTutorialViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9EADB9426D7FB050042CAF2 /* EierMLTutorialViewModel.swift */; };
 /* End PBXBuildFile section */
@@ -127,6 +128,7 @@
 		D9E1051526CC40BD002CB828 /* VisualEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisualEffect.swift; sourceTree = "<group>"; };
 		D9E1051726CC4E6B002CB828 /* UIScreenExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIScreenExtension.swift; sourceTree = "<group>"; };
 		D9E1051C26CC5C9A002CB828 /* PixelScreenManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PixelScreenManager.swift; sourceTree = "<group>"; };
+		D9E5897B26E7948400349794 /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
 		D9EADB9226D7EA5B0042CAF2 /* PrimaryButtonStyle copy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PrimaryButtonStyle copy.swift"; sourceTree = "<group>"; };
 		D9EADB9426D7FB050042CAF2 /* EierMLTutorialViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EierMLTutorialViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -163,6 +165,7 @@
 			children = (
 				D90AC30526C5822F00B6B7D0 /* EggsView.swift */,
 				D90AC30826C5C50700B6B7D0 /* EggsViewModel.swift */,
+				D9E5897D26E7948A00349794 /* TimerView */,
 				D97F19DA26DD5EF900374033 /* Add Egg */,
 				D9BFA14526CAFDA9008BE365 /* ListView */,
 				D9BFA13F26CAE14F008BE365 /* Tutorial */,
@@ -353,6 +356,14 @@
 			path = Helper;
 			sourceTree = "<group>";
 		};
+		D9E5897D26E7948A00349794 /* TimerView */ = {
+			isa = PBXGroup;
+			children = (
+				D9E5897B26E7948400349794 /* TimerView.swift */,
+			);
+			path = TimerView;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -541,6 +552,7 @@
 				D90AC30626C5822F00B6B7D0 /* EggsView.swift in Sources */,
 				D973620226D433F50012AFE7 /* TutorialSheetView.swift in Sources */,
 				D90AC30326C5748900B6B7D0 /* WebLoadingView.swift in Sources */,
+				D9E5897C26E7948400349794 /* TimerView.swift in Sources */,
 				D9BFA14426CAE216008BE365 /* TutorialSheet.swift in Sources */,
 				D9CD7D3526D8368A00C36DA2 /* EierML.swift in Sources */,
 				D9795FF6269A2D2800C6CF98 /* PrimaryTextField.swift in Sources */,

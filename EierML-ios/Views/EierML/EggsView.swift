@@ -20,7 +20,9 @@ struct EggsView: View {
                 ClassicBackgroundView()
                     .ignoresSafeArea()
                 ZStack {
-                    EggListView(model: model)
+                    ZStack {
+                        EggListView(model: model)
+                    }
                     EierMLTutorialView(model: model)
                     .offset(x: model.eggTutorialIsShown ? 0 : -reader.size.width, y: 0)
                     .zIndex(1.0)
