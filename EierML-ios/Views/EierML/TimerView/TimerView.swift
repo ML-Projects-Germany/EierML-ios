@@ -16,30 +16,33 @@ struct TimerView: View {
                 .ignoresSafeArea()
             ZStack {
                 Color.white
-                ScrollView {
-                    ScrollViewReader { scroller in
-                        AnyView {
-                            withAnimation(.easeInOut) {
-                                scroller.scrollTo(number, anchor: .center)
-                            }
-                        }
-                        .padding()
-
-                        ForEach(0..<100) { i in
-                            Text("Example \(i)")
-                                .font(.title)
-                                .frame(width: 200, height: 200)
-                                .id(i)
-                        }
+                TimerScrollView(number: $number)
+                    .frame(height: 400)
+                VStack {
+                    HStack {
+                        Text("Eier-Timer")
+                            .font(.largeTitle)
+                            .bold()
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                            .padding()
+                        Text("0:00")
+                            .font(.largeTitle)
+                            .fontWeight(.medium)
+                            .padding()
                     }
+                    Spacer()
+                    Button(action: {
+                        withAnimation(.easeOut) {
+                            number+=1
+                        }
+                    }, label: {
+                        Text("Stopp")
+                    })
+                    .buttonStyle(SecondaryButtonStyle(color: .accentColor))
+                    .padding()
                 }
-                .disabled(true)
-                Button(action: {
-                    number+=1
-                }, label: {
-                    Text("Button")
-                })
             }
+            .frame(maxHeight: 500)
             .cornerRadius(25)
             .padding()
         }
@@ -52,6 +55,11 @@ struct TimerView_Previews: PreviewProvider {
             EggsView()
             TimerView()
         }
+        ZStack {
+            EggsView()
+            TimerView()
+        }
+        .previewDevice("iPod touch (7th generation)")
     }
 }
 
