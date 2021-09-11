@@ -8,7 +8,11 @@
 import SwiftUI
 
 struct TimerScrollView: View {
-    @Binding var number: Int
+    @ObservedObject var model: TimerViewModel
+
+    init(model: TimerViewModel) {
+        self._model = ObservedObject(wrappedValue: model)
+    }
 
     var body: some View {
         ScrollView {
@@ -23,15 +27,15 @@ struct TimerScrollView: View {
                         .id(i)
                         .scaleEffect(
                             CGSize(
-                                width: number == i ? 1 : 0,
-                                height: number == i ? 1 : 0
+                                width: model.currentScrollStep == i ? 1 : 0,
+                                height: model.currentScrollStep == i ? 1 : 0
                             )
                         )
-                        .opacity(number == i ? 1 : 0)
+                        .opacity(model.currentScrollStep == i ? 1 : 0)
                 }
-                .onChange(of: number, perform: { _ in
+                .onChange(of: model.currentScrollStep, perform: { _ in
                     withAnimation(.easeInOut(duration: 1)) {
-                        scroller.scrollTo(number, anchor: .center)
+                        scroller.scrollTo(model.currentScrollStep, anchor: .center)
                     }
                 })
                 Spacer().frame(width: 100, height: 100)
@@ -43,6 +47,6 @@ struct TimerScrollView: View {
 
 struct TimerScrollView_Previews: PreviewProvider {
     static var previews: some View {
-        TimerView()
+        TimerView(eggs: Egg.mocks)
     }
 }
