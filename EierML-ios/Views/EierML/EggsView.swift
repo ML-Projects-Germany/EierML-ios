@@ -33,7 +33,7 @@ struct EggsView: View {
                                 Label(
                                     title: { Text("Timer") },
                                     icon: { Image(systemName: "clock") }
-)
+                                )
                             })
                             .buttonStyle(SecondaryButtonStyle(color: .accentColor))
                             .padding()

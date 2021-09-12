@@ -12,8 +12,8 @@ class TimerViewModel: ObservableObject {
     @Published var eggs: [Egg]
     @Published var isTimerRunning = false
     private var startTime =  Date()
-    @Published var time: Int = 155
-    @Published var timerString = "2:35"
+    @Published var time: Int = 0
+    @Published var timerString = "0:00"
     private var timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
 
     var cancellable: Set<AnyCancellable> = []
@@ -28,6 +28,7 @@ class TimerViewModel: ObservableObject {
                     let time = Int(Date().timeIntervalSince( self.startTime).rounded())
                     let minutes = Int(time/60)
                     let seconds = Int(time%60)
+                    self.time = time
                     self.timerString = "\(minutes):\(seconds < 10 ? "0" : "")\(seconds)"
                 }
             }
@@ -46,9 +47,11 @@ class TimerViewModel: ObservableObject {
         self.timer = Timer.publish(every: 0.1, on: .main, in: .common).autoconnect()
     }
     func resetTimer() {
+        time = 0
         timerString = "0:00"
     }
     func restartTimer() {
+        time = 0
         timerString = "0:00"
         startTime = Date()
         self.timer = Timer.publish(every: 0.1, on: .main, in: .common).autoconnect()

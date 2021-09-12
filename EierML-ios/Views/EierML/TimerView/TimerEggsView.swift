@@ -16,21 +16,23 @@ struct TimerEggsView: View {
         GeometryReader { reader in
             LazyVGrid(
                 columns: GridItem.getItems(
-                    for: .fixed(reader.size.width/CGFloat(Int(reader.size.width/60))-20),
-                    count: Int(reader.size.width/70)
+                    for: .fixed(reader.size.width/CGFloat(Int(reader.size.width/65))-20),
+                    count: Int(reader.size.width/75)
                 ),
-                alignment: .leading,
+                alignment: .center,
                 content: {
                     ForEach(model.eggs) { egg in
                         EggImageViewWithNumber(number: egg.number)
+                            .frame(width: 55, height: 55)
+                            .opacity(egg.time <= model.time ? 1 : 0.2)
+                            .onChange(of: model.time, perform: { value in
+                                if egg.time == model.time {
+                                    startSound()
+                                }
+                            })
                     }
                     .padding(5)
                 })
-                .onAppear {
-//                    Timer.scheduledTimer(withTimeInterval: 0.5, repeats: true) { _ in
-//                        startSound()
-//                    }
-                }
         }
     }
     func startSound() {
