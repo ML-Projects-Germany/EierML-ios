@@ -29,8 +29,12 @@ struct TimerView: View {
                     .ignoresSafeArea()
                     .opacity(isShown ? 1 : 0)
                     .onTapGesture {
-                        alert = .dismiss
-                        showAlert = true
+                        if model.time > 0 {
+                            alert = .dismiss
+                            showAlert = true
+                        } else {
+                            dismiss()
+                        }
                     }
                 ZStack {
                     Color.white
@@ -51,8 +55,10 @@ struct TimerView: View {
                             .padding(.horizontal)
                         HStack(spacing: 0) {
                             Button(action: {
-                                alert = .reset
-                                showAlert = true
+                                if model.time > 0 {
+                                    alert = .reset
+                                    showAlert = true
+                                }
                             }, label: {
                                 Text("Zurücksetzen")
                                     .frame(minWidth: 120)
@@ -101,12 +107,7 @@ struct TimerView: View {
                 title: Text("Willst du den Timer wirklich verlassen?"),
                 message: Text("Die Zeit wird zurück gesetzt."),
                 primaryButton: .default(Text("Verlassen"), action: {
-                    withAnimation(.easeOut) {
-                        isShown = false
-                    }
-                    Timer.scheduledTimer(withTimeInterval: 1, repeats: false) { _ in
-                        model.resetTimer()
-                    }
+                    dismiss()
                 }),
                 secondaryButton: .cancel(Text("Abbrechen"))
             )
@@ -116,8 +117,12 @@ struct TimerView: View {
     var doneButtonOverlay: some View {
         VStack {
             Button(action: {
-                alert = .dismiss
-                showAlert = true
+                if model.time > 0 {
+                    alert = .dismiss
+                    showAlert = true
+                } else {
+                    dismiss()
+                }
             }, label: {
                 Text("Fertig")
                     .foregroundColor(.accentColor)
@@ -126,6 +131,15 @@ struct TimerView: View {
             .frame(maxWidth: .infinity, alignment: .trailing)
             .padding(10)
             Spacer()
+        }
+    }
+
+    func dismiss() {
+        withAnimation(.easeOut) {
+            isShown = false
+        }
+        Timer.scheduledTimer(withTimeInterval: 1, repeats: false) { _ in
+            model.resetTimer()
         }
     }
 }
