@@ -25,7 +25,7 @@ struct TimerEggsView: View {
                         EggImageViewWithNumber(number: egg.number)
                             .frame(width: 55, height: 55)
                             .opacity(egg.time <= model.time ? 1 : 0.2)
-                            .onChange(of: model.time, perform: { value in
+                            .onChange(of: model.time, perform: { _ in
                                 if egg.time == model.time {
                                     startSound()
                                 }

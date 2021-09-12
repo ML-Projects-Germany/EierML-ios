@@ -13,7 +13,7 @@ struct NewsRowView: View {
 
     var body: some View {
         ZStack {
-            Color.primary.colorInvert()
+            Color(UIColor.systemBackground)
             backgroundImage
             VStack {
                 Spacer()

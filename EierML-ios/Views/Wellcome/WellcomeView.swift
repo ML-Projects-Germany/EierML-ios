@@ -24,7 +24,7 @@ struct WellcomeView: View {
                 VStack(alignment: .leading) {
                     Spacer()
                     Button(action: {
-                        withAnimation(.easeInOut) {
+                        withAnimation(.easeIn) {
                             firstAppStart = false
                         }
                     }, label: {

@@ -41,7 +41,7 @@ struct EggsView: View {
                         TimerView(eggs: model.eggs, isShown: $showTimerView)
                     }
                     EierMLTutorialView(model: model)
-                    .offset(x: model.eggTutorialIsShown ? 0 : -reader.size.width, y: 0)
+                        .offset(x: model.eggTutorialIsShown ? 0 : -reader.size.width, y: 0)
                 }
                 .fullScreenCover(isPresented: $model.addEggViewIsPresented, content: {
                     AddEggView(model: model)

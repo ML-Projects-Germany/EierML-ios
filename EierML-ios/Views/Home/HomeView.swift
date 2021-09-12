@@ -56,16 +56,22 @@ struct HomeView: View {
                                             }
                                         )
                                         .font(.headline)
+                                        .foregroundColor(.primary.opacity(0.8))
                                         .frame(maxWidth: .infinity, alignment: .leading)
                                         .padding(.leading, 20)
+                                        EierMLBandages()
+                                            .padding(.vertical, 10)
                                         // MARK: Mehr über Machine learning lernen
                                         Label(
                                             title: { Text("Mehr über Machine learning lernen") },
                                             icon: { Image(systemName: "graduationcap") }
                                         )
                                         .font(.headline)
+                                        .foregroundColor(.primary.opacity(0.8))
                                         .frame(maxWidth: .infinity, alignment: .leading)
                                         .padding(.leading, 20)
+                                        MLProjectsBandages()
+                                            .padding(.vertical, 10)
                                         Spacer()
                                     }
                                     .frame(maxWidth: .infinity, alignment: .leading)

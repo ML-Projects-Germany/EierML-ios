@@ -32,6 +32,10 @@
 		D945215E2693512600305EF8 /* EierML_iosUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D945215D2693512600305EF8 /* EierML_iosUITests.swift */; };
 		D945216C2693544D00305EF8 /* WellcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D945216B2693544D00305EF8 /* WellcomeView.swift */; };
 		D945217326935C1E00305EF8 /* SecondaryButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = D945217226935C1E00305EF8 /* SecondaryButtonStyle.swift */; };
+		D953699D26EEA3A60056BD82 /* Bandage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D953699C26EEA3A60056BD82 /* Bandage.swift */; };
+		D953699F26EEA9190056BD82 /* AppModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D953699E26EEA9190056BD82 /* AppModel.swift */; };
+		D95369A326EEABDB0056BD82 /* EierMLBandages.swift in Sources */ = {isa = PBXBuildFile; fileRef = D95369A226EEABDB0056BD82 /* EierMLBandages.swift */; };
+		D95369A526EEABED0056BD82 /* MLProjectsBandages.swift in Sources */ = {isa = PBXBuildFile; fileRef = D95369A426EEABED0056BD82 /* MLProjectsBandages.swift */; };
 		D971FCCA26EE6E96002C65D0 /* GridItem+getItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = D971FCC926EE6E96002C65D0 /* GridItem+getItems.swift */; };
 		D973620026D4276B0012AFE7 /* EggListRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D97361FF26D4276B0012AFE7 /* EggListRowView.swift */; };
 		D973620226D433F50012AFE7 /* TutorialSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D973620126D433F50012AFE7 /* TutorialSheetView.swift */; };
@@ -113,6 +117,10 @@
 		D945215F2693512600305EF8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D945216B2693544D00305EF8 /* WellcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WellcomeView.swift; sourceTree = "<group>"; };
 		D945217226935C1E00305EF8 /* SecondaryButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondaryButtonStyle.swift; sourceTree = "<group>"; };
+		D953699C26EEA3A60056BD82 /* Bandage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bandage.swift; sourceTree = "<group>"; };
+		D953699E26EEA9190056BD82 /* AppModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppModel.swift; sourceTree = "<group>"; };
+		D95369A226EEABDB0056BD82 /* EierMLBandages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EierMLBandages.swift; sourceTree = "<group>"; };
+		D95369A426EEABED0056BD82 /* MLProjectsBandages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLProjectsBandages.swift; sourceTree = "<group>"; };
 		D971FCC926EE6E96002C65D0 /* GridItem+getItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GridItem+getItems.swift"; sourceTree = "<group>"; };
 		D97361FF26D4276B0012AFE7 /* EggListRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EggListRowView.swift; sourceTree = "<group>"; };
 		D973620126D433F50012AFE7 /* TutorialSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialSheetView.swift; sourceTree = "<group>"; };
@@ -267,6 +275,16 @@
 			path = "EierML-iosUITests";
 			sourceTree = "<group>";
 		};
+		D953699B26EEA38F0056BD82 /* Badages */ = {
+			isa = PBXGroup;
+			children = (
+				D95369A226EEABDB0056BD82 /* EierMLBandages.swift */,
+				D95369A426EEABED0056BD82 /* MLProjectsBandages.swift */,
+				D953699C26EEA3A60056BD82 /* Bandage.swift */,
+			);
+			path = Badages;
+			sourceTree = "<group>";
+		};
 		D97F19DA26DD5EF900374033 /* Add Egg */ = {
 			isa = PBXGroup;
 			children = (
@@ -291,8 +309,10 @@
 		D99421E626BB0F3600DB2BCF /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				D93FD7F22696486A002DD264 /* HomeView.swift */,
 				D9BB94CD26A4CC2B007086D0 /* HomeViewHeader.swift */,
 				D9BB94D326A4DF98007086D0 /* WellcomeMessageView.swift */,
+				D953699B26EEA38F0056BD82 /* Badages */,
 				D90D5E5F26C009660023D2C7 /* News */,
 			);
 			path = Home;
@@ -312,6 +332,7 @@
 		D9BA13EC26ADE8F50097E934 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				D953699E26EEA9190056BD82 /* AppModel.swift */,
 				D90AC30A26C5C5E600B6B7D0 /* Egg.swift */,
 				D9CD7D3426D8368A00C36DA2 /* EierML.swift */,
 			);
@@ -322,7 +343,6 @@
 			isa = PBXGroup;
 			children = (
 				D94521422693512600305EF8 /* AppView.swift */,
-				D93FD7F22696486A002DD264 /* HomeView.swift */,
 				D99421E626BB0F3600DB2BCF /* Home */,
 				D90AC30726C5823300B6B7D0 /* EierML */,
 				D9BB94CB26A467FA007086D0 /* Wellcome */,
@@ -553,12 +573,14 @@
 				D93FD7F32696486A002DD264 /* HomeView.swift in Sources */,
 				D94521432693512600305EF8 /* AppView.swift in Sources */,
 				D90D5E6D26C012CD0023D2C7 /* NewsImageLoadingView copy.swift in Sources */,
+				D95369A326EEABDB0056BD82 /* EierMLBandages.swift in Sources */,
 				D90AC30926C5C50700B6B7D0 /* EggsViewModel.swift in Sources */,
 				D98AAB7F26E516290087FAF6 /* Color+Hex.swift in Sources */,
 				D90D5E6326C009950023D2C7 /* NewsListViewModel.swift in Sources */,
 				D9EADB9526D7FB050042CAF2 /* EierMLTutorialViewModel.swift in Sources */,
 				D99421E926BB0FCB00DB2BCF /* NavigationButton.swift in Sources */,
 				D9BB94CE26A4CC2B007086D0 /* HomeViewHeader.swift in Sources */,
+				D953699D26EEA3A60056BD82 /* Bandage.swift in Sources */,
 				D92E9E4626EC8FE6000A0682 /* TimerViewModel.swift in Sources */,
 				D97F19D926DD5ED100374033 /* NumberRow.swift in Sources */,
 				D994220526BB2AFD00DB2BCF /* Date+String.swift in Sources */,
@@ -572,6 +594,7 @@
 				D98AAB7326E4CB250087FAF6 /* PixelConverter.swift in Sources */,
 				D9E1051D26CC5C9A002CB828 /* PixelScreenManager.swift in Sources */,
 				D9EADB9326D7EA5B0042CAF2 /* PrimaryButtonStyle copy.swift in Sources */,
+				D95369A526EEABED0056BD82 /* MLProjectsBandages.swift in Sources */,
 				D90AC30B26C5C5E600B6B7D0 /* Egg.swift in Sources */,
 				D94521412693512600305EF8 /* EierML_iosApp.swift in Sources */,
 				D90AC30626C5822F00B6B7D0 /* EggsView.swift in Sources */,
@@ -590,6 +613,7 @@
 				D93E848B26EE0EDE00A10349 /* EggImageViewWithNumber.swift in Sources */,
 				D93E848D26EE10B300A10349 /* TimerEggsView.swift in Sources */,
 				D902F7B426E3E22F009FB4E7 /* AddEggSlider.swift in Sources */,
+				D953699F26EEA9190056BD82 /* AppModel.swift in Sources */,
 				D90AC30026C5745300B6B7D0 /* ArticleView.swift in Sources */,
 				D98AAB8126E516290087FAF6 /* Palette+Color.swift in Sources */,
 				D90D5E7126C013560023D2C7 /* NewsRowButtonStyle.swift in Sources */,
