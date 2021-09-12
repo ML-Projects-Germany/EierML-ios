@@ -8,24 +8,29 @@
 import SwiftUI
 
 struct AppView: View {
-    @AppStorage("firstAppStart") var firstAppStart: Bool = true
+    @StateObject var appModel: AppModel
+
+    init() {
+        self._appModel = StateObject(wrappedValue: AppModel())
+    }
 
     var body: some View {
-        ZStack {
-            TabView {
-                HomeView()
-                    .tabItem {
-                        Label("Startseite", systemImage: "rectangle.stack")
-                    }
-                    .tag(0)
-                EggsView()
-                    .tabItem {
-                        Label("EierML", systemImage: "magnifyingglass.circle")
-                    }
-            }
-            if firstAppStart {
-                WellcomeView(firstAppStart: $firstAppStart)
-                    .transition(.opacity)
+        GeometryReader { reader in
+            ZStack {
+                TabView {
+                    HomeView()
+                        .tabItem {
+                            Label("Startseite", systemImage: "rectangle.stack")
+                        }
+                        .tag(0)
+                    EggsView()
+                        .tabItem {
+                            Label("EierML", systemImage: "magnifyingglass.circle")
+                        }
+                }
+                WellcomeView(firstAppStart: $appModel.firstAppStart)
+                    .shadow(color: .black.opacity(0.15), radius: 5, x: 5, y: 0.0)
+                    .offset(x: appModel.firstAppStart ? 0 : -reader.size.width, y: 0)
             }
         }
     }

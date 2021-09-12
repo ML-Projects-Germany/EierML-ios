@@ -9,6 +9,7 @@ import SwiftUI
 
 struct EggsView: View {
     @StateObject private var model: EggsViewModel
+    @State var showTimerView: Bool = false
 
     init() {
         self._model = StateObject(wrappedValue: EggsViewModel())
@@ -20,10 +21,27 @@ struct EggsView: View {
                 ClassicBackgroundView()
                     .ignoresSafeArea()
                 ZStack {
-                    EggListView(model: model)
+                    ZStack {
+                        EggListView(model: model)
+                        VStack {
+                            Spacer()
+                            Button(action: {
+                                withAnimation(.spring()) {
+                                    showTimerView = true
+                                }
+                            }, label: {
+                                Label(
+                                    title: { Text("Timer") },
+                                    icon: { Image(systemName: "clock") }
+                                )
+                            })
+                            .buttonStyle(SecondaryButtonStyle(color: .accentColor))
+                            .padding()
+                        }
+                        TimerView(eggs: model.eggs, isShown: $showTimerView)
+                    }
                     EierMLTutorialView(model: model)
-                    .offset(x: model.eggTutorialIsShown ? 0 : -reader.size.width, y: 0)
-                    .zIndex(1.0)
+                        .offset(x: model.eggTutorialIsShown ? 0 : -reader.size.width, y: 0)
                 }
                 .fullScreenCover(isPresented: $model.addEggViewIsPresented, content: {
                     AddEggView(model: model)

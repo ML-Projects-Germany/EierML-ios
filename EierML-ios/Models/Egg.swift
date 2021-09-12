@@ -41,7 +41,7 @@ struct Egg: Identifiable, Codable {
         self.height = height
         self.width = width
         self.viscosity = viscosity
-        self.time = EierML.predict_v1(
+        self.time = EierML.predict_v2_1(
             height: height,
             width: width,
             viscosity: viscosity
@@ -61,5 +61,30 @@ struct Egg: Identifiable, Codable {
             viscosity: Int.random(in: 1...10),
             time: 180
         )
+    }
+    static var mocks: [Self] {
+        [
+            .init(
+                number: 1,
+                height: Int.random(in: 44...65),
+                width: Int.random(in: 40...45),
+                viscosity: Int.random(in: 1...10),
+                time: 180
+            ),
+            .init(
+                number: 2,
+                height: Int.random(in: 44...65),
+                width: Int.random(in: 40...45),
+                viscosity: Int.random(in: 1...10),
+                time: 180
+            ),
+            .init(
+                number: 3,
+                height: Int.random(in: 44...65),
+                width: Int.random(in: 40...45),
+                viscosity: Int.random(in: 1...10),
+                time: 180
+            )
+        ]
     }
 }

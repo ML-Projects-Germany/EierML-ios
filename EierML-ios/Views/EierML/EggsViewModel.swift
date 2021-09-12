@@ -57,7 +57,6 @@ class EggsViewModel: ObservableObject {
 
     func showAddEggView(with egg: Egg? = nil) {
         editableEgg = egg
-        print(editableEgg?.number)
         addEggViewIsPresented = true
     }
 

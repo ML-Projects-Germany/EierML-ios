@@ -25,7 +25,7 @@ struct WellcomeMessageView: View {
             .padding(15)
             .padding(.trailing, 15)
             .background(
-                Color.primary.colorInvert()
+                Color(UIColor.systemBackground)
                     .opacity(0.2)
             )
             .overlay(

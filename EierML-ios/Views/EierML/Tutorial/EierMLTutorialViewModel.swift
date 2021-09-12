@@ -26,9 +26,19 @@ class EierMLTutorialViewModel: ObservableObject {
             imageName: "tutorial_add_view"
         ),
         TutorialSheet(
+            title: "Ei härte auswählen",
+            text: "Wähle einfach aus wie hart dein Ei werden soll.",
+            imageName: "tutorial_select_vis"
+        ),
+        TutorialSheet(
             title: "Deine Eier",
             text: "Wenn du ein Ei hinzufügst findest du es dannach in der List \"Deine Eier\" wieder.",
             imageName: "tutorial_list"
+        ),
+        TutorialSheet(
+            title: "Timer starten",
+            text: "Wenn du deine Ei hinzugefügt hast tippe einfach auf \"Timer\".",
+            imageName: "tutorial_timer_button"
         ),
         TutorialSheet(
             title: "Viel Spaß!",

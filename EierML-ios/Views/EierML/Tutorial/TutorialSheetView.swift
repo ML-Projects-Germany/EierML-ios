@@ -51,7 +51,7 @@ struct TutorialSheetView: View {
                 if tutorialSheet.doneButton {
                     Button(action: {
                         withAnimation(.spring()) {
-                            dismissTutorial = true
+                            dismissTutorial = false
                         }
                     }, label: {
                         Text("Fertig")
