@@ -22,7 +22,7 @@ struct EierMLTutorialView: View {
     var body: some View {
         GeometryReader { reader in
             ZStack {
-                Color.primary.colorInvert()
+                Color(UIColor.systemBackground)
                     .ignoresSafeArea()
                     .shadow(color: .black.opacity(0.1), radius: 8)
                 ClassicBackgroundView()
