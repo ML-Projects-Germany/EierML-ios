@@ -1,4 +1,9 @@
 
 .DS_Store
 *.xcuserstate
-EierML-ios.xcodeproj/project.xcworkspace/xcuserdata/
+project.xcworkspace
+xcuserdata
+UserInterfaceState.xcuserstate
+project.xcworkspace/
+xcuserdata/
+UserInterface.xcuserstate

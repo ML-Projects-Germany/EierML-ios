@@ -62,4 +62,29 @@ struct Egg: Identifiable, Codable {
             time: 180
         )
     }
+    static var mocks: [Self] {
+        [
+            .init(
+                number: 1,
+                height: Int.random(in: 44...65),
+                width: Int.random(in: 40...45),
+                viscosity: Int.random(in: 1...10),
+                time: 180
+            ),
+            .init(
+                number: 2,
+                height: Int.random(in: 44...65),
+                width: Int.random(in: 40...45),
+                viscosity: Int.random(in: 1...10),
+                time: 180
+            ),
+            .init(
+                number: 3,
+                height: Int.random(in: 44...65),
+                width: Int.random(in: 40...45),
+                viscosity: Int.random(in: 1...10),
+                time: 180
+            )
+        ]
+    }
 }
