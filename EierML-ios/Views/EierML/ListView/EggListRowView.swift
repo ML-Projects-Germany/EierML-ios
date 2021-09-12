@@ -31,7 +31,8 @@ struct EggListRowView: View {
             HStack(spacing: 0) {
                 HStack {
                     EggImageViewWithNumber(number: egg.number)
-                    .padding(5)
+                        .frame(width: 40, height: 40)
+                        .padding(5)
                     VStack(alignment: .leading) {
                         Text("\(egg.height)mm x \(egg.width)mm")
                             .fontWeight(.medium)

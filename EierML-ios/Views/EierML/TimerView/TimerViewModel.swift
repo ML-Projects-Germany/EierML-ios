@@ -9,17 +9,17 @@ import Foundation
 import Combine
 
 class TimerViewModel: ObservableObject {
-    @Published var currentScrollStep: Int = 0
     @Published var eggs: [Egg]
     @Published var isTimerRunning = false
     private var startTime =  Date()
-    @Published var timerString = "0:00"
+    @Published var time: Int = 155
+    @Published var timerString = "2:35"
     private var timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
 
     var cancellable: Set<AnyCancellable> = []
 
     init(eggs: [Egg]) {
-        self.eggs = eggs
+        self.eggs = eggs.sorted(by: { $0.time < $1.time })
         self.stopTimer()
         timer
             .receive(on: DispatchQueue.main)
@@ -60,14 +60,3 @@ class TimerViewModel: ObservableObject {
         return TimeInterval(Float(seconds))
     }
 }
-
-// if isTimerRunning {
-//    // stop UI updates
-//    self.stopTimer()
-// } else {
-//    timerString = "0.00"
-//    startTime = Date().addingTimeInterval(TimeInterval(Float("-"+timerString) ?? 0))
-//    // start UI updates
-//    self.startTimer()
-// }
-// isTimerRunning.toggle()
