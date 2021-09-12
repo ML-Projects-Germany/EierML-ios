@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct TimerView: View {
-    @StateObject var model: TimerViewModel
+    @ObservedObject var model: TimerViewModel
     @Binding var isShown: Bool
     @State var showAlert: Bool = false
     @State var alert: TimerAlert?
@@ -18,7 +18,7 @@ struct TimerView: View {
     }
 
     init(eggs: [Egg], isShown: Binding<Bool>) {
-        self._model = StateObject(wrappedValue: TimerViewModel(eggs: eggs))
+        self._model = ObservedObject(wrappedValue: TimerViewModel(eggs: eggs))
         self._isShown = isShown
     }
 
@@ -52,7 +52,6 @@ struct TimerView: View {
                         }
                         .padding(.bottom)
                         TimerEggsView(model: model)
-                            .padding(.horizontal)
                         HStack(spacing: 0) {
                             Button(action: {
                                 if model.time > 0 {
