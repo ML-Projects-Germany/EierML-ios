@@ -41,7 +41,7 @@ struct Egg: Identifiable, Codable {
         self.height = height
         self.width = width
         self.viscosity = viscosity
-        self.time = EierML.predict_v1(
+        self.time = EierML.predict_v2_1(
             height: height,
             width: width,
             viscosity: viscosity
