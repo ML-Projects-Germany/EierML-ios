@@ -13,6 +13,7 @@ class EierML {
     ///   - height: In mm
     ///   - width: In mm
     ///   - viscosity: Int between 1 and 10
+    // swiftlint:disable:next function_parameter_count
     static private func predict(
         height: Int,
         width: Int,
