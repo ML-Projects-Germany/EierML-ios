@@ -20,6 +20,7 @@
 		D90D5E6D26C012CD0023D2C7 /* NewsImageLoadingView copy.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90D5E6C26C012CD0023D2C7 /* NewsImageLoadingView copy.swift */; };
 		D90D5E7126C013560023D2C7 /* NewsRowButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90D5E7026C013560023D2C7 /* NewsRowButtonStyle.swift */; };
 		D92E9E4626EC8FE6000A0682 /* TimerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D92E9E4526EC8FE6000A0682 /* TimerViewModel.swift */; };
+		D93E848B26EE0EDE00A10349 /* EggImageViewWithNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = D93E848A26EE0EDE00A10349 /* EggImageViewWithNumber.swift */; };
 		D93FD7F32696486A002DD264 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D93FD7F22696486A002DD264 /* HomeView.swift */; };
 		D94521412693512600305EF8 /* EierML_iosApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D94521402693512600305EF8 /* EierML_iosApp.swift */; };
 		D94521432693512600305EF8 /* AppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D94521422693512600305EF8 /* AppView.swift */; };
@@ -41,7 +42,7 @@
 		D99421EB26BB124100DB2BCF /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D99421EA26BB124100DB2BCF /* Launch Screen.storyboard */; };
 		D994220326BB2AD200DB2BCF /* AsyncImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D994220226BB2AD200DB2BCF /* AsyncImage.swift */; };
 		D994220526BB2AFD00DB2BCF /* Date+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = D994220426BB2AFD00DB2BCF /* Date+String.swift */; };
-		D99AFCE426EA939F00EEE80A /* TimerScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99AFCE326EA939F00EEE80A /* TimerScrollView.swift */; };
+		D99AFCE426EA939F00EEE80A /* TimerEggsScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99AFCE326EA939F00EEE80A /* TimerEggsScrollView.swift */; };
 		D9A15A7826B62380000B56F8 /* SwiftUIWPArticleLoader in Frameworks */ = {isa = PBXBuildFile; productRef = D9A15A7726B62380000B56F8 /* SwiftUIWPArticleLoader */; };
 		D9BB94CE26A4CC2B007086D0 /* HomeViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9BB94CD26A4CC2B007086D0 /* HomeViewHeader.swift */; };
 		D9BB94D026A4CCF6007086D0 /* ClassicBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9BB94CF26A4CCF6007086D0 /* ClassicBackgroundView.swift */; };
@@ -92,6 +93,7 @@
 		D90D5E6C26C012CD0023D2C7 /* NewsImageLoadingView copy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NewsImageLoadingView copy.swift"; sourceTree = "<group>"; };
 		D90D5E7026C013560023D2C7 /* NewsRowButtonStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsRowButtonStyle.swift; sourceTree = "<group>"; };
 		D92E9E4526EC8FE6000A0682 /* TimerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewModel.swift; sourceTree = "<group>"; };
+		D93E848A26EE0EDE00A10349 /* EggImageViewWithNumber.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EggImageViewWithNumber.swift; sourceTree = "<group>"; };
 		D93FD7F22696486A002DD264 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		D945213D2693512500305EF8 /* EierML-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "EierML-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D94521402693512600305EF8 /* EierML_iosApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EierML_iosApp.swift; sourceTree = "<group>"; };
@@ -119,7 +121,7 @@
 		D99421EA26BB124100DB2BCF /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		D994220226BB2AD200DB2BCF /* AsyncImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsyncImage.swift; sourceTree = "<group>"; };
 		D994220426BB2AFD00DB2BCF /* Date+String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+String.swift"; sourceTree = "<group>"; };
-		D99AFCE326EA939F00EEE80A /* TimerScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerScrollView.swift; sourceTree = "<group>"; };
+		D99AFCE326EA939F00EEE80A /* TimerEggsScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerEggsScrollView.swift; sourceTree = "<group>"; };
 		D9BB94CD26A4CC2B007086D0 /* HomeViewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewHeader.swift; sourceTree = "<group>"; };
 		D9BB94CF26A4CCF6007086D0 /* ClassicBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassicBackgroundView.swift; sourceTree = "<group>"; };
 		D9BB94D326A4DF98007086D0 /* WellcomeMessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WellcomeMessageView.swift; sourceTree = "<group>"; };
@@ -339,6 +341,7 @@
 			children = (
 				D9BFA14626CAFDC0008BE365 /* EggListView.swift */,
 				D97361FF26D4276B0012AFE7 /* EggListRowView.swift */,
+				D93E848A26EE0EDE00A10349 /* EggImageViewWithNumber.swift */,
 			);
 			path = ListView;
 			sourceTree = "<group>";
@@ -365,7 +368,7 @@
 			children = (
 				D9E5897B26E7948400349794 /* TimerView.swift */,
 				D92E9E4526EC8FE6000A0682 /* TimerViewModel.swift */,
-				D99AFCE326EA939F00EEE80A /* TimerScrollView.swift */,
+				D99AFCE326EA939F00EEE80A /* TimerEggsScrollView.swift */,
 			);
 			path = TimerView;
 			sourceTree = "<group>";
@@ -555,7 +558,7 @@
 				D9E1051D26CC5C9A002CB828 /* PixelScreenManager.swift in Sources */,
 				D9EADB9326D7EA5B0042CAF2 /* PrimaryButtonStyle copy.swift in Sources */,
 				D90AC30B26C5C5E600B6B7D0 /* Egg.swift in Sources */,
-				D99AFCE426EA939F00EEE80A /* TimerScrollView.swift in Sources */,
+				D99AFCE426EA939F00EEE80A /* TimerEggsScrollView.swift in Sources */,
 				D94521412693512600305EF8 /* EierML_iosApp.swift in Sources */,
 				D90AC30626C5822F00B6B7D0 /* EggsView.swift in Sources */,
 				D973620226D433F50012AFE7 /* TutorialSheetView.swift in Sources */,
@@ -569,6 +572,7 @@
 				D973620026D4276B0012AFE7 /* EggListRowView.swift in Sources */,
 				D90D5E6726C00AF90023D2C7 /* NewsRowView.swift in Sources */,
 				D994220326BB2AD200DB2BCF /* AsyncImage.swift in Sources */,
+				D93E848B26EE0EDE00A10349 /* EggImageViewWithNumber.swift in Sources */,
 				D902F7B426E3E22F009FB4E7 /* AddEggSlider.swift in Sources */,
 				D90AC30026C5745300B6B7D0 /* ArticleView.swift in Sources */,
 				D98AAB8126E516290087FAF6 /* Palette+Color.swift in Sources */,

@@ -1,5 +1,5 @@
 //
-//  TimerScrollView.swift
+//  TimerEggsScrollView.swift
 //  EierML-ios
 //
 //  Created by Torben Köhler on 09.09.21.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct TimerScrollView: View {
+struct TimerEggsScrollView: View {
     @ObservedObject var model: TimerViewModel
 
     init(model: TimerViewModel) {

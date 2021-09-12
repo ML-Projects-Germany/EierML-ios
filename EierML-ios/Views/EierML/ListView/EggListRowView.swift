@@ -30,18 +30,7 @@ struct EggListRowView: View {
                 .cornerRadius(15)
             HStack(spacing: 0) {
                 HStack {
-                    ZStack {
-                        Image("egg bordered")
-                            .renderingMode(.template)
-                            .resizable()
-                            .scaledToFit()
-                            .frame(width: 40)
-                        Text("\(egg.number)")
-                            .font(.body.bold())
-                            .lineLimit(1)
-                            .minimumScaleFactor(0.01)
-                            .frame(width: 20)
-                    }
+                    EggImageViewWithNumber(number: egg.number)
                     .padding(5)
                     VStack(alignment: .leading) {
                         Text("\(egg.height)mm x \(egg.width)mm")
