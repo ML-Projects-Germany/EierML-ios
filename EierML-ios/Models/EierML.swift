@@ -7,7 +7,7 @@
 
 import Foundation
 class EierML {
-    /// EierML Predict Version 1 (30 Eggs)
+    /// EierML Predict
     ///
     /// - Parameters:
     ///   - height: In mm
