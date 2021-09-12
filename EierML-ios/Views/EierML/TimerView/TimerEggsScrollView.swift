@@ -45,7 +45,7 @@ struct TimerEggsScrollView: View {
     }
 }
 
-struct TimerScrollView_Previews: PreviewProvider {
+struct TimerEggsScrollView_Previews: PreviewProvider {
     static var previews: some View {
         TimerView(eggs: Egg.mocks)
     }

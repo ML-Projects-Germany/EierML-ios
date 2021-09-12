@@ -21,6 +21,7 @@
 		D90D5E7126C013560023D2C7 /* NewsRowButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90D5E7026C013560023D2C7 /* NewsRowButtonStyle.swift */; };
 		D92E9E4626EC8FE6000A0682 /* TimerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D92E9E4526EC8FE6000A0682 /* TimerViewModel.swift */; };
 		D93E848B26EE0EDE00A10349 /* EggImageViewWithNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = D93E848A26EE0EDE00A10349 /* EggImageViewWithNumber.swift */; };
+		D93E848D26EE10B300A10349 /* TimerEggView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D93E848C26EE10B300A10349 /* TimerEggView.swift */; };
 		D93FD7F32696486A002DD264 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D93FD7F22696486A002DD264 /* HomeView.swift */; };
 		D94521412693512600305EF8 /* EierML_iosApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D94521402693512600305EF8 /* EierML_iosApp.swift */; };
 		D94521432693512600305EF8 /* AppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D94521422693512600305EF8 /* AppView.swift */; };
@@ -94,6 +95,7 @@
 		D90D5E7026C013560023D2C7 /* NewsRowButtonStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsRowButtonStyle.swift; sourceTree = "<group>"; };
 		D92E9E4526EC8FE6000A0682 /* TimerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewModel.swift; sourceTree = "<group>"; };
 		D93E848A26EE0EDE00A10349 /* EggImageViewWithNumber.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EggImageViewWithNumber.swift; sourceTree = "<group>"; };
+		D93E848C26EE10B300A10349 /* TimerEggView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerEggView.swift; sourceTree = "<group>"; };
 		D93FD7F22696486A002DD264 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		D945213D2693512500305EF8 /* EierML-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "EierML-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D94521402693512600305EF8 /* EierML_iosApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EierML_iosApp.swift; sourceTree = "<group>"; };
@@ -369,6 +371,7 @@
 				D9E5897B26E7948400349794 /* TimerView.swift */,
 				D92E9E4526EC8FE6000A0682 /* TimerViewModel.swift */,
 				D99AFCE326EA939F00EEE80A /* TimerEggsScrollView.swift */,
+				D93E848C26EE10B300A10349 /* TimerEggView.swift */,
 			);
 			path = TimerView;
 			sourceTree = "<group>";
@@ -573,6 +576,7 @@
 				D90D5E6726C00AF90023D2C7 /* NewsRowView.swift in Sources */,
 				D994220326BB2AD200DB2BCF /* AsyncImage.swift in Sources */,
 				D93E848B26EE0EDE00A10349 /* EggImageViewWithNumber.swift in Sources */,
+				D93E848D26EE10B300A10349 /* TimerEggView.swift in Sources */,
 				D902F7B426E3E22F009FB4E7 /* AddEggSlider.swift in Sources */,
 				D90AC30026C5745300B6B7D0 /* ArticleView.swift in Sources */,
 				D98AAB8126E516290087FAF6 /* Palette+Color.swift in Sources */,
