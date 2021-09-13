@@ -53,5 +53,7 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>NSUserTrackingUsageDescription</key>
+	<string>Auf unserer Webseite finden sich Cookies um diese benutzen zu können, erlaube bitte das Tracking.</string>
 </dict>
 </plist>
