@@ -8,19 +8,19 @@
 import SwiftUI
 
 extension View {
-    // swiftlint:disable:next function_parameter_count
     func alertView(
         title: String,
         description: String,
         primaryButtonTitle: String,
-        secondaryButtonTitle: String,
+        secondaryButtonTitle: String? = nil,
         show: Binding<Bool>,
         action: @escaping () -> Void
     ) -> some View {
         let model = AlertViewModel(
             title: title,
             description: description,
-            buttonTitle: primaryButtonTitle
+            primaryButtonTitle: primaryButtonTitle,
+            secondaryButtonTitle: secondaryButtonTitle
         )
         return modifier(AlertViewModifier(model: model, action: action, shown: show))
     }

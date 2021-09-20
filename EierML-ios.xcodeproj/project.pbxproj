@@ -341,10 +341,10 @@
 		D9B3A8F526F1BF0D0036458C /* Costume Alert */ = {
 			isa = PBXGroup;
 			children = (
-				D9B3A8F626F1BF1F0036458C /* AlertView.swift */,
-				D98C379C26F1CC3000389E92 /* AlertViewModel.swift */,
 				D9B3A8F826F1BF370036458C /* AlertViewModifier.swift */,
 				D9B3A8FA26F1BF950036458C /* View+Modifier.swift */,
+				D9B3A8F626F1BF1F0036458C /* AlertView.swift */,
+				D98C379C26F1CC3000389E92 /* AlertViewModel.swift */,
 			);
 			path = "Costume Alert";
 			sourceTree = "<group>";

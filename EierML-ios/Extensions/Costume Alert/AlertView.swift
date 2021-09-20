@@ -13,18 +13,24 @@ struct AlertView: View {
     let closeTriggered: () -> Void
 
     var body: some View {
-        VStack {
-            Spacer()
+        GeometryReader { reader in
+            ZStack {
+                VStack {
+                    Spacer()
+                    HStack {
+                        Spacer()
+                        content
+                            .padding(.horizontal, 20)
+                        Spacer()
+                    }
 
-            HStack {
-                Spacer()
-                content
-                    .padding(.horizontal, 20)
-                Spacer()
+                    Spacer()
+                }
+                .frame(width: reader.size.width/3*2, height: reader.size.width/3*2, alignment: .center)
+                .shadow(radius: 10)
             }
-
-            Spacer()
         }
+
     }
 
     @ViewBuilder
@@ -40,7 +46,7 @@ struct AlertView_Previews: PreviewProvider {
                 title: "Log out?",
                 description:
                     "You are about to log out of your Sameday Health account.\n\nPlease confirm you wish to log out.",
-                buttonTitle: "Log out"
+                primaryButtonTitle: "Log out"
             ),
             action: {},
             closeTriggered: {}
