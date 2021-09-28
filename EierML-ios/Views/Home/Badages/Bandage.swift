@@ -38,7 +38,7 @@ struct Bandage: View {
             .frame(minHeight: 65, alignment: .center)
             .background(
                 ZStack {
-                    Color(UIColor.systemBackground)
+                    Color(.white)
                     linkColor.opacity(0.1)
                 }
             )

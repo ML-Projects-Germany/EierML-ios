@@ -10,7 +10,7 @@ import Combine
 
 class TimerViewModel: ObservableObject {
     @Published var eggs: [Egg]
-    @Published var isTimerRunning = false
+    @Published private(set) var isTimerRunning = false
     private var startTime =  Date()
     @Published var time: Int = 0
     @Published var timerString = "0:00"
@@ -40,21 +40,19 @@ class TimerViewModel: ObservableObject {
 
     // MARK: Timer functions
     func stopTimer() {
+        isTimerRunning = false
         self.timer.upstream.connect().cancel()
     }
     func startTimer() {
+        isTimerRunning = true
         startTime = Date().addingTimeInterval(getTimeInterval())
         self.timer = Timer.publish(every: 0.1, on: .main, in: .common).autoconnect()
     }
     func resetTimer() {
         time = 0
         timerString = "0:00"
-    }
-    func restartTimer() {
-        time = 0
-        timerString = "0:00"
         startTime = Date()
-        self.timer = Timer.publish(every: 0.1, on: .main, in: .common).autoconnect()
+        stopTimer()
     }
     private func getTimeInterval() -> TimeInterval {
         let time = timerString.split(separator: ":")
