@@ -25,10 +25,10 @@ struct Bandage: View {
                 VStack(alignment: .leading, spacing: 3) {
                     Text(title)
                         .font(.headline)
-                        .foregroundColor(.primary.opacity(0.8))
+                        .foregroundColor(.black.opacity(0.8))
                     Text(subtitle)
                         .font(.footnote)
-                        .foregroundColor(.primary.opacity(0.5))
+                        .foregroundColor(.black.opacity(0.5))
                 }
                 .frame(maxWidth: .infinity, alignment: .leading)
                 Image(systemName: "chevron.forward")
