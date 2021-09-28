@@ -15,41 +15,66 @@ struct AlertView: View {
     var body: some View {
         GeometryReader { reader in
             ZStack {
-                VStack {
-                    Spacer()
+                VStack(spacing: 0) {
+                    Text(model.title)
+                        .font(.title2)
+                        .foregroundColor(.black)
+                        .fontWeight(.medium)
+                        .multilineTextAlignment(.center)
+                        .padding([.horizontal, .top], 20)
+                    Text(model.description)
+                        .foregroundColor(.gray)
+                        .multilineTextAlignment(.center)
+                        .padding(.top, 5)
+                        .padding(.bottom)
                     HStack {
                         Spacer()
-                        content
-                            .padding(.horizontal, 20)
+                        Button(action: {
+                            action()
+                            closeTriggered()
+                        }, label: {
+                            Text(model.primaryButtonTitle)
+                        })
+                        .buttonStyle(SecondaryButtonStyle(color: .Palette.red))
+                        Spacer()
+                        Button(action: {
+                            closeTriggered()
+                        }, label: {
+                            Text("Abbrechen")
+                        })
+                        .buttonStyle(SecondaryButtonStyle(color: .Palette.red))
                         Spacer()
                     }
-
-                    Spacer()
+                    .padding()
                 }
-                .frame(width: reader.size.width/3*2, height: reader.size.width/3*2, alignment: .center)
-                .shadow(radius: 10)
+                .frame(width: reader.size.width/5*4, alignment: .center)
+                .background(Color.white)
+                .cornerRadius(20)
+                .shadow(color: .black.opacity(0.2), radius: 10)
             }
+            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
         }
 
     }
 
-    @ViewBuilder
-    private var content: some View {
-        Text("")
-    }
+//    @ViewBuilder
+//    private var content: some View {
+//        Text("")
+//    }
 }
 
 struct AlertView_Previews: PreviewProvider {
     static var previews: some View {
-        AlertView(
-            model: AlertViewModel(
-                title: "Log out?",
-                description:
-                    "You are about to log out of your Sameday Health account.\n\nPlease confirm you wish to log out.",
-                primaryButtonTitle: "Log out"
-            ),
-            action: {},
-            closeTriggered: {}
+        ZStack {
+            ClassicBackgroundView()
+                .ignoresSafeArea()
+        }
+        .alertView(
+            title: "Log out?",
+            description: "You are about to log out",
+            primaryButtonTitle: "Log out",
+            show: .constant(true),
+            action: {}
         )
     }
 }
