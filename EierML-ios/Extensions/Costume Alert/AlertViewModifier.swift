@@ -15,7 +15,7 @@ struct AlertViewModifier: ViewModifier {
     func body(content: Content) -> some View {
         ZStack {
             content
-
+                .disabled(shown)
             if shown {
                 AlertView(model: model, action: {
                     shown = false

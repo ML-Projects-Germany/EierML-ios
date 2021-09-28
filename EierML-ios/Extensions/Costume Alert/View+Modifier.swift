@@ -12,15 +12,13 @@ extension View {
         title: String,
         description: String,
         primaryButtonTitle: String,
-        secondaryButtonTitle: String? = nil,
         show: Binding<Bool>,
         action: @escaping () -> Void
     ) -> some View {
         let model = AlertViewModel(
             title: title,
             description: description,
-            primaryButtonTitle: primaryButtonTitle,
-            secondaryButtonTitle: secondaryButtonTitle
+            primaryButtonTitle: primaryButtonTitle
         )
         return modifier(AlertViewModifier(model: model, action: action, shown: show))
     }

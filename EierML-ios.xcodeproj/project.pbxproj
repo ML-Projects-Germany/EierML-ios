@@ -286,9 +286,9 @@
 		D953699B26EEA38F0056BD82 /* Badages */ = {
 			isa = PBXGroup;
 			children = (
+				D953699C26EEA3A60056BD82 /* Bandage.swift */,
 				D95369A226EEABDB0056BD82 /* EierMLBandages.swift */,
 				D95369A426EEABED0056BD82 /* MLProjectsBandages.swift */,
-				D953699C26EEA3A60056BD82 /* Bandage.swift */,
 			);
 			path = Badages;
 			sourceTree = "<group>";
