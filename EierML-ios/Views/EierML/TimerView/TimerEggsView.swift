@@ -23,6 +23,7 @@ struct TimerEggsView: View {
                 content: {
                     ForEach(model.eggs) { egg in
                         EggImageViewWithNumber(number: egg.number)
+                            .foregroundColor(.black)
                             .frame(width: 55, height: 55)
                             .opacity(egg.time <= model.time ? 1 : 0.2)
                             .onChange(of: model.time, perform: { _ in

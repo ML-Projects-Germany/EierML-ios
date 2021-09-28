@@ -38,6 +38,7 @@ struct HomeView: View {
                                             icon: { Image(systemName: "filemenu.and.cursorarrow") }
                                         )
                                         .font(.headline)
+                                        .foregroundColor(.primary.opacity(0.8))
                                         .frame(maxWidth: .infinity, alignment: .leading)
                                         .padding(.leading, 20)
                                         .padding(.bottom, -15)

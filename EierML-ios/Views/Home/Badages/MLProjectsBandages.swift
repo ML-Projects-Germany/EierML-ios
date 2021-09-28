@@ -14,7 +14,7 @@ struct MLProjectsBandages: View {
                 title: "ML-Projects",
                 systemImage: "graduationcap",
                 subtitle: "Hier findest du alles über ML-Projects",
-                link: "https://eierml.ml-projects.de",
+                link: "https://ml-projects.de",
                 linkColor: Color(hex: "#FEBC12")
             )
             Bandage(

@@ -10,12 +10,8 @@ import SwiftUI
 struct TimerView: View {
     @ObservedObject var model: TimerViewModel
     @Binding var isShown: Bool
-    @State var showAlert: Bool = false
-    @State var alert: TimerAlert?
-
-    enum TimerAlert {
-        case reset, dismiss
-    }
+    @State var showDismissAlert: Bool = false
+    @State var showResetAlert: Bool = false
 
     init(eggs: [Egg], isShown: Binding<Bool>) {
         self._model = ObservedObject(wrappedValue: TimerViewModel(eggs: eggs))
@@ -30,8 +26,7 @@ struct TimerView: View {
                     .opacity(isShown ? 1 : 0)
                     .onTapGesture {
                         if model.time > 0 {
-                            alert = .dismiss
-                            showAlert = true
+                            showDismissAlert = true
                         } else {
                             dismiss()
                         }
@@ -50,13 +45,13 @@ struct TimerView: View {
                                 .fontWeight(.medium)
                                 .padding([.top, .trailing])
                         }
+                        .foregroundColor(.black)
                         .padding(.bottom)
                         TimerEggsView(model: model)
                         HStack(spacing: 0) {
                             Button(action: {
                                 if model.time > 0 {
-                                    alert = .reset
-                                    showAlert = true
+                                    showResetAlert = true
                                 }
                             }, label: {
                                 Text("Zurücksetzen")
@@ -71,7 +66,6 @@ struct TimerView: View {
                                     } else {
                                         model.startTimer()
                                     }
-                                    model.isTimerRunning.toggle()
                                 }
                             }, label: {
                                 Text(model.isTimerRunning ? "Stop" : "Start")
@@ -91,34 +85,32 @@ struct TimerView: View {
                     .opacity(isShown ? 1 : 0)
             }
         }
-        .alert(isPresented: $showAlert, content: {
-            if alert == .reset {
-                return Alert(
-                    title: Text("Willst du den Timer wirklich zurücksetzen?"),
-                    message: Text("Dies kann nicht wiederrufen werden."),
-                    primaryButton: .default(Text("Zurücksetzen"), action: {
-                        model.resetTimer()
-                    }),
-                    secondaryButton: .cancel(Text("Abbrechen"))
-                )
+        .alertView(
+            title: "Willst du den Timer wirklich zurücksetzen?",
+            description: "Dies kann nicht wiederrufen werden.",
+            primaryButtonTitle: "Zurücksetzen",
+            show: $showResetAlert,
+            action: {
+                model.resetTimer()
+                model.stopTimer()
             }
-            return Alert(
-                title: Text("Willst du den Timer wirklich verlassen?"),
-                message: Text("Die Zeit wird zurück gesetzt."),
-                primaryButton: .default(Text("Verlassen"), action: {
-                    dismiss()
-                }),
-                secondaryButton: .cancel(Text("Abbrechen"))
-            )
-        })
+        )
+        .alertView(
+            title: "Willst du den Timer wirklich verlassen?",
+            description: "Die Zeit wird zurück gesetzt.",
+            primaryButtonTitle: "Verlassen",
+            show: $showDismissAlert,
+            action: {
+                dismiss()
+            }
+        )
     }
 
     var doneButtonOverlay: some View {
         VStack {
             Button(action: {
                 if model.time > 0 {
-                    alert = .dismiss
-                    showAlert = true
+                    showDismissAlert = true
                 } else {
                     dismiss()
                 }
@@ -139,6 +131,7 @@ struct TimerView: View {
         }
         Timer.scheduledTimer(withTimeInterval: 1, repeats: false) { _ in
             model.resetTimer()
+            model.stopTimer()
         }
     }
 }
