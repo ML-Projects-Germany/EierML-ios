@@ -27,17 +27,23 @@ struct EierMLTutorialView: View {
                     .shadow(color: .black.opacity(0.1), radius: 8)
                 ClassicBackgroundView()
                     .ignoresSafeArea()
-                Pager(page: page, data: viewModel.tutorialSheets, id: \.id) { tutorialSheet in
-                    TutorialSheetView(tutorialSheet, dismissTutorial: $model.eggTutorialIsShown)
+                if !viewModel.tutorialSheets.isEmpty {
+                    Pager(page: page, data: viewModel.tutorialSheets, id: \.id) { tutorialSheet in
+                        TutorialSheetView(tutorialSheet, dismissTutorial: $model.eggTutorialIsShown)
+                    }
+                    .preferredItemSize(CGSize(width: .greatestFiniteMagnitude, height: reader.size.height/2))
+                    .itemSpacing(20)
+                    .interactive(opacity: 0.5)
+                    .vertical()
+                    .sensitivity(.high)
+                    .shadow(color: .black.opacity(0.15), radius: 10)
+                    .padding(.horizontal, 20)
+                    .ignoresSafeArea()
+                } else {
+                    ProgressView()
+                        .progressViewStyle(CircularProgressViewStyle(tint: .white))
+                        .onAppear(perform: viewModel.loadSheets)
                 }
-                .preferredItemSize(CGSize(width: .greatestFiniteMagnitude, height: reader.size.height/2))
-                .itemSpacing(20)
-                .interactive(opacity: 0.5)
-                .vertical()
-                .sensitivity(.high)
-                .shadow(color: .black.opacity(0.15), radius: 10)
-                .padding(.horizontal, 20)
-                .ignoresSafeArea()
                 VStack {
                     VisualEffectView(effect: UIBlurEffect(style: .systemUltraThinMaterial))
                         .frame(maxWidth: .infinity, maxHeight: reader.safeAreaInsets.top+55)
@@ -53,7 +59,8 @@ struct EierMLTutorialView: View {
                                     model.eggTutorialIsShown = false
                                 }
                             }, label: {
-                                Text("Überspringen")
+                                Text("Fertig")
+                                    .fontWeight(.medium)
                             })
                             .padding([.top, .trailing])
                         }
