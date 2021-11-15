@@ -23,10 +23,10 @@ class EierML {
         viscosityValue: Double,
         intercept: Double
     ) -> Int {
-        var result = (Double(height)/10)*(-21.99032108)
-        result += (Double(width)/10)*80.18921518
-        result += Double(viscosity)*34.69196907
-        result += -150.79408648
+        var result = (Double(height)/10)*(heightValue)
+        result += (Double(width)/10)*widthValue
+        result += Double(viscosity)*viscosityValue
+        result += intercept
         return Int(result.rounded())
     }
 }
