@@ -1,0 +1,52 @@
+[
+  {
+    "title": "Willkommen",
+    "text": "Fangen wir ganz am Anfang an, EierML ist eine App die dazu erschaffen 🧠 und trainiert 💪 wurde dir das Eier kochen zu erleichtern. Wische nach nun nach oben um zum nächsten Schritt zu kommen."
+  },
+  {
+    "title": "Eier hinzufügen",
+    "text": "Tippe auf das Plus Symbol um ein Ei hinzuzufügen.",
+    "imageName": "tutorial_add_button"
+  },
+  {
+    "title": "Ei vermessen",
+    "text": "Um zu berechnen wie lang dein Ei kochen muss, brauchen wir die Maße deines Eis.",
+    "imageName": "tutorial_add_view"
+  },
+  {
+    "title": "Größe abmessen",
+    "text": "Die Schablone die angezeigt wird, bildet die Größe eines Eis akkurat ab. Du brauchst also nur die App und kein extra Massband 😉."
+  },
+  {
+    "title": "Ei härte auswählen",
+    "text": "Wähle einfach aus wie hart dein Ei werden soll.",
+    "imageName": "tutorial_select_view"
+  },
+  {
+    "title": "Deine Eier",
+    "text": "Wenn du ein Ei hinzufügst findest du es dannach in der List \\\"Deine Eier\\\" wieder.",
+    "imageName": "tutorial_list"
+  },
+  {
+    "title": "Wasser aufsetzen",
+    "text": "Bevor du deine Eier kochst stelle sicher, dass das Wasser schon kocht. Wir haben bei unseren Messungen die Eier in kochendes Wasser gelegt."
+  },
+  {
+    "title": "Kein Kühlschrank",
+    "text": "Stelle sicher, dass das dein Ei raumtemperatur hat, lege es dafür zum Beispiel vor dem kochen neben den Topf und lasse es ca. 5min warm werden."
+  },
+  {
+    "title": "Timer starten",
+    "text": "Wenn du deine Ei hinzugefügt hast tippe einfach auf \\\"Timer\\\".",
+    "imageName": "tutorial_timer_button"
+  },
+  {
+    "title": "Hergehört!",
+    "text": "Bitte stelle sicher das der Ton deines Handys an und der Timer angezeigt wird, um den Ring Ton zu hören. Wenn dein Handy stumm geschaltet ist wird nur eine Vibration abgespielt die eventuell nicht von allen Nutzern gehört wird!"
+  },
+  {
+    "title": "Viel Spaß!",
+    "text": "Wir wünschen dir viel Erfolg beim Eier kochen!\\n\\nDein EierML-Team",
+    "doneButton": true
+  }
+]
