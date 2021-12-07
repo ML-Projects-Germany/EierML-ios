@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6509AE76275FC6DE00EB331B /* EggCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6509AE75275FC6DE00EB331B /* EggCardView.swift */; };
 		6509AE78275FC77700EB331B /* QuickLinks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6509AE77275FC77700EB331B /* QuickLinks.swift */; };
 		6550359027424C2D00BE7033 /* TutorialSheet+mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6550358F27424C2D00BE7033 /* TutorialSheet+mock.swift */; };
 		6550359227424E5800BE7033 /* TutorialSheets.json in Resources */ = {isa = PBXBuildFile; fileRef = 6550359127424E5800BE7033 /* TutorialSheets.json */; };
@@ -94,6 +95,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6509AE75275FC6DE00EB331B /* EggCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EggCardView.swift; sourceTree = "<group>"; };
 		6509AE77275FC77700EB331B /* QuickLinks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickLinks.swift; sourceTree = "<group>"; };
 		6550358F27424C2D00BE7033 /* TutorialSheet+mock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TutorialSheet+mock.swift"; sourceTree = "<group>"; };
 		6550359127424E5800BE7033 /* TutorialSheets.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = TutorialSheets.json; sourceTree = "<group>"; };
