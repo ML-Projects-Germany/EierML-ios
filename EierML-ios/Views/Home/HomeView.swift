@@ -45,34 +45,7 @@ struct HomeView: View {
                                         NewsListView()
                                             .frame(maxWidth: .infinity)
                                             .frame(height: rowWidth(reader: reader)/1.35)
-                                        // MARK: Mehr über EierML lernen
-                                        Label(
-                                            title: { Text("Mehr über EierML lernen") },
-                                            icon: {
-                                                Image("egg")
-                                                    .renderingMode(.template)
-                                                    .resizable()
-                                                    .scaledToFit()
-                                                    .frame(width: 20, height: 20)
-                                            }
-                                        )
-                                        .font(.headline)
-                                        .foregroundColor(.primary.opacity(0.8))
-                                        .frame(maxWidth: .infinity, alignment: .leading)
-                                        .padding(.leading, 20)
-                                        EierMLBandages()
-                                            .padding(.vertical, 10)
-                                        // MARK: Mehr über Machine learning lernen
-                                        Label(
-                                            title: { Text("Mehr über Machine learning lernen") },
-                                            icon: { Image(systemName: "graduationcap") }
-                                        )
-                                        .font(.headline)
-                                        .foregroundColor(.primary.opacity(0.8))
-                                        .frame(maxWidth: .infinity, alignment: .leading)
-                                        .padding(.leading, 20)
-                                        MLProjectsBandages()
-                                            .padding(.vertical, 10)
+                                        QuickLinks()
                                         Spacer()
                                     }
                                     .frame(maxWidth: .infinity, alignment: .leading)
@@ -82,6 +55,7 @@ struct HomeView: View {
                     }
                 }
                 .navigationBarHidden(true)
+                .navigationViewStyle(StackNavigationViewStyle())
                 VStack {
                     VisualEffectView(effect: UIBlurEffect(style: .systemUltraThinMaterial))
                         .frame(maxWidth: .infinity, maxHeight: reader.safeAreaInsets.top)
