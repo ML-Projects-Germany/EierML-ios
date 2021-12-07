@@ -28,6 +28,7 @@ struct AppView: View {
                             Label("EierML", systemImage: "magnifyingglass.circle")
                         }
                 }
+                
                 .onAppear {
                     if #available(iOS 15.0, *) {
                         let appearance = UITabBarAppearance()
