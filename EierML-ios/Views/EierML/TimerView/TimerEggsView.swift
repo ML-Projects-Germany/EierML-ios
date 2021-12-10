@@ -65,8 +65,8 @@ struct TimerEggsView: View {
 
 struct TimerEggView_Previews: PreviewProvider {
     static var previews: some View {
-        TimerView(eggs: Egg.mocks, isShown: .constant(true))
-        TimerView(eggs: Egg.mocks, isShown: .constant(true))
+        TimerView(eggs: Egg.generateMocks(3), isShown: .constant(true))
+        TimerView(eggs: Egg.generateMocks(3), isShown: .constant(true))
             .previewDevice("iPod touch (7th generation)")
     }
 }

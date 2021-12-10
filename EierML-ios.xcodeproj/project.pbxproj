@@ -11,6 +11,7 @@
 		6509AE78275FC77700EB331B /* QuickLinks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6509AE77275FC77700EB331B /* QuickLinks.swift */; };
 		6550359027424C2D00BE7033 /* TutorialSheet+mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6550358F27424C2D00BE7033 /* TutorialSheet+mock.swift */; };
 		6550359227424E5800BE7033 /* TutorialSheets.json in Resources */ = {isa = PBXBuildFile; fileRef = 6550359127424E5800BE7033 /* TutorialSheets.json */; };
+		65D2EF0427635FB400E5D71C /* EggCardsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D2EF0327635FB400E5D71C /* EggCardsListView.swift */; };
 		D902F7B426E3E22F009FB4E7 /* AddEggSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = D902F7B326E3E22F009FB4E7 /* AddEggSlider.swift */; };
 		D90AC30026C5745300B6B7D0 /* ArticleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90AC2FF26C5745300B6B7D0 /* ArticleView.swift */; };
 		D90AC30326C5748900B6B7D0 /* WebLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90AC30126C5748900B6B7D0 /* WebLoadingView.swift */; };
@@ -32,7 +33,6 @@
 		D94521432693512600305EF8 /* AppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D94521422693512600305EF8 /* AppView.swift */; };
 		D94521452693512600305EF8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D94521442693512600305EF8 /* Assets.xcassets */; };
 		D94521482693512600305EF8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D94521472693512600305EF8 /* Preview Assets.xcassets */; };
-		D94521532693512600305EF8 /* EierML_iosTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D94521522693512600305EF8 /* EierML_iosTests.swift */; };
 		D945215E2693512600305EF8 /* EierML_iosUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D945215D2693512600305EF8 /* EierML_iosUITests.swift */; };
 		D945216C2693544D00305EF8 /* WellcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D945216B2693544D00305EF8 /* WellcomeView.swift */; };
 		D945217326935C1E00305EF8 /* SecondaryButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = D945217226935C1E00305EF8 /* SecondaryButtonStyle.swift */; };
@@ -78,13 +78,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		D945214F2693512600305EF8 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D94521352693512500305EF8 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = D945213C2693512500305EF8;
-			remoteInfo = "EierML-ios";
-		};
 		D945215A2693512600305EF8 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D94521352693512500305EF8 /* Project object */;
@@ -99,6 +92,7 @@
 		6509AE77275FC77700EB331B /* QuickLinks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickLinks.swift; sourceTree = "<group>"; };
 		6550358F27424C2D00BE7033 /* TutorialSheet+mock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TutorialSheet+mock.swift"; sourceTree = "<group>"; };
 		6550359127424E5800BE7033 /* TutorialSheets.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = TutorialSheets.json; sourceTree = "<group>"; };
+		65D2EF0327635FB400E5D71C /* EggCardsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EggCardsListView.swift; sourceTree = "<group>"; };
 		D902F7B326E3E22F009FB4E7 /* AddEggSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEggSlider.swift; sourceTree = "<group>"; };
 		D90AC2FF26C5745300B6B7D0 /* ArticleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleView.swift; sourceTree = "<group>"; };
 		D90AC30126C5748900B6B7D0 /* WebLoadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebLoadingView.swift; sourceTree = "<group>"; };
@@ -122,9 +116,6 @@
 		D94521442693512600305EF8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D94521472693512600305EF8 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		D94521492693512600305EF8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D945214E2693512600305EF8 /* EierML-iosTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "EierML-iosTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		D94521522693512600305EF8 /* EierML_iosTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EierML_iosTests.swift; sourceTree = "<group>"; };
-		D94521542693512600305EF8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D94521592693512600305EF8 /* EierML-iosUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "EierML-iosUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D945215D2693512600305EF8 /* EierML_iosUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EierML_iosUITests.swift; sourceTree = "<group>"; };
 		D945215F2693512600305EF8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -176,13 +167,6 @@
 			files = (
 				D9B3A8FE26F1C19D0036458C /* SwiftUIPager in Frameworks */,
 				D9A15A7826B62380000B56F8 /* SwiftUIWPArticleLoader in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		D945214B2693512600305EF8 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -247,7 +231,6 @@
 			isa = PBXGroup;
 			children = (
 				D945213F2693512600305EF8 /* EierML-ios */,
-				D94521512693512600305EF8 /* EierML-iosTests */,
 				D945215C2693512600305EF8 /* EierML-iosUITests */,
 				D945213E2693512500305EF8 /* Products */,
 			);
@@ -257,7 +240,6 @@
 			isa = PBXGroup;
 			children = (
 				D945213D2693512500305EF8 /* EierML-ios.app */,
-				D945214E2693512600305EF8 /* EierML-iosTests.xctest */,
 				D94521592693512600305EF8 /* EierML-iosUITests.xctest */,
 			);
 			name = Products;
@@ -286,15 +268,6 @@
 				D94521472693512600305EF8 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
-			sourceTree = "<group>";
-		};
-		D94521512693512600305EF8 /* EierML-iosTests */ = {
-			isa = PBXGroup;
-			children = (
-				D94521522693512600305EF8 /* EierML_iosTests.swift */,
-				D94521542693512600305EF8 /* Info.plist */,
-			);
-			path = "EierML-iosTests";
 			sourceTree = "<group>";
 		};
 		D945215C2693512600305EF8 /* EierML-iosUITests */ = {
@@ -452,6 +425,7 @@
 			isa = PBXGroup;
 			children = (
 				D9E5897B26E7948400349794 /* TimerView.swift */,
+				65D2EF0327635FB400E5D71C /* EggCardsListView.swift */,
 				D93E848C26EE10B300A10349 /* TimerEggsView.swift */,
 				6509AE75275FC6DE00EB331B /* EggCardView.swift */,
 			);
@@ -483,24 +457,6 @@
 			productReference = D945213D2693512500305EF8 /* EierML-ios.app */;
 			productType = "com.apple.product-type.application";
 		};
-		D945214D2693512600305EF8 /* EierML-iosTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = D94521652693512600305EF8 /* Build configuration list for PBXNativeTarget "EierML-iosTests" */;
-			buildPhases = (
-				D945214A2693512600305EF8 /* Sources */,
-				D945214B2693512600305EF8 /* Frameworks */,
-				D945214C2693512600305EF8 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				D94521502693512600305EF8 /* PBXTargetDependency */,
-			);
-			name = "EierML-iosTests";
-			productName = "EierML-iosTests";
-			productReference = D945214E2693512600305EF8 /* EierML-iosTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 		D94521582693512600305EF8 /* EierML-iosUITests */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = D94521682693512600305EF8 /* Build configuration list for PBXNativeTarget "EierML-iosUITests" */;
@@ -531,10 +487,6 @@
 					D945213C2693512500305EF8 = {
 						CreatedOnToolsVersion = 12.5.1;
 					};
-					D945214D2693512600305EF8 = {
-						CreatedOnToolsVersion = 12.5.1;
-						TestTargetID = D945213C2693512500305EF8;
-					};
 					D94521582693512600305EF8 = {
 						CreatedOnToolsVersion = 12.5.1;
 						TestTargetID = D945213C2693512500305EF8;
@@ -560,7 +512,6 @@
 			projectRoot = "";
 			targets = (
 				D945213C2693512500305EF8 /* EierML-ios */,
-				D945214D2693512600305EF8 /* EierML-iosTests */,
 				D94521582693512600305EF8 /* EierML-iosUITests */,
 			);
 		};
@@ -576,13 +527,6 @@
 				D93E849226EE17AD00A10349 /* bell.mp3 in Resources */,
 				D94521482693512600305EF8 /* Preview Assets.xcassets in Resources */,
 				D94521452693512600305EF8 /* Assets.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		D945214C2693512600305EF8 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -641,6 +585,7 @@
 				D9B3A8FB26F1BF950036458C /* View+Modifier.swift in Sources */,
 				D945217326935C1E00305EF8 /* SecondaryButtonStyle.swift in Sources */,
 				D9BFA14726CAFDC0008BE365 /* EggListView.swift in Sources */,
+				65D2EF0427635FB400E5D71C /* EggCardsListView.swift in Sources */,
 				D9E1051826CC4E6B002CB828 /* UIScreenExtension.swift in Sources */,
 				D9E1051626CC40BD002CB828 /* VisualEffect.swift in Sources */,
 				D9D3353426DA4B0B004E7ECD /* ViscosityView.swift in Sources */,
@@ -683,14 +628,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D945214A2693512600305EF8 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				D94521532693512600305EF8 /* EierML_iosTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		D94521552693512600305EF8 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -702,11 +639,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		D94521502693512600305EF8 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = D945213C2693512500305EF8 /* EierML-ios */;
-			targetProxy = D945214F2693512600305EF8 /* PBXContainerItemProxy */;
-		};
 		D945215B2693512600305EF8 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = D945213C2693512500305EF8 /* EierML-ios */;
@@ -881,50 +813,6 @@
 			};
 			name = Release;
 		};
-		D94521662693512600305EF8 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 2CFZ99QKY4;
-				INFOPLIST_FILE = "EierML-iosTests/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "de.TorbenKoehler.EierML-iosTests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/EierML-ios.app/EierML-ios";
-			};
-			name = Debug;
-		};
-		D94521672693512600305EF8 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 2CFZ99QKY4;
-				INFOPLIST_FILE = "EierML-iosTests/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "de.TorbenKoehler.EierML-iosTests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/EierML-ios.app/EierML-ios";
-			};
-			name = Release;
-		};
 		D94521692693512600305EF8 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -982,15 +870,6 @@
 			buildConfigurations = (
 				D94521632693512600305EF8 /* Debug */,
 				D94521642693512600305EF8 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		D94521652693512600305EF8 /* Build configuration list for PBXNativeTarget "EierML-iosTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				D94521662693512600305EF8 /* Debug */,
-				D94521672693512600305EF8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

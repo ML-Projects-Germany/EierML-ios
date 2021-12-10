@@ -54,37 +54,43 @@ struct Egg: Identifiable, Codable {
         return "\(minutes)min \(seconds)s"
     }
     static var mock: Self {
-        .init(
+        let height = Int.random(in: 44...65)
+        let width = Int.random(in: 40...45)
+        let viscosity = Int.random(in: 1...10)
+        return Egg(
             number: 1,
-            height: Int.random(in: 44...65),
-            width: Int.random(in: 40...45),
-            viscosity: Int.random(in: 1...10),
-            time: 180
+            height: height,
+            width: width,
+            viscosity: viscosity,
+            time: EierML.predict_v2_1(
+                height: height,
+                width: width,
+                viscosity: viscosity
+            )
         )
     }
-    static var mocks: [Self] {
-        [
-            .init(
-                number: 1,
-                height: Int.random(in: 44...65),
-                width: Int.random(in: 40...45),
-                viscosity: Int.random(in: 1...10),
-                time: 180
-            ),
-            .init(
-                number: 2,
-                height: Int.random(in: 44...65),
-                width: Int.random(in: 40...45),
-                viscosity: Int.random(in: 1...10),
-                time: 180
-            ),
-            .init(
-                number: 3,
-                height: Int.random(in: 44...65),
-                width: Int.random(in: 40...45),
-                viscosity: Int.random(in: 1...10),
-                time: 180
-            )
-        ]
+    static func generateMocks(_ number: Int) -> [Self] {
+        var eggs: [Egg] = []
+
+        if number > 0 {
+            for i in 0...number-1 {
+                let number = i+1
+                let height = Int.random(in: 44...65)
+                let width = Int.random(in: 40...45)
+                let viscosity = Int.random(in: 1...10)
+                eggs.append(Egg(
+                    number: number,
+                    height: height,
+                    width: width,
+                    viscosity: viscosity,
+                    time: EierML.predict_v2_1(
+                        height: height,
+                        width: width,
+                        viscosity: viscosity
+                    )
+                ))
+            }
+        }
+        return eggs
     }
 }

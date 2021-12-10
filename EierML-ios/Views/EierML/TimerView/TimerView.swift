@@ -146,11 +146,11 @@ struct TimerView_Previews: PreviewProvider {
     static var previews: some View {
         ZStack {
             EggsView()
-            TimerView(eggs: Egg.mocks, isShown: .constant(true))
+            TimerView(eggs: Egg.generateMocks(3), isShown: .constant(true))
         }
         ZStack {
             EggsView()
-            TimerView(eggs: Egg.mocks, isShown: .constant(true))
+            TimerView(eggs: Egg.generateMocks(3), isShown: .constant(true))
         }
         .previewDevice("iPod touch (7th generation)")
     }
