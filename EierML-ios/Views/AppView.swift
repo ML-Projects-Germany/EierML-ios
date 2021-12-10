@@ -15,30 +15,31 @@ struct AppView: View {
     }
 
     var body: some View {
-        GeometryReader { reader in
-            ZStack {
-                TabView {
-                    HomeView()
-                        .tabItem {
-                            Label("Startseite", systemImage: "rectangle.stack")
-                        }
-                        .tag(0)
-                    EggsView()
-                        .tabItem {
-                            Label("EierML", systemImage: "magnifyingglass.circle")
-                        }
-                }
-                .onAppear {
-                    if #available(iOS 15.0, *) {
-                        let appearance = UITabBarAppearance()
-                        UITabBar.appearance().scrollEdgeAppearance = appearance
-                    }
-                }
-                WellcomeView(firstAppStart: $appModel.firstAppStart)
-                    .shadow(color: .black.opacity(0.15), radius: 5, x: 5, y: 0.0)
-                    .offset(x: appModel.firstAppStart ? 0 : -reader.size.width, y: 0)
-            }
-        }
+        EggCardsListView(eggs: Egg.generateMocks(10))
+//        GeometryReader { reader in
+//            ZStack {
+//                TabView {
+//                    HomeView()
+//                        .tabItem {
+//                            Label("Startseite", systemImage: "rectangle.stack")
+//                        }
+//                        .tag(0)
+//                    EggsView()
+//                        .tabItem {
+//                            Label("EierML", systemImage: "magnifyingglass.circle")
+//                        }
+//                }
+//                .onAppear {
+//                    if #available(iOS 15.0, *) {
+//                        let appearance = UITabBarAppearance()
+//                        UITabBar.appearance().scrollEdgeAppearance = appearance
+//                    }
+//                }
+//                WellcomeView(firstAppStart: $appModel.firstAppStart)
+//                    .shadow(color: .black.opacity(0.15), radius: 5, x: 5, y: 0.0)
+//                    .offset(x: appModel.firstAppStart ? 0 : -reader.size.width, y: 0)
+//            }
+//        }
     }
 }
 
