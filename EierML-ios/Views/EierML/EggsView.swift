@@ -36,7 +36,7 @@ struct EggsView: View {
                                 )
                             })
                             .buttonStyle(SecondaryButtonStyle(
-                                color: Color.Palette.blue
+                                color: Color.Palette.blue,
                                 pressedColor: Color.Palette.darkBlue
                             ))
                             .padding()

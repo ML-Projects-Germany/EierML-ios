@@ -58,7 +58,7 @@ struct TimerView: View {
                                     .frame(minWidth: 120)
                             })
                             .buttonStyle(SecondaryButtonStyle(
-                                color: Color.Palette.blue
+                                color: Color.Palette.blue,
                                 pressedColor: Color.Palette.darkBlue
                             ))
                             .padding(10)
@@ -75,7 +75,7 @@ struct TimerView: View {
                                     .frame(minWidth: 50)
                             })
                             .buttonStyle(SecondaryButtonStyle(
-                                color: Color.Palette.blue
+                                color: Color.Palette.blue,
                                 pressedColor: Color.Palette.darkBlue
                             ))
                             .padding(10)
