@@ -57,7 +57,10 @@ struct TimerView: View {
                                 Text("Zurücksetzen")
                                     .frame(minWidth: 120)
                             })
-                            .buttonStyle(SecondaryButtonStyle(color: .accentColor))
+                            .buttonStyle(SecondaryButtonStyle(
+                                color: Color.Palette.blue
+                                pressedColor: Color.Palette.darkBlue
+                            ))
                             .padding(10)
                             Button(action: {
                                 withAnimation(.easeOut) {
@@ -71,7 +74,10 @@ struct TimerView: View {
                                 Text(model.isTimerRunning ? "Stop" : "Start")
                                     .frame(minWidth: 50)
                             })
-                            .buttonStyle(SecondaryButtonStyle(color: .accentColor))
+                            .buttonStyle(SecondaryButtonStyle(
+                                color: Color.Palette.blue
+                                pressedColor: Color.Palette.darkBlue
+                            ))
                             .padding(10)
                         }
                         .padding(.bottom, 5)
@@ -116,7 +122,7 @@ struct TimerView: View {
                 }
             }, label: {
                 Text("Fertig")
-                    .foregroundColor(.accentColor)
+                    .foregroundColor(Color.Palette.blue)
                     .fontWeight(.bold)
             })
             .frame(maxWidth: .infinity, alignment: .trailing)

@@ -17,11 +17,11 @@ struct NumberRow: View {
             Text(number)
                 .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
         }
-        .background(selectedCell == number ? Color.accentColor.opacity(0.6) : Color(UIColor.systemBackground))
+        .background(selectedCell == number ? Color.Palette.blue.opacity(0.6) : Color(UIColor.systemBackground))
         .cornerRadius(18)
         .overlay(
             RoundedRectangle(cornerRadius: 15)
-                .stroke(Color.accentColor, lineWidth: 3)
+                .stroke(Color.Palette.blue, lineWidth: 3)
         )
         .shadow(color: .black.opacity(0.1), radius: 8)
         .onTapGesture {

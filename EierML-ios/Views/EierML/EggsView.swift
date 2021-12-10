@@ -35,7 +35,10 @@ struct EggsView: View {
                                     icon: { Image(systemName: "clock") }
                                 )
                             })
-                            .buttonStyle(SecondaryButtonStyle(color: .accentColor))
+                            .buttonStyle(SecondaryButtonStyle(
+                                color: Color.Palette.blue
+                                pressedColor: Color.Palette.darkBlue
+                            ))
                             .padding()
                         }
                         TimerView(eggs: model.eggs, isShown: $showTimerView)
