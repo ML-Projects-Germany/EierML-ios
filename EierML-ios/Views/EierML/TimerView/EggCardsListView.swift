@@ -25,24 +25,41 @@ struct EggCardsListView: View {
             ScrollView {
                 LazyVStack(spacing: -15) {
                     Spacer()
-                        .frame(height: geometry.size.height/2-60)
+                        .frame(height: geometry.size.height/2)
                     ForEach(eggs) { egg in
-                        GeometryReader { proxy in
-                            let offset = proxy.frame(in: .named("scroll")).minY
+                        GeometryReader { cellGeometry in
+                            let offset = cellGeometry.frame(in: .named("scroll")).minY
                             EggCardView(egg: egg)
                                 .padding()
-                            Color.clear.preference(key: ScrollViewOffsetPreferenceKey.self, value: )
+                                .opacity(
+                                    checkIfCellIsMiddle(
+                                        viewHeight: geometry.size.height,
+                                        offset: offset
+                                    ) ? 1 : 0.5
+                                )
+                                .scaleEffect(
+                                    checkIfCellIsMiddle(
+                                        viewHeight: geometry.size.height,
+                                        offset: offset
+                                    ) ? 1 : 0.9
+                                )
+                                .animation(.easeInOut(duration: 0.2), value: checkIfCellIsMiddle(
+                                    viewHeight: geometry.size.height,
+                                    offset: offset
+                                ))
                         }
+                        .frame(height: 110)
                     }
                     Spacer()
                         .frame(height: geometry.size.height/2-60)
                 }
             }
             .coordinateSpace(name: "scroll")
-            .onPreferenceChange(ScrollViewOffsetPreferenceKey.self) { value in
-                print(value)
-            }
         }
+    }
+
+    func checkIfCellIsMiddle(viewHeight: CGFloat, offset: CGFloat) -> Bool {
+        return offset > viewHeight/2-48 && offset < viewHeight/2+48
     }
 }
 
