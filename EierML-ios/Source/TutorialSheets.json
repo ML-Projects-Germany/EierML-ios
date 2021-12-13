@@ -1,7 +1,7 @@
 [
   {
     "title": "Willkommen",
-    "text": "Fangen wir ganz am Anfang an, EierML ist eine App die dazu erschaffen 🧠 und trainiert 💪 wurde dir das Eier kochen zu erleichtern. Wische nach nun nach oben um zum nächsten Schritt zu kommen."
+    "text": "Fangen wir ganz am Anfang an, EierML ist eine App die dazu erschaffen 🧠 und trainiert 💪 wurde dir das Eier kochen zu erleichtern. Wische nun nach oben um zum nächsten Schritt zu kommen."
   },
   {
     "title": "Eier hinzufügen",
@@ -24,7 +24,7 @@
   },
   {
     "title": "Deine Eier",
-    "text": "Wenn du ein Ei hinzufügst findest du es dannach in der List \\\"Deine Eier\\\" wieder.",
+    "text": "Wenn du ein Ei hinzufügst findest du es dannach in der List \"Deine Eier\" wieder.",
     "imageName": "tutorial_list"
   },
   {
@@ -37,7 +37,7 @@
   },
   {
     "title": "Timer starten",
-    "text": "Wenn du deine Ei hinzugefügt hast tippe einfach auf \\\"Timer\\\".",
+    "text": "Wenn du dein Ei hinzugefügt hast tippe einfach auf \"Timer\".",
     "imageName": "tutorial_timer_button"
   },
   {
