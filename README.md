@@ -9,4 +9,4 @@ Vielen Dank das du EierML nutzt :)
 Dein ML-Projects-Team
 
 
-© Torben Köhler - ML Projects Alle Rechte vorbehalten
+© Torben Köhler - ML Projects. Alle Rechte sind vorbehalten.
