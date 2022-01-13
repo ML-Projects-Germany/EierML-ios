@@ -6,6 +6,7 @@ Bei fragen schreibe uns gerne eine E-Mail unter [github-support@EierML.ML-Projec
 
 Vielen Dank das du EierML nutzt :)
 
-ML-Projects
+Dein ML-Projects-Team
 
-© Torben Köhler - ML Projects
+
+© Torben Köhler - ML Projects Alle Rechte vorbehalten
