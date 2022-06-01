@@ -9,7 +9,11 @@ import Foundation
 import ComposableArchitecture
 
 struct AppState: Equatable {
-
+    var currentPage: Page = .main
+    
+    enum Page {
+        case main, settings, articles
+    }
 }
 
 struct AppAction: Equatable {
