@@ -1,58 +1,13 @@
 //
-//  Egg.swift
+//  Egg+mock.swift
 //  EierML-ios
 //
-//  Created by Torben Köhler on 12.08.21.
+//  Created by Torben Köhler on 01.06.22.
 //
 
 import Foundation
 
-struct Egg: Identifiable, Codable {
-    let id: UUID
-    var number: Int
-    var height: Int
-    var width: Int
-    var viscosity: Int
-    var time: Int
-    // MARK: init without ML
-    init(
-        number: Int,
-        height: Int,
-        width: Int,
-        viscosity: Int,
-        time: Int
-    ) {
-        self.id = UUID()
-        self.number = number
-        self.height = height
-        self.width = width
-        self.viscosity = viscosity
-        self.time = time
-    }
-    // MARK: init with ML
-    init(
-        number: Int,
-        height: Int,
-        width: Int,
-        viscosity: Int
-    ) {
-        self.id = UUID()
-        self.number = number
-        self.height = height
-        self.width = width
-        self.viscosity = viscosity
-        self.time = EierML.predict_v2_1(
-            height: height,
-            width: width,
-            viscosity: viscosity
-        )
-    }
-    var timeString: String {
-        let minutes = Int(time/60)
-        let seconds = Int(time%60)
-
-        return "\(minutes)min \(seconds)s"
-    }
+extension Egg {
     static var mock: Self {
         let height = Int.random(in: 44...65)
         let width = Int.random(in: 40...45)
@@ -62,7 +17,7 @@ struct Egg: Identifiable, Codable {
             height: height,
             width: width,
             viscosity: viscosity,
-            time: EierML.predict_v2_1(
+            time: MLEngine.predict_v2_1(
                 height: height,
                 width: width,
                 viscosity: viscosity
@@ -83,7 +38,7 @@ struct Egg: Identifiable, Codable {
                     height: height,
                     width: width,
                     viscosity: viscosity,
-                    time: EierML.predict_v2_1(
+                    time: MLEngine.predict_v2_1(
                         height: height,
                         width: width,
                         viscosity: viscosity

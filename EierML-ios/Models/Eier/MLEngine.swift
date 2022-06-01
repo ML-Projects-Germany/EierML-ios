@@ -6,7 +6,7 @@
 //
 
 import Foundation
-class EierML {
+class MLEngine {
     /// EierML Predict
     ///
     /// - Parameters:
@@ -32,7 +32,7 @@ class EierML {
 }
 
 // MARK: MLs
-extension EierML {
+extension MLEngine {
     // MARK: Version 1.0
     /// EierML Predict Version 1.0 (30 Eggs) - inaccuracy: 32 sec
     ///

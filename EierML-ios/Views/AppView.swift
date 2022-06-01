@@ -8,37 +8,20 @@
 import SwiftUI
 
 struct AppView: View {
-    @StateObject var appModel: AppModel
-
-    init() {
-        self._appModel = StateObject(wrappedValue: AppModel())
-    }
-
     var body: some View {
-        GeometryReader { reader in
-            ZStack {
-                TabView {
-                    HomeView()
-                        .tabItem {
-                            Label("Startseite", systemImage: "rectangle.stack")
-                        }
-                        .tag(0)
-                    EggsView()
-                        .tabItem {
-                            Label("EierML", systemImage: "magnifyingglass.circle")
-                        }
-                }
-                .onAppear {
-                    if #available(iOS 15.0, *) {
-                        let appearance = UITabBarAppearance()
-                        UITabBar.appearance().scrollEdgeAppearance = appearance
-                    }
-                }
-                WellcomeView(firstAppStart: $appModel.firstAppStart)
-                    .shadow(color: .black.opacity(0.15), radius: 5, x: 5, y: 0.0)
-                    .offset(x: appModel.firstAppStart ? 0 : -reader.size.width, y: 0)
+        ZStack {
+            Group {
+                Color.white
+                LinearGradient(colors: [
+                    Color(red: 0.384, green: 0.596, blue: 0.875, opacity:0.7),
+                    Color(red: 0.941, green: 0.369, blue: 0.392, opacity: 0.7)
+                ], startPoint: .top, endPoint: .bottom)
             }
+            .ignoresSafeArea()
+            Text("Hello EierML-App")
         }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+
     }
 }
 
@@ -47,3 +30,5 @@ struct MainView_Previews: PreviewProvider {
         AppView()
     }
 }
+
+// background: linear-gradient(180deg, rgba(98, 152, 223, 0.7) 0%, rgba(240, 94, 100, 0.7) 100%);
