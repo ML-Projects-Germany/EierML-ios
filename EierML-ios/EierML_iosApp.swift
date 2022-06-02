@@ -11,11 +11,14 @@ import SwiftUI
 struct EierML_iosApp: App {
     var body: some Scene {
         WindowGroup {
-            AppView(store: .init(
-                initialState: .init(),
-                reducer: appReducer,
-                environment: ()
-            ))
+            ZStack {
+                AppView(store: .init(
+                    initialState: .init(),
+                    reducer: appReducer,
+                    environment: ()
+                ))
+                TimerView()
+            }
         }
     }
 }
