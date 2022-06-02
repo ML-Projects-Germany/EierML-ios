@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		6521A7DE2849190700ADB6BC /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6521A7DD2849190700ADB6BC /* TimerView.swift */; };
+		6521A7E028491B9D00ADB6BC /* CornerRadius+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6521A7DF28491B9D00ADB6BC /* CornerRadius+Extension.swift */; };
 		65330FE42848A95300EB6624 /* CustomVerticalSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65330FE32848A95300EB6624 /* CustomVerticalSlider.swift */; };
 		6550359227424E5800BE7033 /* TutorialSheets.json in Resources */ = {isa = PBXBuildFile; fileRef = 6550359127424E5800BE7033 /* TutorialSheets.json */; };
 		65D2143328488F030002E565 /* CustomSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D2143228488F030002E565 /* CustomSlider.swift */; };
@@ -52,6 +53,7 @@
 
 /* Begin PBXFileReference section */
 		6521A7DD2849190700ADB6BC /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
+		6521A7DF28491B9D00ADB6BC /* CornerRadius+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CornerRadius+Extension.swift"; sourceTree = "<group>"; };
 		65330FE32848A95300EB6624 /* CustomVerticalSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomVerticalSlider.swift; sourceTree = "<group>"; };
 		6550359127424E5800BE7033 /* TutorialSheets.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = TutorialSheets.json; sourceTree = "<group>"; };
 		65D2143228488F030002E565 /* CustomSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSlider.swift; sourceTree = "<group>"; };
@@ -217,7 +219,6 @@
 		D9BB94CA26A467EF007086D0 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				D953699E26EEA9190056BD82 /* AppState.swift */,
 				D94521422693512600305EF8 /* AppView.swift */,
 				D9F6A94A2848045C00A124EA /* RoundButton.swift */,
 				D9F6A94C284812C100A124EA /* EggSizeView.swift */,
@@ -238,6 +239,7 @@
 				D99421E826BB0FCB00DB2BCF /* NavigationButton.swift */,
 				D9E1051526CC40BD002CB828 /* VisualEffect.swift */,
 				D98AAB7226E4CB250087FAF6 /* PixelConverter.swift */,
+				6521A7DF28491B9D00ADB6BC /* CornerRadius+Extension.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -245,6 +247,7 @@
 		D9F6A9452847FAD800A124EA /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				D953699E26EEA9190056BD82 /* AppState.swift */,
 			);
 			name = Views;
 			path = Eier/Views;
@@ -399,6 +402,7 @@
 				D9E1051D26CC5C9A002CB828 /* PixelScreenManager.swift in Sources */,
 				D90AC30B26C5C5E600B6B7D0 /* Egg.swift in Sources */,
 				D94521412693512600305EF8 /* EierML_iosApp.swift in Sources */,
+				6521A7E028491B9D00ADB6BC /* CornerRadius+Extension.swift in Sources */,
 				D90AC30326C5748900B6B7D0 /* WebLoadingView.swift in Sources */,
 				D9F6A9472847FB8F00A124EA /* Egg+mock.swift in Sources */,
 				D9CD7D3526D8368A00C36DA2 /* MLEngine.swift in Sources */,
@@ -557,7 +561,7 @@
 				DEVELOPMENT_TEAM = 2CFZ99QKY4;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "EierML-ios/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -581,7 +585,7 @@
 				DEVELOPMENT_TEAM = 2CFZ99QKY4;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "EierML-ios/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

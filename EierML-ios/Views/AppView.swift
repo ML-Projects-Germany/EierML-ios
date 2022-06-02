@@ -75,8 +75,7 @@ struct MainView_Previews: PreviewProvider {
             reducer: appReducer,
             environment: ()
         ))
+        .previewDevice("iPod touch (7th generation)")
             .preferredColorScheme(.dark)
     }
 }
-
-// background: linear-gradient(180deg, rgba(98, 152, 223, 0.7) 0%, rgba(240, 94, 100, 0.7) 100%);
