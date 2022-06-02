@@ -37,7 +37,7 @@ struct AppView: View {
                     }
                     .padding(.init(top: 10, leading: 20, bottom: 0, trailing: 20))
                     Spacer()
-                    Text("Hello EierML-App")
+                    EggSizeView()
                     Spacer()
                 }
                 switch viewStore.currentPage {

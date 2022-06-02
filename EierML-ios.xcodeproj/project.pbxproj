@@ -7,7 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6521A7DE2849190700ADB6BC /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6521A7DD2849190700ADB6BC /* TimerView.swift */; };
+		65330FE42848A95300EB6624 /* CustomVerticalSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65330FE32848A95300EB6624 /* CustomVerticalSlider.swift */; };
 		6550359227424E5800BE7033 /* TutorialSheets.json in Resources */ = {isa = PBXBuildFile; fileRef = 6550359127424E5800BE7033 /* TutorialSheets.json */; };
+		65D2143328488F030002E565 /* CustomSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D2143228488F030002E565 /* CustomSlider.swift */; };
 		D90AC30326C5748900B6B7D0 /* WebLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90AC30126C5748900B6B7D0 /* WebLoadingView.swift */; };
 		D90AC30426C5748900B6B7D0 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90AC30226C5748900B6B7D0 /* WebView.swift */; };
 		D90AC30B26C5C5E600B6B7D0 /* Egg.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90AC30A26C5C5E600B6B7D0 /* Egg.swift */; };
@@ -34,7 +37,7 @@
 		D9F6A9442847FA8900A124EA /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = D9F6A9432847FA8900A124EA /* ComposableArchitecture */; };
 		D9F6A9472847FB8F00A124EA /* Egg+mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F6A9462847FB8F00A124EA /* Egg+mock.swift */; };
 		D9F6A94B2848045C00A124EA /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F6A94A2848045C00A124EA /* RoundButton.swift */; };
-		D9F6A94D284812C100A124EA /* VerticalSliderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F6A94C284812C100A124EA /* VerticalSliderView.swift */; };
+		D9F6A94D284812C100A124EA /* EggSizeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F6A94C284812C100A124EA /* EggSizeView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,7 +51,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6521A7DD2849190700ADB6BC /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
+		65330FE32848A95300EB6624 /* CustomVerticalSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomVerticalSlider.swift; sourceTree = "<group>"; };
 		6550359127424E5800BE7033 /* TutorialSheets.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = TutorialSheets.json; sourceTree = "<group>"; };
+		65D2143228488F030002E565 /* CustomSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSlider.swift; sourceTree = "<group>"; };
 		D90AC30126C5748900B6B7D0 /* WebLoadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebLoadingView.swift; sourceTree = "<group>"; };
 		D90AC30226C5748900B6B7D0 /* WebView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
 		D90AC30A26C5C5E600B6B7D0 /* Egg.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Egg.swift; sourceTree = "<group>"; };
@@ -77,7 +83,7 @@
 		D9E1051C26CC5C9A002CB828 /* PixelScreenManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PixelScreenManager.swift; sourceTree = "<group>"; };
 		D9F6A9462847FB8F00A124EA /* Egg+mock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Egg+mock.swift"; sourceTree = "<group>"; };
 		D9F6A94A2848045C00A124EA /* RoundButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundButton.swift; sourceTree = "<group>"; };
-		D9F6A94C284812C100A124EA /* VerticalSliderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerticalSliderView.swift; sourceTree = "<group>"; };
+		D9F6A94C284812C100A124EA /* EggSizeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EggSizeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,7 +149,7 @@
 				D94521402693512600305EF8 /* EierML_iosApp.swift */,
 				D9BB94CA26A467EF007086D0 /* Views */,
 				D9BA13EC26ADE8F50097E934 /* Models */,
-				D99421E726BB0FBC00DB2BCF /* Extensions */,
+				D99421E726BB0FBC00DB2BCF /* Components */,
 				D9D37426269B0B810075DE4E /* Helper */,
 				D93E848E26EE175700A10349 /* Source */,
 				D94521442693512600305EF8 /* Assets.xcassets */,
@@ -190,11 +196,13 @@
 			path = Color;
 			sourceTree = "<group>";
 		};
-		D99421E726BB0FBC00DB2BCF /* Extensions */ = {
+		D99421E726BB0FBC00DB2BCF /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				65D2143228488F030002E565 /* CustomSlider.swift */,
+				65330FE32848A95300EB6624 /* CustomVerticalSlider.swift */,
 			);
-			path = Extensions;
+			path = Components;
 			sourceTree = "<group>";
 		};
 		D9BA13EC26ADE8F50097E934 /* Models */ = {
@@ -212,7 +220,8 @@
 				D953699E26EEA9190056BD82 /* AppState.swift */,
 				D94521422693512600305EF8 /* AppView.swift */,
 				D9F6A94A2848045C00A124EA /* RoundButton.swift */,
-				D9F6A94C284812C100A124EA /* VerticalSliderView.swift */,
+				D9F6A94C284812C100A124EA /* EggSizeView.swift */,
+				6521A7DD2849190700ADB6BC /* TimerView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -376,13 +385,16 @@
 			files = (
 				D94521432693512600305EF8 /* AppView.swift in Sources */,
 				D98AAB7F26E516290087FAF6 /* Color+Hex.swift in Sources */,
+				65D2143328488F030002E565 /* CustomSlider.swift in Sources */,
 				D99421E926BB0FCB00DB2BCF /* NavigationButton.swift in Sources */,
 				D994220526BB2AFD00DB2BCF /* Date+String.swift in Sources */,
 				D9F6A94B2848045C00A124EA /* RoundButton.swift in Sources */,
 				D9E1051826CC4E6B002CB828 /* UIScreenExtension.swift in Sources */,
 				D9E1051626CC40BD002CB828 /* VisualEffect.swift in Sources */,
-				D9F6A94D284812C100A124EA /* VerticalSliderView.swift in Sources */,
+				D9F6A94D284812C100A124EA /* EggSizeView.swift in Sources */,
+				65330FE42848A95300EB6624 /* CustomVerticalSlider.swift in Sources */,
 				D90AC30426C5748900B6B7D0 /* WebView.swift in Sources */,
+				6521A7DE2849190700ADB6BC /* TimerView.swift in Sources */,
 				D98AAB7326E4CB250087FAF6 /* PixelConverter.swift in Sources */,
 				D9E1051D26CC5C9A002CB828 /* PixelScreenManager.swift in Sources */,
 				D90AC30B26C5C5E600B6B7D0 /* Egg.swift in Sources */,
