@@ -9,13 +9,11 @@
 /* Begin PBXBuildFile section */
 		6521A7DE2849190700ADB6BC /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6521A7DD2849190700ADB6BC /* TimerView.swift */; };
 		6521A7E028491B9D00ADB6BC /* CornerRadius+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6521A7DF28491B9D00ADB6BC /* CornerRadius+Extension.swift */; };
-		65330FE42848A95300EB6624 /* CustomVerticalSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65330FE32848A95300EB6624 /* CustomVerticalSlider.swift */; };
 		6544A40D28709A220082702E /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6544A40C28709A220082702E /* MainView.swift */; };
 		6544A40F28709B2B0082702E /* TopNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6544A40E28709B2B0082702E /* TopNavigationView.swift */; };
 		6544A4112870A80E0082702E /* AppBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6544A4102870A80E0082702E /* AppBackground.swift */; };
 		6550359227424E5800BE7033 /* TutorialSheets.json in Resources */ = {isa = PBXBuildFile; fileRef = 6550359127424E5800BE7033 /* TutorialSheets.json */; };
 		65C7D97828586E09003C0DDC /* AnimatedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C7D97728586E09003C0DDC /* AnimatedView.swift */; };
-		65D2143328488F030002E565 /* CustomSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D2143228488F030002E565 /* CustomSlider.swift */; };
 		D90AC30326C5748900B6B7D0 /* WebLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90AC30126C5748900B6B7D0 /* WebLoadingView.swift */; };
 		D90AC30426C5748900B6B7D0 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90AC30226C5748900B6B7D0 /* WebView.swift */; };
 		D90AC30B26C5C5E600B6B7D0 /* Egg.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90AC30A26C5C5E600B6B7D0 /* Egg.swift */; };
@@ -30,6 +28,8 @@
 		D98AAB7F26E516290087FAF6 /* Color+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98AAB7C26E516290087FAF6 /* Color+Hex.swift */; };
 		D98AAB8026E516290087FAF6 /* Color+Adjust.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98AAB7D26E516290087FAF6 /* Color+Adjust.swift */; };
 		D98AAB8126E516290087FAF6 /* Palette+Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98AAB7E26E516290087FAF6 /* Palette+Color.swift */; };
+		D98AEE652870AD8C0020CAF6 /* HorizontalCustomSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98AEE642870AD8C0020CAF6 /* HorizontalCustomSlider.swift */; };
+		D98AEE672870B1900020CAF6 /* VerticalCustomSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98AEE662870B1900020CAF6 /* VerticalCustomSlider.swift */; };
 		D99421E926BB0FCB00DB2BCF /* NavigationButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99421E826BB0FCB00DB2BCF /* NavigationButton.swift */; };
 		D99421EB26BB124100DB2BCF /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D99421EA26BB124100DB2BCF /* Launch Screen.storyboard */; };
 		D994220326BB2AD200DB2BCF /* AsyncImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D994220226BB2AD200DB2BCF /* AsyncImage.swift */; };
@@ -58,13 +58,11 @@
 /* Begin PBXFileReference section */
 		6521A7DD2849190700ADB6BC /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
 		6521A7DF28491B9D00ADB6BC /* CornerRadius+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CornerRadius+Extension.swift"; sourceTree = "<group>"; };
-		65330FE32848A95300EB6624 /* CustomVerticalSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomVerticalSlider.swift; sourceTree = "<group>"; };
 		6544A40C28709A220082702E /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		6544A40E28709B2B0082702E /* TopNavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopNavigationView.swift; sourceTree = "<group>"; };
 		6544A4102870A80E0082702E /* AppBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppBackground.swift; sourceTree = "<group>"; };
 		6550359127424E5800BE7033 /* TutorialSheets.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = TutorialSheets.json; sourceTree = "<group>"; };
 		65C7D97728586E09003C0DDC /* AnimatedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedView.swift; sourceTree = "<group>"; };
-		65D2143228488F030002E565 /* CustomSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSlider.swift; sourceTree = "<group>"; };
 		D90AC30126C5748900B6B7D0 /* WebLoadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebLoadingView.swift; sourceTree = "<group>"; };
 		D90AC30226C5748900B6B7D0 /* WebView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
 		D90AC30A26C5C5E600B6B7D0 /* Egg.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Egg.swift; sourceTree = "<group>"; };
@@ -83,6 +81,8 @@
 		D98AAB7C26E516290087FAF6 /* Color+Hex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Color+Hex.swift"; sourceTree = "<group>"; };
 		D98AAB7D26E516290087FAF6 /* Color+Adjust.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Color+Adjust.swift"; sourceTree = "<group>"; };
 		D98AAB7E26E516290087FAF6 /* Palette+Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Palette+Color.swift"; sourceTree = "<group>"; };
+		D98AEE642870AD8C0020CAF6 /* HorizontalCustomSlider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HorizontalCustomSlider.swift; sourceTree = "<group>"; };
+		D98AEE662870B1900020CAF6 /* VerticalCustomSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerticalCustomSlider.swift; sourceTree = "<group>"; };
 		D99421E826BB0FCB00DB2BCF /* NavigationButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationButton.swift; sourceTree = "<group>"; };
 		D99421EA26BB124100DB2BCF /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		D994220226BB2AD200DB2BCF /* AsyncImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsyncImage.swift; sourceTree = "<group>"; };
@@ -209,8 +209,8 @@
 		D99421E726BB0FBC00DB2BCF /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				65D2143228488F030002E565 /* CustomSlider.swift */,
-				65330FE32848A95300EB6624 /* CustomVerticalSlider.swift */,
+				D98AEE662870B1900020CAF6 /* VerticalCustomSlider.swift */,
+				D98AEE642870AD8C0020CAF6 /* HorizontalCustomSlider.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -402,14 +402,14 @@
 				6544A40D28709A220082702E /* MainView.swift in Sources */,
 				D98AAB7F26E516290087FAF6 /* Color+Hex.swift in Sources */,
 				6544A4112870A80E0082702E /* AppBackground.swift in Sources */,
-				65D2143328488F030002E565 /* CustomSlider.swift in Sources */,
 				D99421E926BB0FCB00DB2BCF /* NavigationButton.swift in Sources */,
 				D994220526BB2AFD00DB2BCF /* Date+String.swift in Sources */,
 				D9F6A94B2848045C00A124EA /* RoundButton.swift in Sources */,
 				D9E1051826CC4E6B002CB828 /* UIScreenExtension.swift in Sources */,
 				D9E1051626CC40BD002CB828 /* VisualEffect.swift in Sources */,
 				D9F6A94D284812C100A124EA /* EggSizeView.swift in Sources */,
-				65330FE42848A95300EB6624 /* CustomVerticalSlider.swift in Sources */,
+				D98AEE652870AD8C0020CAF6 /* HorizontalCustomSlider.swift in Sources */,
+				D98AEE672870B1900020CAF6 /* VerticalCustomSlider.swift in Sources */,
 				D90AC30426C5748900B6B7D0 /* WebView.swift in Sources */,
 				6521A7DE2849190700ADB6BC /* TimerView.swift in Sources */,
 				65C7D97828586E09003C0DDC /* AnimatedView.swift in Sources */,

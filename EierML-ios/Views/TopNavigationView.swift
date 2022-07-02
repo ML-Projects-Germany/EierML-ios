@@ -9,30 +9,24 @@ import SwiftUI
 
 struct TopNavigationView: View {
     var body: some View {
-        VStack {
-            HStack {
-                Button {
-                    print("")
-                } label: {
-                    Image(systemName: "ellipsis")
-                }
-                .buttonStyle(RoundButton())
-                Spacer()
-                Text("EierML")
-                    .font(.system(size: 27, weight: .bold, design: .default))
-                    .foregroundColor(.white)
-                Spacer()
-                Button {
-                    print("")
-                } label: {
-                    Image(systemName: "heart.text.square")
-                }
-                .buttonStyle(RoundButton())
+        HStack {
+            Button {
+                print("")
+            } label: {
+                Image(systemName: "ellipsis")
             }
-            .padding(.init(top: 10, leading: 20, bottom: 0, trailing: 20))
+            .buttonStyle(RoundButton())
             Spacer()
-            EggSizeView()
+            Text("EierML")
+                .font(.system(size: 27, weight: .bold, design: .default))
+                .foregroundColor(.white)
             Spacer()
+            Button {
+                print("")
+            } label: {
+                Image(systemName: "heart.text.square")
+            }
+            .buttonStyle(RoundButton())
         }
     }
 }
@@ -40,5 +34,6 @@ struct TopNavigationView: View {
 struct TopNavigationView_Previews: PreviewProvider {
     static var previews: some View {
         TopNavigationView()
+            .padding(.init(top: 10, leading: 20, bottom: 0, trailing: 20))
     }
 }

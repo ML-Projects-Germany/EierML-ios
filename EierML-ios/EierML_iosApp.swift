@@ -6,18 +6,24 @@
 //
 
 import SwiftUI
+import ComposableArchitecture
 
 @main
 struct EierML_iosApp: App {
     var body: some Scene {
         WindowGroup {
             ZStack {
-                AppView(store: .init(
-                    initialState: .init(),
-                    reducer: appReducer,
+                AppBackground()
+                EggSizeView(store: Store(
+                    initialState: .init(
+                        heightSliderValue: 0.5,
+                        widthSliderValue: 0.5
+                    ),
+                    reducer: eggSizeViewReducer,
                     environment: ()
                 ))
-                TimerView()
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
+                .ignoresSafeArea()
             }
         }
     }

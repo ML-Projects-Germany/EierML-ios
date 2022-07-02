@@ -6,83 +6,92 @@
 //
 
 import SwiftUI
+import ComposableArchitecture
+
+struct EggSizeViewState: Equatable {
+    var heightSliderValue: Double
+    var widthSliderValue: Double
+}
+
+enum EggSizeViewAction {
+    case updateHeightSliderValue(Double)
+    case updateWidthSliderValue(Double)
+}
+
+var eggSizeViewReducer = Reducer<EggSizeViewState, EggSizeViewAction, Void> { state, action, _ in
+    switch action {
+    case .updateHeightSliderValue(let newValue):
+        state.heightSliderValue = newValue
+        return .none
+    case .updateWidthSliderValue(let newValue):
+        state.widthSliderValue = newValue
+        return .none
+    }
+}
 
 struct EggSizeView: View {
-    @State var height: Double = 50
-    @State var weight: Double = 50
+    var store: Store<EggSizeViewState, EggSizeViewAction>
 
     var body: some View {
-        VStack {
-            ZStack {
-                Image("egg")
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(width: 180)
-                    .scaleEffect(1.3)
-                Button {
-                    print("add")
-                } label: {
-                    Label("Hinzufügen", systemImage: "plus")
-                        .foregroundColor(.black)
-                        .offset(y: 10)
+        WithViewStore(self.store) { viewStore in
+            VStack {
+                ZStack {
+                    Image("egg")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 180)
+                        .scaleEffect(1.3)
+                    Button {
+                        print("add")
+                    } label: {
+                        Label("Hinzufügen", systemImage: "plus")
+                            .foregroundColor(.black)
+                            .offset(y: 10)
+                    }
+                    VerticalCustomSlider(value: viewStore.binding(
+                        get: \.heightSliderValue,
+                        send: EggSizeViewAction.updateHeightSliderValue
+                    ))
+                        .frame(width: 25, height: 321)
+                        .frame(maxWidth: .infinity, alignment: .trailing)
                 }
-                CustomVerticalSlider(value: $height, range: (0, 100)) { modifiers in
-                    ZStack {
-                        Color.white.opacity(0.3)
-                        ZStack(alignment: .top) {
-                            Color.white
-                            Image(systemName: "ellipsis")
-                                .foregroundColor(Color(hex: "5E5E5E"))
-                                .frame(width: 25, height: 15, alignment: .center)
-                                .padding(.top, height >= 98.5 ? 5 : 0)
+                .padding(.horizontal)
+                VStack(alignment: .leading, spacing: 5) {
+                    VStack(alignment: .leading, spacing: 0) {
+                        Group {
+                            Text("Breite: 32mm")
+                            Text("Höhe: 61mm")
+                            Text("Dauer: 3min 20s")
                         }
-                        .padding(.top, -13)
-                        .modifier(modifiers.barBottom)
+                        .foregroundColor(.white)
                     }
-                    .cornerRadius(10)
+                    HorizontalCustomSlider(value: viewStore.binding(
+                        get: \.widthSliderValue,
+                        send: EggSizeViewAction.updateWidthSliderValue
+                    ))
+                        .frame(height: 25)
                 }
-                .frame(width: 25, height: 300)
-                .frame(maxWidth: .infinity, alignment: .trailing)
+                .frame(maxWidth: .infinity)
+                .padding(.horizontal, 35)
             }
-            .padding(.horizontal)
-            VStack(alignment: .leading, spacing: 5) {
-                VStack(alignment: .leading, spacing: 0) {
-                    Group {
-                        Text("Breite: 32mm")
-                        Text("Höhe: 61mm")
-                        Text("Dauer: 3min 20s")
-                    }
-                    .foregroundColor(.white)
-                }
-                CustomSlider(value: $weight, range: (0, 100)) { modifiers in
-                    ZStack {
-                        Color.white.opacity(0.3)
-                        ZStack(alignment: .trailing) {
-                            Color.white
-                            Image(systemName: "ellipsis")
-                                .foregroundColor(Color(hex: "5E5E5E"))
-                                .rotationEffect(.degrees(90))
-                                .frame(width: 15, height: 25, alignment: .center)
-                                .padding(.trailing, weight >= 98.5 ? 5 : 0)
-                        }
-                        .padding(.trailing, -13)
-                        .modifier(modifiers.barLeft)
-                    }
-                    .cornerRadius(10)
-                }
-                .frame(height: 25)
-            }
-            .frame(maxWidth: .infinity)
-            .padding(.horizontal, 35)
         }
     }
 }
 
 struct EggSizeView_Previews: PreviewProvider {
     static var previews: some View {
-        EggSizeView()
-            .frame(maxWidth: .infinity, maxHeight: .infinity)
-            .background(Color.orange)
-            .ignoresSafeArea()
+        ZStack {
+            AppBackground()
+            EggSizeView(store: Store(
+                initialState: .init(
+                    heightSliderValue: 0.5,
+                    widthSliderValue: 0.5
+                ),
+                reducer: eggSizeViewReducer,
+                environment: ()
+            ))
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
+                .ignoresSafeArea()
+        }
     }
 }
