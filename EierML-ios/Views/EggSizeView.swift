@@ -92,7 +92,6 @@ struct EggSizeView: View {
                             Group {
                                 Text("Breite: \(viewStore.widthMM)mm")
                                 Text("Höhe: \(viewStore.heightMM)mm")
-                                Text("Dauer: 3min 20s")
                             }
                             .foregroundColor(.white)
                             .shadow(color: .black.opacity(0.4), radius: 5)
