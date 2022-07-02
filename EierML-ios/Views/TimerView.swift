@@ -8,18 +8,19 @@
 import SwiftUI
 
 struct TimerView: View {
-    @State var height: Double = 200
+    @State var height: Double = UIScreen.main.bounds.height*0.6
 
     var body: some View {
-        let dragGesture = DragGesture(minimumDistance: 1).onChanged { drag in
-            withAnimation(.easeOut) {
-                self.height = 200 + (drag.location.y - drag.translation.height)
+        let dragGesture = DragGesture()
+            .onChanged {
+                self.height = $0.translation.height
+            }.onEnded {
+                if $0.translation.height < UIScreen.main.bounds.height * 0.5 {
+                    self.height = UIScreen.main.bounds.height*0.15
+                } else {
+                    self.height = UIScreen.main.bounds.height*0.6
+                }
             }
-            print(height)
-            print(drag.location.y)
-            print(drag.translation.height)
-            print("---")
-        }
 
         return GeometryReader { geometry in
             VStack(spacing: 0) {
@@ -28,11 +29,10 @@ struct TimerView: View {
                     .frame(width: 80, height: 7)
                     .padding(8)
                     .gesture(dragGesture)
-                Text("\(self.height)")
             }
             .frame(
-                maxWidth: .infinity,
-                maxHeight: max(min(height, 900), 200),
+                width: UIScreen.main.bounds.width,
+                height: UIScreen.main.bounds.height,
                 alignment: .top
             )
             .safeAreaInset(edge: .bottom, content: {
@@ -40,8 +40,9 @@ struct TimerView: View {
             })
             .background(Material.thin)
             .cornerRadius(20, corners: [.topLeft, .topRight])
-            .padding(.bottom, -geometry.safeAreaInsets.bottom)
-            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottom)
+            .padding(.bottom, -(geometry.safeAreaInsets.top))
+            .offset(y: height)
+            .animation(.spring(), value: height)
         }
     }
 }
@@ -50,7 +51,7 @@ struct TimerView_Previews: PreviewProvider {
     static var previews: some View {
         ZStack {
             AppView(store: .init(
-                initialState: .init(currentPage: .main),
+                initialState: .init(),
                 reducer: appReducer,
                 environment: ()
             ))
