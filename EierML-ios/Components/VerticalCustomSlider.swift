@@ -24,7 +24,7 @@ struct VerticalCustomSlider: View {
                         .foregroundColor(Color(hex: "#5E5E5E")
                             .opacity(isDragged ? 1 : 0.5))
                         .animation(.easeIn.speed(2.5), value: isDragged)
-                        .padding(.top, dragValueY >= 0.988 ? 13 : 5)
+                        .padding(.top, dragValueY >= 1 ? 13 : 5)
                         .frame(
                             width: geometry.size.width,
                             height: geometry.size.height,

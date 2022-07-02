@@ -11,7 +11,7 @@ struct TopNavigationView: View {
     var body: some View {
         HStack {
             Button {
-                print("")
+                print("settings")
             } label: {
                 Image(systemName: "ellipsis")
             }
@@ -22,7 +22,7 @@ struct TopNavigationView: View {
                 .foregroundColor(.white)
             Spacer()
             Button {
-                print("")
+                print("articles")
             } label: {
                 Image(systemName: "heart.text.square")
             }

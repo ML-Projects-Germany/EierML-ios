@@ -206,6 +206,15 @@
 			path = Color;
 			sourceTree = "<group>";
 		};
+		D98AEE6A2870DE990020CAF6 /* Pixel */ = {
+			isa = PBXGroup;
+			children = (
+				D98AAB7226E4CB250087FAF6 /* PixelConverter.swift */,
+				D9E1051C26CC5C9A002CB828 /* PixelScreenManager.swift */,
+			);
+			path = Pixel;
+			sourceTree = "<group>";
+		};
 		D99421E726BB0FBC00DB2BCF /* Components */ = {
 			isa = PBXGroup;
 			children = (
@@ -244,13 +253,12 @@
 			children = (
 				D98AAB7B26E516290087FAF6 /* Color */,
 				D9E1051726CC4E6B002CB828 /* UIScreenExtension.swift */,
-				D9E1051C26CC5C9A002CB828 /* PixelScreenManager.swift */,
 				D980D3042702EA96004AC5D0 /* Web */,
 				D994220426BB2AFD00DB2BCF /* Date+String.swift */,
 				D994220226BB2AD200DB2BCF /* AsyncImage.swift */,
 				D99421E826BB0FCB00DB2BCF /* NavigationButton.swift */,
 				D9E1051526CC40BD002CB828 /* VisualEffect.swift */,
-				D98AAB7226E4CB250087FAF6 /* PixelConverter.swift */,
+				D98AEE6A2870DE990020CAF6 /* Pixel */,
 				6521A7DF28491B9D00ADB6BC /* CornerRadius+Extension.swift */,
 			);
 			path = Helper;

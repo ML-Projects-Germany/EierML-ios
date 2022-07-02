@@ -28,8 +28,22 @@ struct MainView: View {
     var store: Store<MainViewStore, MainViewAction>
 
     var body: some View {
-        WithViewStore(self.store) { viewStore in
-            Text("Rabit Hole")
+        GeometryReader { geometry in
+            WithViewStore(self.store) { viewStore in
+                VStack {
+                    TopNavigationView()
+                    EggSizeView(store: Store(
+                        initialState: .init(heightSliderValue: 0.5, widthSliderValue: 0.5),
+                        reducer: eggSizeViewReducer,
+                        environment: ()
+                    ))
+                    .frame(height: geometry.size.height/2)
+                    .frame(maxWidth: 400, maxHeight: .infinity)
+                    Spacer()
+                        .frame(height: 130)
+                }
+                .padding()
+            }
         }
     }
 }

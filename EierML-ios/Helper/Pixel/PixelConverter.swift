@@ -9,6 +9,10 @@ import Foundation
 import UIKit
 
 class PixelConverter {
+    static func checkThatDeviceIsSupported() -> Bool {
+        return UIScreen.pixelsPerCentimeter != nil
+    }
+
     static func getCentimeterForNormalPixels(_ pixels: CGFloat) -> CGFloat {
         let nativeBoundsComposer = UIScreen.main.nativeBounds.width/UIScreen.main.bounds.width
         let nativeBounds = pixels*nativeBoundsComposer
