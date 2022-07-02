@@ -25,7 +25,7 @@ struct HorizontalCustomSlider: View {
                             .opacity(isDragged ? 1 : 0.5))
                         .animation(.easeIn.speed(2.5), value: isDragged)
                         .rotationEffect(.degrees(-90))
-                        .padding(.trailing, dragValueX >= 1 ? 10 : 0)
+                        .padding(.trailing, dragValueX >= 0.988 ? 10 : 0)
                         .frame(
                             width: geometry.size.width,
                             height: geometry.size.height,
