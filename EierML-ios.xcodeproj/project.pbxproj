@@ -24,6 +24,7 @@
 		D94521482693512600305EF8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D94521472693512600305EF8 /* Preview Assets.xcassets */; };
 		D945215E2693512600305EF8 /* EierML_iosUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D945215D2693512600305EF8 /* EierML_iosUITests.swift */; };
 		D953699F26EEA9190056BD82 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = D953699E26EEA9190056BD82 /* AppState.swift */; };
+		D95A49632874DFFF008F3402 /* EggCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D95A49622874DFFF008F3402 /* EggCardView.swift */; };
 		D98AAB7326E4CB250087FAF6 /* PixelConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98AAB7226E4CB250087FAF6 /* PixelConverter.swift */; };
 		D98AAB7F26E516290087FAF6 /* Color+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98AAB7C26E516290087FAF6 /* Color+Hex.swift */; };
 		D98AAB8026E516290087FAF6 /* Color+Adjust.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98AAB7D26E516290087FAF6 /* Color+Adjust.swift */; };
@@ -77,6 +78,7 @@
 		D945215D2693512600305EF8 /* EierML_iosUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EierML_iosUITests.swift; sourceTree = "<group>"; };
 		D945215F2693512600305EF8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D953699E26EEA9190056BD82 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
+		D95A49622874DFFF008F3402 /* EggCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EggCardView.swift; sourceTree = "<group>"; };
 		D98AAB7226E4CB250087FAF6 /* PixelConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PixelConverter.swift; sourceTree = "<group>"; };
 		D98AAB7C26E516290087FAF6 /* Color+Hex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Color+Hex.swift"; sourceTree = "<group>"; };
 		D98AAB7D26E516290087FAF6 /* Color+Adjust.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Color+Adjust.swift"; sourceTree = "<group>"; };
@@ -244,6 +246,7 @@
 				D9F6A94C284812C100A124EA /* EggSizeView.swift */,
 				6521A7DD2849190700ADB6BC /* TimerView.swift */,
 				65C7D97728586E09003C0DDC /* AnimatedView.swift */,
+				D95A49622874DFFF008F3402 /* EggCardView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -411,6 +414,7 @@
 				D98AAB7F26E516290087FAF6 /* Color+Hex.swift in Sources */,
 				6544A4112870A80E0082702E /* AppBackground.swift in Sources */,
 				D99421E926BB0FCB00DB2BCF /* NavigationButton.swift in Sources */,
+				D95A49632874DFFF008F3402 /* EggCardView.swift in Sources */,
 				D994220526BB2AFD00DB2BCF /* Date+String.swift in Sources */,
 				D9F6A94B2848045C00A124EA /* RoundButton.swift in Sources */,
 				D9E1051826CC4E6B002CB828 /* UIScreenExtension.swift in Sources */,

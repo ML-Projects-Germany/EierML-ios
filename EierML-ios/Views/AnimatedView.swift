@@ -9,37 +9,21 @@ import SwiftUI
 
 struct AnimatedView: View {
     @Namespace var namespace
-    @State var show: Bool = true
+    @State var show: Bool = !true
 
     var body: some View {
         ZStack {
-            if !show {
-                VStack(alignment: .leading) {
-                    Text("Dein Ei")
-                        .font(.headline)
-                        .matchedGeometryEffect(id: "title", in: namespace)
-                    Text("23mm x 30mm")
-                        .matchedGeometryEffect(id: "text", in: namespace)
-                }
-                .foregroundColor(.white)
-                .padding(.horizontal)
-                .frame(width: 200, height: 70, alignment: .leading)
-                .background(.red)
-                .cornerRadius(10)
+            AppBackground()
+            if show {
+                Image("egg")
+                    .resizable()
+                    .matchedGeometryEffect(id: "egg", in: namespace)
+                    .frame(width: 200, height: 300)
             } else {
-                VStack(alignment: .leading) {
-                    Text("Dein Ei")
-                        .font(.headline)
-                        .matchedGeometryEffect(id: "title", in: namespace)
-                    Spacer()
-                    Text("23mm x 30mm")
-                        .matchedGeometryEffect(id: "text", in: namespace)
-                }
-                .foregroundColor(.white)
-                .padding()
-                .frame(width: 200, height: 150, alignment: .topLeading)
-                .background(.red)
-                .cornerRadius(10)
+                Image("egg")
+                    .resizable()
+                    .matchedGeometryEffect(id: "egg", in: namespace)
+                    .frame(width: 60, height: 80)
             }
         }
         .onTapGesture {
